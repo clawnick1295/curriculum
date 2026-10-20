@@ -14,7 +14,7 @@ function home(){
   const inYear = cw >= 1 && cw <= 52;
   const when = inYear ? `Week ${cw} · ${D.weekRange(cw).label}` : `School year starts ${DA_CONFIG.SCHOOL_YEAR_START}`;
   return nav("Curriculum Dashboard") + `<main class="wrap home-lead">
-   <section class="hero fun"><img class="ch heroL" src="${DA.CH.owl}" alt="Davie owl"><div class="herotxt"><h2>Hi teachers! 👋</h2><p>Choose an age group.</p><p class="small">${U.esc(when)}</p></div><img class="ch heroR" src="${DA.CH.sampson}" alt="Sampson the Manatee"></section>
+   <section class="hero fun play-hero"><div class="parallax"><img class="ch heroL bob" src="${DA.CH.owl}" alt="Davie owl"></div><div class="herotxt"><h2>Hi teachers! 👋</h2><p>Choose an age group.</p><p class="small">${U.esc(when)}</p></div><div class="parallax"><img class="ch heroR bob" src="${DA.CH.sampson}" alt="Sampson the Manatee"></div></section>
    <h2 class="sec hh">${U.ch("literacy","hd")}Curriculum by age</h2>
    <div class="grid ages">${D.ages().map(ageTile).join("")}</div>
    <a class="hometour" href="#/tour"><b>Tour day</b><span>See a sample week, our characters, and the family song.</span></a>
@@ -26,7 +26,7 @@ function home(){
 function ageTile(a){
   const cw = D.currentWeekNumber();
   const jump = cw >= 1 && cw <= 52 ? `<a class="agejump" href="#/age/${a.id}/${cw}">Jump to this week</a>` : "";
-  return `<article class="age" style="--c:${a.color}"><a class="agemain" href="#/age/${a.id}">${U.ch(DA.AGE_CH[a.id],"agech")}<b>${U.esc(a.name)}</b><small>${U.esc(a.sub)}</small></a>${jump}</article>`;
+  return `<article class="age" style="--c:${a.color}"><a class="agemain" href="#/age/${a.id}">${U.ch(DA.AGE_CH[a.id],"agech bob")}<b>${U.esc(a.name)}</b><small>${U.esc(a.sub)}</small></a>${jump}</article>`;
 }
 function search(q){
   q = q.trim().toLowerCase(); const out = []; if (q.length < 2) return "";
@@ -483,7 +483,7 @@ function tourPage(){
   const homeHtml = home.map(h => Array.isArray(h) ? `<li><b>${U.esc(h[0])}</b> ${U.esc(h[1] || "")}</li>` : `<li>${U.esc(h)}</li>`).join("");
   const url = siteHomeUrl();
   return `${parentHeader()}<main class="wrap narrow tourpage">
-    <section class="card hero2 fun tour-hero"><img class="ch pch" src="${DA.CH.sampson}" alt=""><p class="kicker">${DA.t("tourKicker")}</p><h2>${DA.t("tourTitle")}</h2><p>${DA.t("tourLead")}</p></section>
+    <section class="card hero2 fun tour-hero play-hero"><div class="wave-sampson parallax"><span class="bubble">${DA.t("wave")}</span><img class="ch pch bob" src="${DA.CH.sampson}" alt="Sampson the Manatee"></div><p class="kicker">${DA.t("tourKicker")}</p><h2>${DA.t("tourTitle")}</h2><p>${DA.t("tourLead")}</p></section>
     <h2 class="sec">${DA.t("meet")}</h2>
     <div class="tour-chars">${chars}</div>
     <p><a class="btn ghost" href="#/grows">${DA.t("grows")}</a></p>
@@ -506,7 +506,7 @@ function castFigures(){
   return list.map(c => {
     const name = c.img === "owl" || !c.name ? (c.img === "owl" ? ollieName() : c.name) : c.name;
     const src = DA.CH[c.img] || "";
-    return `<figure class="tour-char"><img src="${src}" alt="${U.esc(name)}"><figcaption>${U.esc(name)}<small>${U.esc(DA.pick(c.role))}</small></figcaption></figure>`;
+    return `<figure class="tour-char"><img class="bob" src="${src}" alt="${U.esc(name)}" loading="lazy" decoding="async"><figcaption>${U.esc(name)}<small>${U.esc(DA.pick(c.role))}</small></figcaption></figure>`;
   }).join("");
 }
 function growsPage(){
@@ -596,6 +596,7 @@ function render(){
   const p = location.hash.replace(/^#\/?/, "").split("/");
   let screen = "", sheet = "";
   pendingShare = null;
+  document.querySelectorAll(".pop-host").forEach(n => n.remove());
   DA.lang.surface = (p[0] === "parent" || p[0] === "pplan" || p[0] === "tour" || p[0] === "readiness" || p[0] === "grows") ? "family" : "teacher";
   document.documentElement.lang = DA.lang.family() ? "es" : "en";
   try {
@@ -642,8 +643,125 @@ function render(){
     });
     document.querySelectorAll("[data-obs]").forEach(cb => cb.onchange = () => {
       DA.store.obsSet(ctx.ageId, ctx.weekN, decodeURIComponent(cb.dataset.obs), cb.checked);
+      if (cb.checked) celebrate(cb);
     });
   }
+  bindMotion();
+}
+let motionIO = null;
+let motionScroll = null;
+function motionOff(){
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+function markReveal(list, calm){
+  list.forEach((el, i) => {
+    el.classList.add("reveal");
+    if (calm) el.classList.add("reveal-calm");
+    el.style.setProperty("--i", String(i % 6));
+  });
+}
+function settleReveal(el){
+  const done = ev => {
+    if (ev && ev.target !== el) return;
+    el.classList.add("settled");
+  };
+  el.addEventListener("transitionend", done);
+  setTimeout(() => el.classList.add("settled"), 900);
+}
+function bindMotion(){
+  if (motionIO) { motionIO.disconnect(); motionIO = null; }
+  if (motionScroll) { removeEventListener("scroll", motionScroll); motionScroll = null; }
+  const reduce = motionOff();
+  const calm = document.querySelector(".weekpage");
+  if (calm) markReveal(calm.querySelectorAll(".card"), true);
+  else {
+    document.querySelectorAll(".monthblock").forEach(block => markReveal(block.querySelectorAll(".weekrow"), false));
+    markReveal(document.querySelectorAll(".home-lead .age, .home-lead .hometour, .home-lead .homeready"), false);
+    markReveal(document.querySelectorAll(".tourpage .card:not(.tour-hero), .tourpage .tour-char, .growpage .grow-step, .growpage .tour-char"), false);
+    markReveal(document.querySelectorAll(".readiness .ready-item, .parentpg .card"), true);
+  }
+  const nodes = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) nodes.forEach(n => n.classList.add("in", "settled"));
+  else {
+    motionIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        settleReveal(e.target);
+        motionIO.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px 8% 0px", threshold: 0.08 });
+    nodes.forEach(n => motionIO.observe(n));
+  }
+  if (reduce) return;
+  const bounce = el => {
+    el.classList.remove("tapped");
+    requestAnimationFrame(() => el.classList.add("tapped"));
+  };
+  document.querySelectorAll(".bob").forEach(el => {
+    if (el.closest(".wave-sampson")) return;
+    el.onpointerdown = () => bounce(el);
+    el.onanimationend = ev => { if (ev.animationName === "tap-bounce") el.classList.remove("tapped"); };
+  });
+  document.querySelectorAll(".wave-sampson").forEach(wrap => {
+    const img = wrap.querySelector(".bob");
+    if (!img) return;
+    wrap.onpointerdown = () => bounce(img);
+    img.onanimationend = ev => { if (ev.animationName === "tap-bounce") img.classList.remove("tapped"); };
+  });
+  const heroes = document.querySelectorAll(".play-hero");
+  if (!heroes.length) return;
+  let tick = false;
+  motionScroll = () => {
+    if (tick) return;
+    tick = true;
+    requestAnimationFrame(() => {
+      tick = false;
+      const view = window.innerHeight || 800;
+      heroes.forEach(hero => {
+        const r = hero.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > view) return;
+        const mid = r.top + r.height / 2 - view * 0.32;
+        const shift = Math.max(-12, Math.min(12, mid * 0.04));
+        hero.querySelectorAll(".parallax").forEach((el, i) => {
+          const dir = i === 0 ? 1 : -0.7;
+          el.style.transform = "translate3d(0," + (shift * dir).toFixed(1) + "px,0)";
+        });
+      });
+    });
+  };
+  addEventListener("scroll", motionScroll, { passive: true });
+  motionScroll();
+}
+function celebrate(anchor){
+  if (motionOff()) return;
+  const old = document.querySelector(".pop-host");
+  if (old) old.remove();
+  const host = document.createElement("div");
+  host.className = "pop-host";
+  host.setAttribute("aria-hidden", "true");
+  const rect = anchor.getBoundingClientRect();
+  host.style.left = (rect.left + rect.width / 2) + "px";
+  host.style.top = (rect.top + rect.height / 2) + "px";
+  const colors = ["#022A4F", "#F7931E", "#022A4F", "#F7931E", "#A85B00"];
+  for (let i = 0; i < 12; i++) {
+    const bit = document.createElement("i");
+    bit.className = "confetti";
+    const angle = (Math.PI * 2 * i) / 12 - Math.PI / 2;
+    const dist = 34 + (i % 4) * 12;
+    bit.style.setProperty("--dx", (Math.cos(angle) * dist).toFixed(1) + "px");
+    bit.style.setProperty("--dy", (Math.sin(angle) * dist).toFixed(1) + "px");
+    bit.style.setProperty("--spin", ((i % 2 ? 1 : -1) * (50 + i * 18)) + "deg");
+    bit.style.background = colors[i % colors.length];
+    host.appendChild(bit);
+  }
+  const face = document.createElement("img");
+  face.className = "pop-ch";
+  face.src = DA.CH.sampson;
+  face.alt = "";
+  host.appendChild(face);
+  document.body.appendChild(host);
+  setTimeout(() => host.remove(), 760);
 }
 function weekContext(p){
   if (p[0] === "age" && p[2]) return {ageId: p[1], weekN: p[2]};

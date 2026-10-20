@@ -211,3 +211,70 @@ ul.big{padding-left:1.2em}ul.big li{margin:8px 0;font-size:1.15rem}
 .tour-cta .btn{background:var(--orange);color:var(--navy)}
 .ages-this{font-weight:800;margin:12px 0 8px}
 @media (min-width:700px){.tour-chars{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Motion: transform and opacity only. Plan pages use the calm entrance. */
+.parallax{flex:none;display:flex;align-items:flex-end}
+.bob{-webkit-user-drag:none;user-select:none}
+.wave-sampson{position:absolute;right:6px;bottom:0;width:128px;height:158px}
+.wave-sampson .pch{position:relative;right:auto;bottom:auto;width:120px;height:120px;margin-top:34px}
+.bubble{position:absolute;left:0;top:0;max-width:7.2rem;background:#fff;color:var(--navy);border:2px solid var(--orange);border-radius:16px;padding:4px 10px;font-weight:900;font-size:.95rem;line-height:1.15;box-shadow:0 3px 0 rgba(2,42,79,.12)}
+.bubble:after{content:"";position:absolute;left:22px;bottom:-8px;border:6px solid transparent;border-top-color:var(--orange)}
+.reveal{opacity:0;transform:translateY(14px)}
+.reveal:not(.in){transition:none !important}
+.reveal.in{opacity:1;transform:none;transition:opacity .42s ease, transform .42s ease;transition-delay:calc(var(--i, 0) * 42ms)}
+.reveal-calm{transform:translateY(6px)}
+.reveal-calm.in{transition-duration:.26s}
+.reveal.in.settled{transition:transform .12s ease;transition-delay:0ms}
+.pop-host{position:fixed;z-index:30;width:0;height:0;pointer-events:none}
+.confetti{position:absolute;left:0;top:0;width:8px;height:8px;border-radius:2px;opacity:1}
+.confetti:nth-child(odd){border-radius:50%}
+.pop-ch{position:absolute;left:-26px;top:-58px;width:52px;height:52px;object-fit:contain}
+@media (max-width:700px){
+  .wave-sampson{width:104px;height:136px;right:2px}
+  .wave-sampson .pch{width:96px;height:96px;margin-top:32px}
+  .bubble{font-size:.85rem;padding:3px 8px}
+}
+@media (prefers-reduced-motion: no-preference){
+  .heroR{animation-name:bob-tilt}
+  .home-lead .ch.agech.bob,.tour-char .bob{animation:floaty 4.2s ease-in-out infinite}
+  .tour-char:nth-child(2n) .bob{animation-delay:.45s}
+  .tour-char:nth-child(3n) .bob{animation-delay:.9s}
+  .wave-sampson .bob{animation:wave 2.8s ease-in-out infinite;transform-origin:50% 88%}
+  .bob.tapped{animation:tap-bounce .42s ease !important}
+  .btn,.age,.weekrow,.plantile,.hometour,.homeready,.step,.agejump,.tour-char,.grow-step,.top nav a{transition:transform .12s ease}
+  .btn:active,.age:active,.weekrow:active,.plantile:active,.hometour:active,.homeready:active,.step:active,.agejump:active,.tour-char:active,.grow-step:active,.top nav a:active{transform:scale(.97)}
+  .confetti{animation:burst .62s ease-out forwards}
+  .pop-ch{animation:pop .58s ease forwards}
+}
+@keyframes bob-tilt{50%{transform:translateY(-12px) rotate(-6deg)}}
+@keyframes floaty{50%{transform:translateY(-7px)}}
+@keyframes wave{
+  0%,100%{transform:rotate(0deg) translateY(0)}
+  25%{transform:rotate(-8deg) translateY(-3px)}
+  50%{transform:rotate(7deg) translateY(-1px)}
+  75%{transform:rotate(-4deg) translateY(-4px)}
+}
+@keyframes tap-bounce{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.12) rotate(-4deg)}
+  70%{transform:scale(.96)}
+  100%{transform:scale(1)}
+}
+@keyframes burst{
+  0%{transform:translate3d(0,0,0) scale(1);opacity:1}
+  100%{transform:translate3d(var(--dx), var(--dy), 0) rotate(var(--spin)) scale(.55);opacity:0}
+}
+@keyframes pop{
+  0%{transform:translateY(8px) scale(.3);opacity:0}
+  45%{transform:translateY(-6px) scale(1.08);opacity:1}
+  100%{transform:translateY(-16px) scale(1);opacity:0}
+}
+@media (prefers-reduced-motion: reduce){
+  .heroL,.heroR,.bob,.wave-sampson .bob,.tour-char img,.ch.agech{animation:none !important}
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+  .parallax{transform:none !important}
+}
+@media print{
+  .reveal,.reveal.in{opacity:1 !important;transform:none !important;animation:none !important;transition:none !important}
+  .pop-host{display:none !important}
+}

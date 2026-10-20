@@ -54,6 +54,7 @@
     soFar: ["skill areas so far", "áreas de aprendizaje hasta ahora"],
     notYet: ["Not yet this year", "Todavía no este año"],
     coveredIn: ["Covered in", "Lo vemos en"],
+    wave: ["Hi!", "¡Hola!"],
     tourKicker: ["Tour day", "Día de recorrido"],
     tourTitle: ["Come see how we learn", "Ven a ver cómo aprendemos"],
     tourLead: ["A week in our classrooms: a theme, a song, play for every age, and a page families can share.", "Una semana en nuestros salones: un tema, una canción, juego para cada edad y una página que las familias pueden compartir."],

@@ -1,4 +1,4 @@
-const C='da-v8',F=['./index.html','./parent.html','./js/plans.js','./logo.svg','./css/styles.css','./js/qrcode.js','./js/data.js','./js/store.js','./js/components.js','./js/app.js','./manifest.json','./icon.svg'];
+const C='da-v9',F=['./index.html','./parent.html','./js/plans.js','./logo.svg','./css/styles.css','./js/qrcode.js','./js/data.js','./js/store.js','./js/components.js','./js/app.js','./manifest.json','./icon.svg'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(F)))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{ if(e.request.method!=='GET'||/\/media\//.test(e.request.url)) return;

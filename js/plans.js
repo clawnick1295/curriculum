@@ -3,6 +3,8 @@
 const FALL_K_SONG = "Kick the Leaves! (Fall · Letter K) — original chant, Davie Academy\n\nHOOK (everyone):\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 1:\nCrunchy leaves are falling down,\nred and orange all around.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 2:\nPumpkins sitting big and round,\nacorns tumble to the ground.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 3:\nFly a kite up in the breeze,\nkids go jumping in the leaves.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nEnding:\nK is for kick! K is for kite!\nK is for kids! Kuh, kuh, kuh!";
 const FALL_K_SONG_VIDEO = "media/fall_k_song.mp4";
 const FALL_K_SONG_POSTER = "media/fall_k_song_poster.jpg";
+const PUMPKIN_P_SONG_VIDEO = "media/pumpkin_p_song.mp4";
+const PUMPKIN_P_SONG_POSTER = "media/pumpkin_p_song_poster.jpg";
 window.DA_PLANS = [
 { id:"fall-kk-unlabeled", room:"", age:"(not filled in)", ageId:null, hidden:true, theme:"Fall – Seasonal Changes", letter:"Kk", source:"Lesson plan PDF #1 (5 pages; room/age left as 'Type here')",
   circle:"Discuss the changes that happen during fall, such as cooler weather, leaves changing colors, falling leaves, and shorter days. Review the four seasons and encourage children to share what they notice about the weather and trees outside. Talk about fall colors and appropriate clothing for cooler weather.",
@@ -97,7 +99,7 @@ window.DA_PLANS = [
  const img=(age,s)=>`media/activities/w11_${age}_${s}.webp`;
  const SONG="Pumpkin Patch Pop! (Letter P chant)\n\nHOOK: P, p, pumpkin — pop, pop, pop!\nPick a pumpkin, plop, plop, plop!\n\nVerse 1: Sampson rolls a pumpkin round,\nP says \"puh\" without a sound… just air!\nVerse 2: Panther peeks in the patch so wide,\nPurple, pink and orange side by side.\n\nEnding: P is for pumpkin, P is for play,\nPumpkin patch fun every day!";
  const base=(age,room)=>({ id:"w11-"+age+"-pumpkin", room:room||"", ageId:age, theme:"Pumpkin Patch", short:"Pumpkin Patch", letter:"Pp", color:"Orange", shape:"Circle",
-  banner:"media/activities/banner_w11.webp", song:SONG, source:"Davie Academy Week 11 plan (generated draft, Oct 2026)" });
+  banner:"media/activities/banner_w11.webp", song:SONG, songVideo:PUMPKIN_P_SONG_VIDEO, songPoster:PUMPKIN_P_SONG_POSTER, source:"Davie Academy Week 11 plan (generated draft, Oct 2026)" });
  const W=[
  Object.assign(base("ones"),{ age:"Ones",
   overview:"Our littlest learners explore pumpkins with their hands, eyes and ears: squishing, rolling, and finding pumpkins that hide.",

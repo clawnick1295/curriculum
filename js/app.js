@@ -17,6 +17,8 @@ function home(){
    <section class="hero fun"><img class="ch heroL" src="${DA.CH.owl}" alt="Davie owl"><div class="herotxt"><h2>Hi teachers! 👋</h2><p>Choose an age group.</p><p class="small">${U.esc(when)}</p></div><img class="ch heroR" src="${DA.CH.sampson}" alt="Sampson the Manatee"></section>
    <h2 class="sec hh">${U.ch("literacy","hd")}Curriculum by age</h2>
    <div class="grid ages">${D.ages().map(ageTile).join("")}</div>
+   <a class="hometour" href="#/tour"><b>Tour day</b><span>See a sample week, our characters, and the family song.</span></a>
+   <a class="homeready" href="#/readiness">Kindergarten readiness</a>
    <section class="hero"><input id="q" class="search" type="search" placeholder="Search themes, books, activities, words…"></section>
    <div id="results"></div></main>`;
 }
@@ -121,7 +123,7 @@ function bookField(model){
 }
 function characterField(model){
   const c = model.character; if (!c) return "";
-  return `<section class="card field"><h3 class="hh">${U.ch("sampson","hd")}Character</h3><figure class="char"><img src="${U.esc(c.image)}" alt="${U.esc(c.name)}" loading="lazy"><figcaption>${U.esc(c.name)}</figcaption></figure></section>`;
+  return `<section class="card field"><h3 class="hh">${U.ch("sampson","hd")}${DA.t("character")}</h3><figure class="char"><img src="${U.esc(c.image)}" alt="${U.esc(c.name)}" loading="lazy"><figcaption>${U.esc(c.name)}</figcaption></figure></section>`;
 }
 function weekActivities(model){
   const slots = SLOT_ORDER.map(slot => {
@@ -161,19 +163,42 @@ function familyAsk(model){
   (p.crafts || []).forEach(c => items.push(c.name));
   return items;
 }
+function familyWords(model){
+  if (!model.words || !model.words.length) return "";
+  const esOn = DA.lang.family();
+  return `<ul class="words">${model.words.map(w => {
+    const en = Array.isArray(w) ? w[0] : w;
+    const es = Array.isArray(w) ? w[1] : "";
+    if (esOn && es) return `<li><b>${U.esc(es)}</b><span>${U.esc(en)}</span></li>`;
+    return `<li><b>${U.esc(en)}</b>${es ? `<span>${U.esc(es)}</span>` : ""}</li>`;
+  }).join("")}</ul>`;
+}
+function familyModel(model){
+  if (!model || !DA.lang.family()) return model;
+  const id = model.plan && model.plan.id;
+  const es = id && window.DA_ES && DA_ES[id];
+  if (!es) return model;
+  return Object.assign({}, model, {
+    theme: es.theme || model.theme,
+    overview: es.overview || model.overview,
+    home: es.home && es.home.length ? es.home : model.home,
+    ask: es.ask && es.ask.length ? es.ask : model.ask,
+    song: es.song || model.song
+  });
+}
 function familyBlock(model){
-  const words = wordList(model.words);
+  const words = familyWords(model);
   const home = familyHome(model);
   const ask = familyAsk(model);
-  const homeLabel = home.length === 3 ? "3 five-minute home activities" : "Five-minute home activities";
+  const homeLabel = home.length === 3 ? DA.t("home3") : DA.t("home");
   const homeHtml = home.length ? `<h3>${homeLabel}</h3><ol class="big">${home.map(h => Array.isArray(h) ? `<li><b>${U.esc(h[0])}</b> ${U.esc(h[1] || "")}</li>` : `<li>${U.esc(h)}</li>`).join("")}</ol>` : "";
-  const askHtml = ask.length ? `<h3>Ask me about…</h3><ul class="big">${ask.map(x => `<li>${U.esc(x)}</li>`).join("")}</ul>` : "";
+  const askHtml = ask.length ? `<h3>${DA.t("ask")}</h3><ul class="big">${ask.map(x => `<li>${U.esc(x)}</li>`).join("")}</ul>` : "";
   const lyric = model.song ? `<p class="lyrics">${U.esc(model.song)}</p>` : "";
-  const video = model.songVideo ? U.video(model.songVideo, model.songPoster) : `<div class="video-ph">${U.ch("music","sm")}<small>Theme song video coming soon</small></div>`;
+  const video = model.songVideo ? U.video(model.songVideo, model.songPoster) : `<div class="video-ph">${U.ch("music","sm")}<small>${DA.t("songSoon")}</small></div>`;
   return `<section class="card family" id="family">
-    ${words ? `<h3>Word of the week</h3>${words}` : ""}
-    ${homeHtml}${askHtml}
-    <h3 class="hh">${U.ch("music","hd")}Theme song</h3>
+    ${words ? `<h3>${DA.t("word")}</h3>${words}` : ""}
+    ${askHtml}${homeHtml}
+    <h3 class="hh">${U.ch("music","hd")}${DA.t("song")}</h3>
     <div class="songslot">${video}${lyric}</div>
   </section>`;
 }
@@ -299,30 +324,143 @@ function weekMessage(model){
   const ask = familyAsk(model).join(", ");
   return `This week at ${DA_CONFIG.schoolName} (${model.age.name}): "${model.theme}"\n\n${model.overview || ""}\n\nWord of the week: ${words || "(coming soon)"}\n\n${home}\n\nAsk me about: ${ask}\n\nFamily page: ${D.parentUrlForWeek(model.age.id, model.weekN)}`;
 }
+function langToggle(){
+  const on = DA.lang.get();
+  return `<div class="langtoggle" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="${on === "en"}" class="${on === "en" ? "on" : ""}">English</button><button type="button" data-lang="es" aria-pressed="${on === "es"}" class="${on === "es" ? "on" : ""}">Español</button></div>`;
+}
+function parentHeader(){
+  return `<header class="top parent">${U.brand(DA.t("familyBrand"))}${langToggle()}</header>`;
+}
+function siteHomeUrl(){
+  return String(DA_CONFIG.PARENT_BASE_URL || "").replace(/parent\.html$/, "") || location.href;
+}
+function digestText(model){
+  const home = familyHome(model).map(h => Array.isArray(h) ? `${h[0]}: ${h[1]}` : h).join("\n");
+  const ask = familyAsk(model).join(", ");
+  const url = D.parentUrlForWeek(model.age.id, model.weekN);
+  return [
+    `${DA.t("thisWeekHome")} — ${DA_CONFIG.schoolName}`,
+    `${DA.ageLabel(model.age)} · ${DA.t("week")} ${model.weekN}: ${model.theme}`,
+    model.overview || "",
+    ask ? `${DA.t("ask")} ${ask}` : "",
+    home,
+    url
+  ].filter(Boolean).join("\n\n");
+}
+let pendingShare = null;
+function shareBar(model){
+  const url = D.parentUrlForWeek(model.age.id, model.weekN);
+  const text = digestText(model);
+  pendingShare = { title: `${DA.t("thisWeekHome")}: ${model.theme}`, text, url };
+  const sms = "sms:?&body=" + encodeURIComponent(text);
+  const mail = "mailto:?subject=" + encodeURIComponent(pendingShare.title) + "&body=" + encodeURIComponent(text);
+  return `<section class="card sharecard"><h3>${DA.t("send")}</h3><div class="sharebar">
+    <button type="button" class="btn" id="share-native">${DA.t("share")}</button>
+    <button type="button" class="btn ghost" id="share-copy">${DA.t("copyLink")}</button>
+    <a class="btn ghost" id="share-sms" href="${sms}">${DA.t("textMsg")}</a>
+    <a class="btn ghost" id="share-mail" href="${mail}">${DA.t("email")}</a>
+  </div><p class="share-status" id="share-status" aria-live="polite"></p></section>`;
+}
 function parentSoon(model){
   const a = model.age;
-  return `<header class="top parent">${U.brand("Family Page")}</header><main class="wrap narrow"><section class="card sooncard">
+  return `${parentHeader()}<main class="wrap narrow"><section class="card sooncard">
     ${U.ch(DA.AGE_CH[a.id], "soonch")}
-    <h2>Week ${model.weekN}</h2>
-    <p class="soonmsg">Coming soon</p>
-    <p>This week's family page isn't ready yet. Your teacher will share the word, home activities, and song when this week is posted.</p>
+    <h2>${DA.t("week")} ${model.weekN}</h2>
+    <p class="soonmsg">${DA.t("comingSoon")}</p>
+    <p>${DA.t("soonBody")}</p>
   </section></main>`;
 }
 function parentPage(model){
   if (!model) return home();
+  model = familyModel(model);
   if (!model.ready) return parentSoon(model);
   const chips = [];
-  if (model.letter) chips.push(`<div class="chip"><small>Letter</small><b>${U.esc(model.letter)}</b></div>`);
-  if (model.number) chips.push(`<div class="chip"><small>Number</small><b>${U.esc(model.number)}</b></div>`);
-  if (model.shape) chips.push(`<div class="chip"><small>Shape</small><b>${U.esc(model.shape)}</b></div>`);
-  return `<header class="top parent">${U.brand("Family Page")}</header><main class="wrap narrow parentpg" style="--c:${model.age.color}">
-    <section class="card hero2 fun"><img class="ch pch" src="${DA.CH.sampson}" alt=""><small>${U.esc(model.age.name)} · Week ${model.weekN}${model.range ? " · " + U.esc(model.range.label) : ""}</small>
-      <h2>This week we're learning about ${U.esc(model.theme)}</h2>
+  if (model.letter) chips.push(`<div class="chip"><small>${DA.t("letter")}</small><b>${U.esc(model.letter)}</b></div>`);
+  if (model.number) chips.push(`<div class="chip"><small>${DA.t("number")}</small><b>${U.esc(model.number)}</b></div>`);
+  if (model.shape) chips.push(`<div class="chip"><small>${DA.t("shape")}</small><b>${U.esc(model.shape)}</b></div>`);
+  if (model.color) chips.push(`<div class="chip"><small>${DA.t("color")}</small><b>${U.esc(model.color)}</b></div>`);
+  return `${parentHeader()}<main class="wrap narrow parentpg" id="family-digest" style="--c:${model.age.color}">
+    <section class="card hero2 fun"><img class="ch pch" src="${DA.CH.sampson}" alt=""><small>${U.esc(DA.ageLabel(model.age))} · ${DA.t("week")} ${model.weekN}${model.range ? " · " + U.esc(model.range.label) : ""}</small>
+      <h2>${DA.t("thisWeekHome")}</h2>
+      <p class="learnline">${DA.t("learningAbout")} ${U.esc(model.theme)}</p>
       ${model.overview ? `<p>${U.esc(model.overview)}</p>` : ""}
       ${chips.length ? `<div class="ofweek">${chips.join("")}</div>` : ""}</section>
+    ${shareBar(model)}
     ${characterField(model)}
     ${familyBlock(model)}
-    <p class="note">From your child's teacher at ${U.esc(DA_CONFIG.schoolName)}.</p>
+    <p class="note">${DA.t("fromTeacher")} ${U.esc(DA_CONFIG.schoolName)}.</p>
+    <p class="family-more"><a href="#/readiness">${DA.t("readiness")}</a></p>
+  </main>`;
+}
+function standardsDomain(tag){
+  const s = String(tag || "").trim().toLowerCase().replace(/&/g, "and");
+  if (!s || s === "tbd") return "";
+  return (window.DA_DOMAINS || []).find(d => s.includes(d.toLowerCase())) || "";
+}
+function readinessPage(){
+  const cw = D.currentWeekNumber();
+  const by = {};
+  (DA_DOMAINS || []).forEach(d => { by[d] = []; });
+  for (let n = 1; n <= 52; n++) {
+    const model = D.weekModel("vpk", n);
+    if (!model || !model.ready) continue;
+    const seen = new Set();
+    (model.activities || []).forEach(a => {
+      const domain = standardsDomain(a.standards);
+      if (!domain || seen.has(domain)) return;
+      seen.add(domain);
+      by[domain].push({ n, theme: (familyModel(Object.assign({}, model, { plan: model.plan }))).theme, inYear: cw >= 1 && cw <= 52 && n <= cw });
+    });
+  }
+  const covered = (DA_DOMAINS || []).filter(d => by[d].some(w => w.inYear)).length;
+  const total = (DA_DOMAINS || []).length;
+  const items = (DA_DOMAINS || []).map(d => {
+    const weeks = by[d];
+    const on = weeks.some(w => w.inYear);
+    const links = weeks.map(w => `<a href="#/parent/vpk/w/${w.n}">${DA.t("week")} ${w.n} · ${U.esc(w.theme)}</a>`).join("");
+    return `<li class="ready-item${on ? " is-on" : ""}"><span class="ready-mark" aria-hidden="true">${on ? "✓" : ""}</span><div><h3>${U.esc(DA.domainLabel(d))}</h3><p>${U.esc(DA.domainBlurb(d))}</p>${links ? `<p class="ready-weeks">${DA.t("coveredIn")} ${links}</p>` : `<p class="ready-weeks">${DA.t("notYet")}</p>`}</div></li>`;
+  }).join("");
+  return `${parentHeader()}<main class="wrap narrow readiness">
+    <p class="crumb"><a href="#/">Home</a> · <a href="#/parent/vpk/w/${cw >= 1 && cw <= 52 ? cw : 11}">VPK</a></p>
+    <h2>${DA.t("readiness")}</h2>
+    <p>${DA.t("readinessLead")}</p>
+    <p class="ready-score"><b>${covered}</b> / ${total} ${DA.t("soFar")}</p>
+    <ol class="ready-list">${items}</ol>
+  </main>`;
+}
+function tourPage(){
+  const sample = familyModel(D.weekModel("vpk", 11));
+  const points = DA.tourPoints().map(([h, p]) => `<li><b>${U.esc(h)}</b><span>${U.esc(p)}</span></li>`).join("");
+  const chars = [
+    [DA.CH.sampson, "Sampson the Manatee"],
+    [DA.CH.owl, "Owl"],
+    [DA.CH.art, "Flamingo"],
+    [DA.CH.movement, "Frog"],
+    [DA.CH.science, "Sea turtle"],
+    [DA.CH.literacy, "Panther"],
+    [DA.CH.math, "Crab"],
+    [DA.CH.music, "Parrot"]
+  ].map(([src, name]) => `<figure class="tour-char"><img src="${src}" alt="${U.esc(name)}"><figcaption>${U.esc(name)}</figcaption></figure>`).join("");
+  const ages = D.ages().map(a => `<a class="btn ghost" href="#/parent/${a.id}/w/11">${U.esc(DA.ageLabel(a))}</a>`).join("");
+  const home = sample ? familyHome(sample).slice(0, 3) : [];
+  const homeHtml = home.map(h => Array.isArray(h) ? `<li><b>${U.esc(h[0])}</b> ${U.esc(h[1] || "")}</li>` : `<li>${U.esc(h)}</li>`).join("");
+  const url = siteHomeUrl();
+  return `${parentHeader()}<main class="wrap narrow tourpage">
+    <section class="card hero2 fun tour-hero"><img class="ch pch" src="${DA.CH.sampson}" alt=""><p class="kicker">${DA.t("tourKicker")}</p><h2>${DA.t("tourTitle")}</h2><p>${DA.t("tourLead")}</p></section>
+    <h2 class="sec">${DA.t("meet")}</h2>
+    <div class="tour-chars">${chars}</div>
+    <section class="card" id="sample-week"><p class="kicker">${DA.t("sampleWeek")} · ${DA.t("week")} 11</p><h2>${sample ? U.esc(sample.theme) : "Pumpkin Patch"}</h2>
+      ${sample && sample.banner ? `<img class="weekbanner" src="${U.esc(sample.banner)}" alt="">` : ""}
+      ${sample && sample.overview ? `<p>${U.esc(sample.overview)}</p>` : ""}
+      ${homeHtml ? `<h3>${DA.t("home3")}</h3><ol class="big">${homeHtml}</ol>` : ""}
+      ${sample && sample.songVideo ? `<h3 class="hh">${U.ch("music","hd")}${DA.t("song")}</h3>${U.video(sample.songVideo, sample.songPoster)}` : ""}
+      <p class="ages-this">${DA.t("agesThisWeek")}</p>
+      <div class="sharebar">${ages}</div>
+      <a class="btn" href="#/parent/vpk/w/11">${DA.t("openFamily")}</a>
+    </section>
+    <section class="card"><h2>${DA.t("special")}</h2><ul class="tour-points">${points}</ul></section>
+    <section class="card tour-qr"><h2>${DA.t("scan")}</h2>${U.qr(url, 6)}<p>${U.esc(url)}</p></section>
+    <section class="card tour-cta" id="schedule"><h2>${DA.t("schedule")}</h2><p>${DA.t("scheduleBody")}</p><a class="btn" href="#/tour">${DA.t("schedule")}</a></section>
   </main>`;
 }
 function legacySample(ageId, monthId, n){
@@ -349,11 +487,58 @@ function fridge(ageId, mid, n){
    <h4>⭐ Challenge</h4><p>${w.challenge} Share a photo with your teacher!</p></div>
    <div class="fqr">${U.qr(D.parentUrl(ageId, mid, n), 4)}<small>Scan for songs, videos & more</small><h4>Ask me about</h4><ul>${w.ask.map(x => `<li>${x}</li>`).join("")}</ul></div></div></div>`;
 }
+function wireShare(payload){
+  const status = $("#share-status");
+  const copyBtn = $("#share-copy");
+  const nativeBtn = $("#share-native");
+  function mark(msg){ if (status) status.textContent = msg; }
+  async function copyText(value){
+    let ok = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(value);
+        ok = true;
+      }
+    } catch (e) {}
+    if (!ok) {
+      const ta = document.createElement("textarea");
+      ta.value = value;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      ta.remove();
+    }
+    if (ok) {
+      mark(DA.t("copied"));
+      if (copyBtn) copyBtn.textContent = DA.t("copied");
+    } else window.prompt(DA.t("copyLink"), value);
+  }
+  if (copyBtn) copyBtn.onclick = () => copyText(payload.url);
+  if (nativeBtn) nativeBtn.onclick = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: payload.title, text: payload.text, url: payload.url });
+        return;
+      } catch (e) {
+        if (e && e.name === "AbortError") return;
+      }
+    }
+    copyText(payload.url);
+  };
+}
 function render(){
   const p = location.hash.replace(/^#\/?/, "").split("/");
   let screen = "", sheet = "";
+  pendingShare = null;
+  DA.lang.surface = (p[0] === "parent" || p[0] === "pplan" || p[0] === "tour" || p[0] === "readiness") ? "family" : "teacher";
+  document.documentElement.lang = DA.lang.family() ? "es" : "en";
   try {
-    if (p[0] === "age" && p[2]) {
+    if (p[0] === "tour") screen = tourPage();
+    else if (p[0] === "readiness") screen = readinessPage();
+    else if (p[0] === "age" && p[2]) {
       const model = D.weekModel(p[1], p[2]);
       screen = weekScreen(model);
       sheet = model && model.ready ? sheetHTML(model) : "";
@@ -377,6 +562,8 @@ function render(){
   document.body.classList.toggle("printing-week", !!sheet);
   scrollTo(0, 0);
   const q = $("#q"); if (q) q.oninput = () => $("#results").innerHTML = search(q.value);
+  document.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { DA.lang.set(b.dataset.lang); render(); });
+  if (pendingShare) wireShare(pendingShare);
   const cur = $("#week-current"); if (cur) cur.scrollIntoView({block: "center"});
   const jump = $("#jump-current"); if (jump) jump.onclick = () => { const el = $("#week-current"); if (el) el.scrollIntoView({block: "center"}); };
   const ctx = weekContext(p);

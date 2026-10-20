@@ -32,6 +32,8 @@ window.DA_PLANS = [
    {name:"Counting with Blocks", desc:"Students will walk around a table and when the music stops they will add the amount of blocks on the number they stop on."},
    {name:"Alphabet Bingo", desc:"Students will play bingo using their alphabet letters."}],
   notes:"The marble-painting craft lists only shaving cream and paint (no marbles listed).",
+  home:[["Signs of fall","On a walk, name the fall colors you see: red, orange, yellow, and brown."],["K sound","Say words that start with K: kite, key, kick. Ask your child to add one more."],["Count seeds","Count a small handful of seeds, cereal, or beans together."]],
+  ask:["signs of fall","the letter Kk","counting seeds"],
   song: FALL_K_SONG, songVideo: FALL_K_SONG_VIDEO, songPoster: FALL_K_SONG_POSTER},
 { id:"room11-3s-fall", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Seasonal Changes – Fall", short:"Fall", letter:"Kk", source:"Lesson plan PDF #3, pages 1–3",
   circle:"Begin reviewing date, weather, weekly vocabulary words, emotion chart and classroom rules/expectations (using anchor charts). Use manipulatives relating to weekly theme to relate to number, color, shape and letter of the week. Review days of the week, months of the year, and follow VPK dialogic reading plan. On Mondays, assign classroom jobs. End circle time with transition song of the week (relating to theme). Inform students that upon hearing the song, it means to be prepared to transition for the week.",
@@ -50,6 +52,8 @@ window.DA_PLANS = [
    {name:"Apple Patterns", desc:"Students will recognize patterns and use fingerprints to correctly continue the pattern. Colors will be green and red to mimic apples."},
    {name:"Big v. Medium v. Small", desc:"Students will take different size leaves and sort them into the correct groups based on size."}],
   notes:"Large/small group columns are marked 'X' but the text layout doesn't show which column each X is in. Pages 4–6 are a blank plan (all N/A).",
+  home:[["Fall walk","On a walk, point out leaves changing color, leaves on the ground, and cooler air."],["Letter K hunt","Find three things at home that start with K, like a key, a kite, or ketchup."],["Pumpkin parts","Look at a pumpkin together. Name the stem, the color, and the seeds."]],
+  ask:["signs of fall","the letter K","pumpkin parts"],
   song: FALL_K_SONG, songVideo: FALL_K_SONG_VIDEO, songPoster: FALL_K_SONG_POSTER},
 { id:"room11-3s-hygiene", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Personal Hygiene – handwashing, potty wiping, bath time, hair and teeth brushing", short:"Personal Hygiene", letter:"Mm", source:"Lesson plan PDF #3, pages 7–9",
   circle:"Begin reviewing date, weather, weekly vocabulary words, emotion chart and classroom rules/expectations (using anchor charts). Use manipulatives relating to weekly theme to relate to number, color, shape and letter of the week. Review days of the week, months of the year, and follow VPK dialogic reading plan. On Mondays, assign classroom jobs. End circle time with transition song of the week (relating to theme). Inform students that upon hearing the song, it means to be prepared to transition for the week.",
@@ -67,7 +71,9 @@ window.DA_PLANS = [
    {name:"Alphabet Teeth Cleaning", desc:"Students clean a letter on the teeth using the corresponding letter paper. If a student picks the letter Nn, they find and erase that letter off the tooth to \"clean\" it."},
    {name:"Toothbrush Scissor Practice", desc:"Students cut on the lines drawn on the toothbrushes and practice proper scissor cutting technique."},
    {name:"Teeth Flossing", desc:"Students use a large Lego with play dough between the ridges and yarn to \"floss\" the gunk out of the gums. Flossing technique will be shown during the lesson.", supplies:["Large Lego","Play dough","Yarn"]}],
-  notes:"Large/small group columns are marked 'X' but which column is unclear."}
+  notes:"Large/small group columns are marked 'X' but which column is unclear.",
+  home:[["Teach me","Have your child teach you how they wash their hands or brush their teeth."],["Letter M hunt","Find three things at home that start with M, like milk, moon, or mittens."],["Soap power","Wash hands together and talk about how soap helps germs go away."]],
+  ask:["washing hands","brushing teeth","the letter M"]}
 ];
 /* Photos extracted from the PDFs (prefix per plan) + one generated example where the PDF had none. */
 (function(){ const P={"fall-kk-unlabeled":"a","room11-3s-fall":"f","room11-3s-hygiene":"h","room7-vpk-fall":"v"};

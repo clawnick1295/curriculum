@@ -193,7 +193,16 @@ ul.big{padding-left:1.2em}ul.big li{margin:8px 0;font-size:1.15rem}
 .tour-chars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 16px}
 .tour-char{background:#fff;border:1px solid #E1E8EF;border-radius:18px;text-align:center;padding:10px 8px;margin:0}
 .tour-char img{width:100%;height:110px;object-fit:contain}
-.tour-char figcaption{font-weight:800;margin-top:4px}
+.tour-char figcaption{font-weight:800;margin-top:4px}.tour-char small{display:block;font-weight:700;color:#4a5d70}
+.heartline,.heartcard{border-left:8px solid var(--orange)}
+.heartline{margin:0 0 8px;background:#fff;border-radius:14px;padding:10px 12px}
+.signword{font-size:2rem;font-weight:900;margin:.1em 0}
+.say{font-weight:800;color:var(--orange-dk)}
+.grow-list{list-style:none;padding:0;margin:0}
+.grow-step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid #E1E8EF;border-left:8px solid var(--orange);border-radius:18px;padding:14px;margin:0 0 10px}
+.grow-n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}
+.grow-step h3{margin:0}
+.ollie{border-left:8px solid var(--orange)}
 .tour-points{list-style:none;padding:0;margin:0}
 .tour-points li{padding:10px 0;border-bottom:1px dashed #E1E8EF}
 .tour-points b{display:block;font-size:1.15rem}

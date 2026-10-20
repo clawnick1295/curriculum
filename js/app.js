@@ -18,6 +18,7 @@ function home(){
    <h2 class="sec hh">${U.ch("literacy","hd")}Curriculum by age</h2>
    <div class="grid ages">${D.ages().map(ageTile).join("")}</div>
    <a class="hometour" href="#/tour"><b>Tour day</b><span>See a sample week, our characters, and the family song.</span></a>
+   <a class="homeready" href="#/grows">How your child grows with us</a>
    <a class="homeready" href="#/readiness">Kindergarten readiness</a>
    <section class="hero"><input id="q" class="search" type="search" placeholder="Search themes, books, activities, words…"></section>
    <div id="results"></div></main>`;
@@ -60,7 +61,9 @@ function agePage(ageId){
       const meta = `${s.range ? U.esc(s.range.label) : ""}${current ? ` <span class="wthis">This week</span>` : ""}`;
       return `<a class="weekrow${soon ? " soon" : ""}${current ? " is-current" : ""}" ${current ? 'id="week-current"' : ""} data-week="${n}" href="#/age/${ageId}/${n}"><span class="wn">Week ${n}</span><span class="wt">${U.esc(label)}</span><span class="wmeta">${meta}${extra}</span>${letter}<span class="wgo" aria-hidden="true">›</span></a>`;
     }).join("");
-    return `<section class="monthblock"><h2 class="monthhead">${U.esc(D.monthHeader(g.month))}</h2><div class="weeklist">${rows}</div></section>`;
+    const heart = window.DA_HEART && DA_HEART[g.month];
+    const heartHtml = heart && heart.en ? `<p class="heartline"><b>Davie Heart</b> ${U.esc(heart.en)}</p>` : "";
+    return `<section class="monthblock"><h2 class="monthhead">${U.esc(D.monthHeader(g.month))}</h2>${heartHtml}<div class="weeklist">${rows}</div></section>`;
   }).join("");
   const jump = inYear ? `<button type="button" class="btn ghost" id="jump-current">Jump to this week</button>` : "";
   const note = inYear ? `Week ${cw} · ${D.weekRange(cw).label}` : (cw < 1 ? `School year starts ${DA_CONFIG.SCHOOL_YEAR_START}.` : `This date is past week 52.`);
@@ -186,6 +189,40 @@ function familyModel(model){
     song: es.song || model.song
   });
 }
+function ollieName(){ return window.DA_OLLIE_NAME || "Ollie the Owl"; }
+function videoSoon(label, who){
+  return `<div class="video-ph">${U.ch(who || "sampson","sm")}<small>${U.esc(label)}</small></div>`;
+}
+function spanishWordCard(model){
+  const w = model.spanishWord;
+  if (!w || !w.word) return "";
+  return `<section class="card" id="spanish-word"><h3>${DA.t("spanishWord")}</h3><p class="signword">${U.esc(w.word)}</p><p>${DA.t("means")} ${U.esc(w.en || "")}</p><p class="say">${DA.t("soundsLike")} ${U.esc(w.say || "")}</p></section>`;
+}
+function signCard(model){
+  const s = model.sign;
+  if (!s) return "";
+  const clip = s.video ? U.video(s.video) : videoSoon(DA.t("sampsonSoon"), "sampson");
+  return `<section class="card" id="sign-week"><h3 class="hh">${U.ch("sampson","hd")}${DA.t("sign")}</h3><p class="signword">${U.esc(DA.pick(s.word))}</p><h4>${DA.t("signHow")}</h4><p>${U.esc(DA.pick(s.how))}</p>${clip}</section>`;
+}
+function songEsCard(model){
+  const clip = model.songEsVideo ? U.video(model.songEsVideo) : videoSoon(DA.t("songEsSoon"), "music");
+  return `<section class="card" id="song-es"><h3 class="hh">${U.ch("music","hd")}${DA.t("songEs")}</h3>${clip}</section>`;
+}
+function challengeCard(model){
+  const text = DA.pick(model.challenge);
+  if (!text) return "";
+  return `<section class="card callout" id="home-challenge"><h3>${DA.t("challenge")}</h3><p>${U.esc(text)}</p></section>`;
+}
+function feelingsCard(model){
+  const text = DA.pick(model.feelings);
+  if (!text) return "";
+  return `<section class="card ollie" id="ollie"><h3 class="hh"><img class="ch hd" src="${DA.CH.owl}" alt="${U.esc(ollieName())}">${DA.t("feelings")} ${U.esc(ollieName())}</h3><p>${U.esc(text)}</p></section>`;
+}
+function heartCard(model){
+  const text = DA.pick(model.heart);
+  if (!text) return "";
+  return `<section class="card heartcard" id="davie-heart"><h3>${DA.t("heart")}</h3><p class="kicker">${DA.t("heartLead")}</p><p>${U.esc(text)}</p></section>`;
+}
 function familyBlock(model){
   const words = familyWords(model);
   const home = familyHome(model);
@@ -197,9 +234,15 @@ function familyBlock(model){
   const video = model.songVideo ? U.video(model.songVideo, model.songPoster) : `<div class="video-ph">${U.ch("music","sm")}<small>${DA.t("songSoon")}</small></div>`;
   return `<section class="card family" id="family">
     ${words ? `<h3>${DA.t("word")}</h3>${words}` : ""}
+    ${spanishWordCard(model)}
     ${askHtml}${homeHtml}
+    ${challengeCard(model)}
+    ${signCard(model)}
     <h3 class="hh">${U.ch("music","hd")}${DA.t("song")}</h3>
     <div class="songslot">${video}${lyric}</div>
+    ${songEsCard(model)}
+    ${feelingsCard(model)}
+    ${heartCard(model)}
   </section>`;
 }
 function brief(s, n){
@@ -306,6 +349,8 @@ function weekScreen(model){
     <div class="toolbar no-print"><button class="btn" id="print-week" onclick="print()">Print this week</button>
       <a class="btn ghost" href="#/parent/${a.id}/w/${model.weekN}">👪 Family page</a>${fridge}
       <button class="btn ghost" id="copy">📋 Copy family message</button></div>
+    ${challengeCard(model)}
+    ${feelingsCard(model)}
     ${todayBlock(model.plan)}
     ${model.plan ? "" : letter}
     ${numberShapeField(model)}
@@ -344,6 +389,7 @@ function digestText(model){
     model.overview || "",
     ask ? `${DA.t("ask")} ${ask}` : "",
     home,
+    DA.pick(model.challenge) ? `${DA.t("challenge")}: ${DA.pick(model.challenge)}` : "",
     url
   ].filter(Boolean).join("\n\n");
 }
@@ -368,7 +414,7 @@ function parentSoon(model){
     <h2>${DA.t("week")} ${model.weekN}</h2>
     <p class="soonmsg">${DA.t("comingSoon")}</p>
     <p>${DA.t("soonBody")}</p>
-  </section></main>`;
+  </section>${heartCard(model)}</main>`;
 }
 function parentPage(model){
   if (!model) return home();
@@ -431,16 +477,7 @@ function readinessPage(){
 function tourPage(){
   const sample = familyModel(D.weekModel("vpk", 11));
   const points = DA.tourPoints().map(([h, p]) => `<li><b>${U.esc(h)}</b><span>${U.esc(p)}</span></li>`).join("");
-  const chars = [
-    [DA.CH.sampson, "Sampson the Manatee"],
-    [DA.CH.owl, "Owl"],
-    [DA.CH.art, "Flamingo"],
-    [DA.CH.movement, "Frog"],
-    [DA.CH.science, "Sea turtle"],
-    [DA.CH.literacy, "Panther"],
-    [DA.CH.math, "Crab"],
-    [DA.CH.music, "Parrot"]
-  ].map(([src, name]) => `<figure class="tour-char"><img src="${src}" alt="${U.esc(name)}"><figcaption>${U.esc(name)}</figcaption></figure>`).join("");
+  const chars = castFigures();
   const ages = D.ages().map(a => `<a class="btn ghost" href="#/parent/${a.id}/w/11">${U.esc(DA.ageLabel(a))}</a>`).join("");
   const home = sample ? familyHome(sample).slice(0, 3) : [];
   const homeHtml = home.map(h => Array.isArray(h) ? `<li><b>${U.esc(h[0])}</b> ${U.esc(h[1] || "")}</li>` : `<li>${U.esc(h)}</li>`).join("");
@@ -449,6 +486,7 @@ function tourPage(){
     <section class="card hero2 fun tour-hero"><img class="ch pch" src="${DA.CH.sampson}" alt=""><p class="kicker">${DA.t("tourKicker")}</p><h2>${DA.t("tourTitle")}</h2><p>${DA.t("tourLead")}</p></section>
     <h2 class="sec">${DA.t("meet")}</h2>
     <div class="tour-chars">${chars}</div>
+    <p><a class="btn ghost" href="#/grows">${DA.t("grows")}</a></p>
     <section class="card" id="sample-week"><p class="kicker">${DA.t("sampleWeek")} · ${DA.t("week")} 11</p><h2>${sample ? U.esc(sample.theme) : "Pumpkin Patch"}</h2>
       ${sample && sample.banner ? `<img class="weekbanner" src="${U.esc(sample.banner)}" alt="">` : ""}
       ${sample && sample.overview ? `<p>${U.esc(sample.overview)}</p>` : ""}
@@ -461,6 +499,31 @@ function tourPage(){
     <section class="card"><h2>${DA.t("special")}</h2><ul class="tour-points">${points}</ul></section>
     <section class="card tour-qr"><h2>${DA.t("scan")}</h2>${U.qr(url, 6)}<p>${U.esc(url)}</p></section>
     <section class="card tour-cta" id="schedule"><h2>${DA.t("schedule")}</h2><p>${DA.t("scheduleBody")}</p><a class="btn" href="#/tour">${DA.t("schedule")}</a></section>
+  </main>`;
+}
+function castFigures(){
+  const list = window.DA_CAST || [];
+  return list.map(c => {
+    const name = c.img === "owl" || !c.name ? (c.img === "owl" ? ollieName() : c.name) : c.name;
+    const src = DA.CH[c.img] || "";
+    return `<figure class="tour-char"><img src="${src}" alt="${U.esc(name)}"><figcaption>${U.esc(name)}<small>${U.esc(DA.pick(c.role))}</small></figcaption></figure>`;
+  }).join("");
+}
+function growsPage(){
+  const steps = (window.DA_GROWTH || []).map((step, i) => {
+    const age = D.age(step.ageId);
+    if (!age) return "";
+    const focus = String(DA.pick(step.focus) || "").replaceAll("{owl}", ollieName());
+    const program = String(DA.pick(step.program) || "").replaceAll("{owl}", ollieName());
+    return `<li class="grow-step"><span class="grow-n">${i + 1}</span><div>${U.ch(DA.AGE_CH[age.id], "hd")}<h3>${U.esc(DA.ageLabel(age))}</h3><p class="small">${U.esc(age.sub)}</p><p><b>${DA.t("roomFocus")}</b> ${U.esc(focus)}</p><p>${U.esc(program)}</p></div></li>`;
+  }).join("");
+  return `${parentHeader()}<main class="wrap narrow growpage">
+    <p class="crumb"><a href="#/">Home</a> · <a href="#/tour">${DA.t("tourKicker")}</a></p>
+    <h2>${DA.t("grows")}</h2>
+    <p>${DA.t("growsLead")}</p>
+    <ol class="grow-list">${steps}</ol>
+    <h2 class="sec">${DA.t("programs")}</h2>
+    <div class="tour-chars">${castFigures()}</div>
   </main>`;
 }
 function legacySample(ageId, monthId, n){
@@ -533,10 +596,11 @@ function render(){
   const p = location.hash.replace(/^#\/?/, "").split("/");
   let screen = "", sheet = "";
   pendingShare = null;
-  DA.lang.surface = (p[0] === "parent" || p[0] === "pplan" || p[0] === "tour" || p[0] === "readiness") ? "family" : "teacher";
+  DA.lang.surface = (p[0] === "parent" || p[0] === "pplan" || p[0] === "tour" || p[0] === "readiness" || p[0] === "grows") ? "family" : "teacher";
   document.documentElement.lang = DA.lang.family() ? "es" : "en";
   try {
     if (p[0] === "tour") screen = tourPage();
+    else if (p[0] === "grows") screen = growsPage();
     else if (p[0] === "readiness") screen = readinessPage();
     else if (p[0] === "age" && p[2]) {
       const model = D.weekModel(p[1], p[2]);

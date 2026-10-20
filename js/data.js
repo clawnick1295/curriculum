@@ -202,3 +202,96 @@ window.DA_PLAN_SLOTS = {
   "w11-twos-pumpkin": {activities: ["centers", "movement"]},
   "w11-vpk-pumpkin": {activities: ["movement", "centers"]}
 };
+/* Owl name-slot. Manners and feelings character. Edit this name in one place. */
+window.DA_OLLIE_NAME = "Ollie the Owl";
+/* ASL sign of the week, keyed by school week. video: "" shows the Sampson placeholder. */
+window.DA_SIGNS = {
+  9: {
+    word: { en: "leaf", es: "hoja" },
+    how: {
+      en: "Point one finger up. That is the stem. Rest your other hand flat on the fingertip, fingers together. Let that hand flutter down, like a leaf falling off.",
+      es: "Apunta un dedo hacia arriba. Ese es el tallo. Apoya la otra mano, abierta y con los dedos juntos, sobre la punta. Deja que esa mano baje revoloteando, como una hoja que se cae."
+    },
+    video: ""
+  },
+  10: {
+    word: { en: "wash", es: "lavar" },
+    how: {
+      en: "Rub your palms together in small circles, the way you wash your hands with soap.",
+      es: "Frota las palmas en círculos pequeños, como cuando te lavas las manos con jabón."
+    },
+    video: ""
+  },
+  11: {
+    word: { en: "pumpkin", es: "calabaza" },
+    how: {
+      en: "Make a fist with one hand. That fist is the pumpkin. With your other hand, flick your thumb off your middle finger onto the back of the fist, like a little thump on a pumpkin.",
+      es: "Cierra una mano en puño. Ese puño es la calabaza. Con la otra mano, suelta el pulgar desde el dedo del medio contra el dorso del puño, como un golpecito a la calabaza."
+    },
+    video: ""
+  }
+};
+/* One kindness act per calendar month (1 = January … 10 = October). Leave a month out, or set en/es to "", to hide it. */
+window.DA_HEART = {
+  10: {
+    en: "Canned food drive for a local pantry. Send one can of food to share.",
+    es: "Colecta de comida enlatada para una despensa local. Envía una lata para compartir."
+  }
+};
+/* Spanish word of the week. say is a pronunciation hint. */
+window.DA_SPANISH_WORDS = {
+  1: { word: "manatí", en: "manatee", say: "mah-nah-TEE" },
+  2: { word: "tortuga", en: "turtle", say: "tor-TOO-gah" },
+  3: { word: "color", en: "color", say: "koh-LOR" },
+  4: { word: "playa", en: "beach", say: "PLAH-yah" },
+  9: { word: "hoja", en: "leaf", say: "OH-hah" },
+  10: { word: "lavar", en: "to wash", say: "lah-VAHR" },
+  11: { word: "calabaza", en: "pumpkin", say: "kah-lah-BAH-sah" }
+};
+/* Screen-free home challenge for weeks that are not already on a sample week. */
+window.DA_CHALLENGES = {
+  9: { en: "On a walk, find 3 leaves that are different colors.", es: "En un paseo, encuentra 3 hojas de colores distintos." },
+  10: { en: "Wash your hands together and count to 10 while you scrub.", es: "Lávense las manos juntos y cuenten hasta 10 mientras se tallan." },
+  11: { en: "Find 3 things at home that start with P.", es: "Encuentra 3 cosas en casa que empiecen con P." }
+};
+/* Spanish lines for the sample-week challenges already written in English. */
+window.DA_CHALLENGE_ES = {
+  1: "Muévanse despacio como un manatí por la sala, y luego rápido como un pez.",
+  2: "Armen un nido de tortuga con cojines o una toalla y cuenten huevos de mentira (calcetines o pelotas).",
+  3: "Busquen en casa 5 cosas de los colores de los peces del arrecife.",
+  4: "Hagan una limpieza de playa de 10 minutos en un cuarto o en el patio y cuenten lo que recogen."
+};
+/* Feelings & manners with the owl, one item per school week, shown on that week's plans. */
+window.DA_OLLIE = {
+  9: {
+    en: "Look at a leaf with Ollie and say how you feel. Practice please when you want a turn to hold it.",
+    es: "Mira una hoja con Ollie y di cómo te sientes. Practica por favor cuando quieras un turno para tomarla."
+  },
+  10: {
+    en: "Wash hands with Ollie and wait for a turn at the sink. Practice excuse me and thank you.",
+    es: "Lávate las manos con Ollie y espera tu turno en el lavabo. Practica con permiso y gracias."
+  },
+  11: {
+    en: "Use gentle hands on the pumpkin with Ollie. Practice your turn and please.",
+    es: "Con Ollie, usa manos suaves con la calabaza. Practica te toca y por favor."
+  }
+};
+/* Growth ladder. {owl} is replaced with DA_OLLIE_NAME. */
+window.DA_GROWTH = [
+  { ageId: "ones", focus: { en: "Hello routines, gentle touch, and moving at their own pace.", es: "Rutinas de saludo, tacto suave y moverse a su propio ritmo." }, program: { en: "Sampson the Manatee leads water play and calm movement.", es: "Sampson el manatí guía el juego con agua y el movimiento tranquilo." } },
+  { ageId: "twos", focus: { en: "Names, colors, and big-body play.", es: "Nombres, colores y juego con todo el cuerpo." }, program: { en: "Frog leads movement: stop and go, hop, and simple words.", es: "La rana guía el movimiento: parar y seguir, saltar y palabras simples." } },
+  { ageId: "threes", focus: { en: "Room 11: questions, letters, and small-group play.", es: "Salón 11: preguntas, letras y juego en grupo pequeño." }, program: { en: "Sea turtle leads science play, like sink, float, and seeds.", es: "La tortuga guía el juego de ciencia, como hundirse, flotar y las semillas." } },
+  { ageId: "vpk", focus: { en: "Room 7: talking, letters, counting, and kindergarten-ready habits.", es: "Salón 7: hablar, letras, contar y hábitos para el kínder." }, program: { en: "{owl} is this room's manners and feelings character.", es: "{owl} es el personaje de modales y sentimientos de este salón." } },
+  { ageId: "fours", focus: { en: "Stories, letters in print, and measuring the world.", es: "Cuentos, letras en los letreros y medir el mundo." }, program: { en: "Panther leads literacy: stories, letters, and words.", es: "La pantera guía la lectura: cuentos, letras y palabras." } },
+  { ageId: "fives", focus: { en: "Sounds in words, adding, and simple maps.", es: "Sonidos en las palabras, sumar y mapas simples." }, program: { en: "Crab leads math play: count, add, and compare.", es: "El cangrejo guía el juego de matemáticas: contar, sumar y comparar." } }
+];
+window.DA_CAST = [
+  { img: "owl", name: "", role: { en: "Manners and feelings", es: "Modales y sentimientos" } },
+  { img: "sampson", name: "Sampson the Manatee", role: { en: "Florida nature", es: "Naturaleza de Florida" } },
+  { img: "music", name: "Parrot", role: { en: "Music", es: "Música" } },
+  { img: "art", name: "Flamingo", role: { en: "Art", es: "Arte" } },
+  { img: "movement", name: "Frog", role: { en: "Movement", es: "Movimiento" } },
+  { img: "science", name: "Sea turtle", role: { en: "Science", es: "Ciencia" } },
+  { img: "literacy", name: "Panther", role: { en: "Literacy", es: "Lectura" } },
+  { img: "math", name: "Crab", role: { en: "Math", es: "Matemáticas" } }
+];

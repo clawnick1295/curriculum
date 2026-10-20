@@ -22,6 +22,22 @@
     home: ["Five-minute home activities", "Actividades de cinco minutos en casa"],
     song: ["Theme song", "Canción del tema"],
     songSoon: ["Theme song video coming soon", "El video de la canción llega pronto"],
+    sign: ["Sign of the week", "Seña de la semana"],
+    signHow: ["How to sign it", "Cómo hacer la seña"],
+    sampsonSoon: ["Sampson video coming soon", "El video de Sampson llega pronto"],
+    heart: ["Davie Heart", "Davie Heart"],
+    heartLead: ["Kindness this month", "Bondad de este mes"],
+    spanishWord: ["Spanish word of the week", "Palabra en español de la semana"],
+    soundsLike: ["Sounds like", "Suena como"],
+    means: ["means", "significa"],
+    songEs: ["Canción en español", "Canción en español"],
+    songEsSoon: ["Coming soon", "Pronto"],
+    challenge: ["Home challenge", "Reto en casa"],
+    feelings: ["Feelings & manners with", "Sentimientos y modales con"],
+    grows: ["How your child grows with us", "Cómo crece tu hijo con nosotros"],
+    growsLead: ["From our youngest ones through VPK, each room has a focus and a character who shows up every week.", "Desde los más pequeños hasta VPK, cada salón tiene un enfoque y un personaje que llega cada semana."],
+    programs: ["Character programs", "Programas de personajes"],
+    roomFocus: ["Room focus", "Enfoque del salón"],
     send: ["Send this to families", "Enviar a las familias"],
     share: ["Share", "Compartir"],
     copyLink: ["Copy link", "Copiar enlace"],
@@ -51,6 +67,13 @@
     forFamilies: ["For families", "Para las familias"],
     tourBlurb: ["See a sample week, our characters, and the family song.", "Mira una semana de muestra, los personajes y la canción familiar."],
     agesThisWeek: ["Every age has its own Week 11", "Cada edad tiene su Semana 11"]
+  };
+  DA.pick = function(pair){
+    if (pair == null || pair === "") return "";
+    if (typeof pair === "string") return pair;
+    const en = pair.en || "";
+    const es = pair.es || "";
+    return DA.lang.family() && es ? es : (en || es);
   };
   DA.t = function(key){
     const pair = UI[key];

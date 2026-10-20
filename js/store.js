@@ -115,15 +115,28 @@ DA.data = {
     const themeName = this.themeAt(ageId, n);
     const range = this.weekRange(n);
     const link = (window.DA_WEEK_LINKS && DA_WEEK_LINKS[ageId] && DA_WEEK_LINKS[ageId][n]) || null;
+    let model = null;
     if (link && link.plan) {
       const plan = (window.DA_PLANS || []).find(p => p.id === link.plan && !p.hidden);
-      if (plan) return this.modelFromPlan(age, n, plan, themeName, range);
+      if (plan) model = this.modelFromPlan(age, n, plan, themeName, range);
     }
-    if (link && link.sample) {
-      const model = this.modelFromSample(age, n, link.sample[0], link.sample[1], themeName, range);
-      if (model) return model;
-    }
-    return this.emptyModel(age, n, themeName, range);
+    if (!model && link && link.sample) model = this.modelFromSample(age, n, link.sample[0], link.sample[1], themeName, range);
+    if (!model) model = this.emptyModel(age, n, themeName, range);
+    return this.attachBits(model);
+  },
+  attachBits(model){
+    if (!model) return model;
+    const n = Number(model.weekN);
+    const month = model.range && model.range.mon ? model.range.mon.getMonth() + 1 : 0;
+    model.sign = (window.DA_SIGNS && DA_SIGNS[n]) || null;
+    model.spanishWord = (window.DA_SPANISH_WORDS && DA_SPANISH_WORDS[n]) || null;
+    model.feelings = (window.DA_OLLIE && DA_OLLIE[n]) || null;
+    const heart = month && window.DA_HEART && DA_HEART[month];
+    model.heart = heart && (heart.en || heart.es) ? heart : null;
+    if (model.challenge && typeof model.challenge === "string" && window.DA_CHALLENGE_ES && DA_CHALLENGE_ES[n]) model.challenge = { en: model.challenge, es: DA_CHALLENGE_ES[n] };
+    else if (!model.challenge && window.DA_CHALLENGES && DA_CHALLENGES[n]) model.challenge = DA_CHALLENGES[n];
+    if (!model.songEsVideo) model.songEsVideo = "";
+    return model;
   },
   modelFromSample(age, weekN, monthId, sampleN, themeName, range){
     const v = this.weekFor(age.id, monthId, sampleN);
@@ -151,7 +164,8 @@ DA.data = {
       home: w.home || [], ask: w.ask || [],
       objectives: null, letterPlan: "", plan: null,
       sample: {monthId, n: Number(sampleN)},
-      room: "", ready: true
+      room: "", ready: true,
+      challenge: w.challenge || ""
     };
   },
   modelFromPlan(age, weekN, plan, themeName, range){

@@ -49,7 +49,7 @@ window.DA_PLANS = [
    {name:"Big v. Medium v. Small", desc:"Students will take different size leaves and sort them into the correct groups based on size."}],
   notes:"Large/small group columns are marked 'X' but the text layout doesn't show which column each X is in. Pages 4–6 are a blank plan (all N/A).",
   song: FALL_K_SONG, songVideo: FALL_K_SONG_VIDEO, songPoster: FALL_K_SONG_POSTER},
-{ id:"room11-3s-hygiene", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Personal Hygiene – handwashing, potty wiping, bath time, hair and teeth brushing", letter:"Mm", source:"Lesson plan PDF #3, pages 7–9",
+{ id:"room11-3s-hygiene", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Personal Hygiene – handwashing, potty wiping, bath time, hair and teeth brushing", short:"Personal Hygiene", letter:"Mm", source:"Lesson plan PDF #3, pages 7–9",
   circle:"Begin reviewing date, weather, weekly vocabulary words, emotion chart and classroom rules/expectations (using anchor charts). Use manipulatives relating to weekly theme to relate to number, color, shape and letter of the week. Review days of the week, months of the year, and follow VPK dialogic reading plan. On Mondays, assign classroom jobs. End circle time with transition song of the week (relating to theme). Inform students that upon hearing the song, it means to be prepared to transition for the week.",
   objectives:["Know routines for hygiene habits.","Know the importance of hygiene, and what it means.","Be able to teach a friend or family member a hygiene routine.","List the different examples of personal hygiene."],
   words:[],

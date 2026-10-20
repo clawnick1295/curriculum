@@ -13,15 +13,25 @@ function home(){
   const cw = D.currentWeekNumber();
   const inYear = cw >= 1 && cw <= 52;
   const when = inYear ? `Week ${cw} · ${D.weekRange(cw).label}` : `School year starts ${DA_CONFIG.SCHOOL_YEAR_START}`;
-  return nav("Curriculum Dashboard") + `<main class="wrap">
-   <section class="hero fun"><img class="ch heroL" src="${DA.CH.owl}" alt="Davie owl"><div class="herotxt"><h2>Hi teachers! 👋</h2><p>Tap an age group, then a week.</p><p class="small">${U.esc(when)}</p></div><img class="ch heroR" src="${DA.CH.sampson}" alt="Sampson the Manatee"></section>
+  return nav("Curriculum Dashboard") + `<main class="wrap home-lead">
+   <section class="hero fun"><img class="ch heroL" src="${DA.CH.owl}" alt="Davie owl"><div class="herotxt"><h2>Hi teachers! 👋</h2><p>Choose an age group.</p><p class="small">${U.esc(when)}</p></div><img class="ch heroR" src="${DA.CH.sampson}" alt="Sampson the Manatee"></section>
+   <h2 class="sec hh">${U.ch("literacy","hd")}Curriculum by age</h2>
+   <div class="grid ages">${D.ages().map(ageTile).join("")}</div>
    <section class="hero"><input id="q" class="search" type="search" placeholder="Search themes, books, activities, words…"></section>
-   <div id="results"></div>
-   <h2 class="sec hh">${U.ch("owl","hd")}Lesson plans</h2><div class="grid plans">${PLANS().map(planTile).join("")}</div>
-   <h2 class="sec hh">${U.ch("literacy","hd")}Curriculum by age</h2><div class="grid ages">${D.ages().map(a => `<a class="age" style="--c:${a.color}" href="#/age/${a.id}">${U.ch(DA.AGE_CH[a.id],"agech")}<b>${U.esc(a.name)}</b><small>${U.esc(a.sub)}</small>${PLANS().filter(p => p.ageId === a.id).map(p => `<span class="agep">${U.esc(p.short || p.theme.split(" – ")[0])} · ${U.esc(p.letter)}</span>`).join("")}</a>`).join("")}</div></main>`;
+   <div id="results"></div></main>`;
+}
+function ageTile(a){
+  const cw = D.currentWeekNumber();
+  const jump = cw >= 1 && cw <= 52 ? `<a class="agejump" href="#/age/${a.id}/${cw}">Jump to this week</a>` : "";
+  return `<article class="age" style="--c:${a.color}"><a class="agemain" href="#/age/${a.id}">${U.ch(DA.AGE_CH[a.id],"agech")}<b>${U.esc(a.name)}</b><small>${U.esc(a.sub)}</small></a>${jump}</article>`;
 }
 function search(q){
   q = q.trim().toLowerCase(); const out = []; if (q.length < 2) return "";
+  (window.DA_PLANS || []).filter(p => !p.hidden).forEach(p => {
+    const hit = D.yearWeekForPlan(p.id); if (!hit) return;
+    const hay = [p.theme, p.short, p.letter, p.age, p.room, p.circle].join(" ").toLowerCase();
+    if (hay.includes(q)) out.push(`<a class="result" href="#/age/${hit.ageId}/${hit.n}">${U.esc(p.short || p.theme.split(" – ")[0])} <small>${U.esc(p.age)} · Week ${hit.n}</small></a>`);
+  });
   D.ages().forEach(a => D.months().forEach(m => m.weeks.forEach(w => {
     const v = D.weekFor(a.id, m.id, w.n); const hay = JSON.stringify([w.theme, w.overview, w.words, v && v.acts]).toLowerCase();
     if (hay.includes(q)) {
@@ -32,15 +42,6 @@ function search(q){
   })));
   return `<div class="card"><h3>${out.length} result(s)</h3>${out.join("") || "<p>No matches.</p>"}</div>`;
 }
-function planHref(p){
-  const hit = D.yearWeekForPlan(p.id);
-  return hit ? `#/age/${hit.ageId}/${hit.n}` : `#/today/${p.id}`;
-}
-function planTile(p){
-  const hit = D.yearWeekForPlan(p.id);
-  return `<a class="plantile" href="${planHref(p)}"><span class="crumbs"><b class="agel">${U.esc(p.age)}</b>${p.room ? ` · Room ${U.esc(p.room)}` : ""}${hit ? ` · Week ${hit.n}` : ""}</span><span class="lbl">Theme</span><b class="th">${U.esc(p.short || p.theme.split(" – ")[0])}</b><span class="lbl">Letter</span><span class="lt">${U.esc(p.letter)}</span><span class="go">Open week ›</span></a>`;
-}
-const PLANS = () => DA_PLANS.filter(p => !p.hidden);
 
 function agePage(ageId){
   const a = D.age(ageId); if (!a) return home();
@@ -218,6 +219,29 @@ function sheetHTML(model){
     ${extras.length ? `<footer class="sh-foot">${extras.join(" · ")}</footer>` : ""}
   </article>`;
 }
+const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+function step(n, title, body, ck){
+  return `<section class="card step"><div class="stepn">${n}</div><div class="stepb"><h3 class="hh">${ck ? U.ch(ck, "hd") : ""}${U.esc(title)}</h3>${body}<label class="done"><input type="checkbox"> Done</label></div></section>`;
+}
+function todayBlock(p){
+  if (!p) return "";
+  const d = DAYS[new Date().getDay()];
+  const dayItems = (p.days && p.days[d]) || [];
+  const mon = d === "Mon" && /Mondays/.test(p.circle || "");
+  let i = 1;
+  const steps = [];
+  if (p.circle) steps.push(step(i++, "Circle time", `<p>${U.esc(p.circle)}</p>`, "circle"));
+  if (p.letterPlan) steps.push(step(i++, "Letter " + p.letter, `<p>${U.esc(p.letterPlan)}</p>`, "letter"));
+  if (p.steam) steps.push(step(i++, "STEAM: " + p.steam.name, `<div class="media2">${U.photo(p.steam.img, p.steam.name)}<p>${U.esc(p.steam.desc)}</p></div>`, "steam"));
+  (p.crafts || []).forEach(c => steps.push(step(i++, "Craft: " + c.name, `<div class="media2">${U.photo(c.img, c.name)}<div>${c.supplies ? "<h4>Supplies</h4>" + U.supplies(c.supplies) : ""}</div></div>`, "craft")));
+  (p.activities || []).forEach(a => steps.push(step(i++, (a.group ? a.group + ": " : "Activity: ") + a.name, `<div class="media2">${U.photo(a.img, a.name, a.imgNote)}<div><p>${U.esc(a.desc || "")}</p>${a.supplies ? "<h4>Supplies</h4>" + U.supplies(a.supplies) : ""}</div></div>`, "activity")));
+  return `<section class="today" id="today-view"><h2 class="sec">Today</h2>
+    <section class="card todayhead"><div><small>Today is ${d} · This week's plan</small><h2>${U.esc(p.short || (p.theme || "").split(" – ")[0])}</h2>
+      <div class="ofweek"><div class="chip"><small>Letter of the week</small><b>${U.esc(p.letter || "")}</b></div></div></div></section>
+    ${(dayItems.length || mon) ? `<section class="card callout"><h3>Special for ${d}</h3><ul class="big">${mon ? "<li>Assign classroom jobs</li>" : ""}${dayItems.map(x => `<li>${U.esc(x)}</li>`).join("")}</ul></section>` : ""}
+    ${steps.join("")}
+    <p class="note">Done boxes reset when you reload.</p></section>`;
+}
 function comingSoon(model){
   const a = model.age;
   const label = model.theme ? U.esc(model.theme) : "Coming soon";
@@ -256,13 +280,14 @@ function weekScreen(model){
     <div class="toolbar no-print"><button class="btn" id="print-week" onclick="print()">Print this week</button>
       <a class="btn ghost" href="#/parent/${a.id}/w/${model.weekN}">👪 Family page</a>${fridge}
       <button class="btn ghost" id="copy">📋 Copy family message</button></div>
-    ${letter}
+    ${todayBlock(model.plan)}
+    ${model.plan ? "" : letter}
     ${numberShapeField(model)}
     ${words ? `<section class="card field"><h3>Word of the week</h3>${words}</section>` : ""}
-    ${songField(model)}
     ${bookField(model)}
     ${characterField(model)}
     ${weekActivities(model)}
+    ${songField(model)}
     ${objectives}
     ${checklist(model)}
   </main>`;

@@ -99,6 +99,12 @@ ul.big{padding-left:1.2em}ul.big li{margin:8px 0;font-size:1.15rem}
 .weekrow .wl:empty{display:none}
 .weekrow .wl:not(:empty){background:var(--navy);color:#fff;border-radius:12px;padding:4px 10px;font-weight:900}
 .agehead>div{min-width:0}
+.home-lead .ages{grid-template-columns:1fr}
+.home-lead .age{display:flex;flex-direction:column;align-items:center;min-height:250px;padding:18px 16px 16px;text-decoration:none}
+.agemain{display:flex;flex-direction:column;align-items:center;width:100%;flex:1;color:#fff;text-decoration:none;min-height:170px}
+.agejump{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:12px;background:#fff;color:var(--navy);font-weight:800;text-decoration:none;border-radius:999px;padding:10px 16px}
+.agejump:active{transform:translateY(2px)}
+@media (min-width:700px){.home-lead .ages{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .weekrow .wgo{grid-area:go;font-size:1.6rem;font-weight:900;color:var(--orange-dk);line-height:1}
 .weekrow:active{transform:translateY(2px)}
 .weekrow:focus-visible{outline:3px solid var(--orange);outline-offset:2px}

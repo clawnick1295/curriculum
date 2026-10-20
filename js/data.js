@@ -173,22 +173,22 @@ function daSeaLinks(){
   };
 }
 window.DA_WEEK_THEMES = {
-  ones: daWeekThemes(DA_SEA_THEMES),
-  twos: daWeekThemes(DA_SEA_THEMES),
-  threes: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall", 10: "Personal Hygiene"})),
-  vpk: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall"})),
-  fours: daWeekThemes(DA_SEA_THEMES),
-  fives: daWeekThemes(DA_SEA_THEMES)
+  ones: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
+  twos: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
+  threes: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall", 10: "Personal Hygiene", 11: "Pumpkin Patch"})),
+  vpk: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall", 11: "Pumpkin Patch"})),
+  fours: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
+  fives: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"}))
 };
 /* Week content. sample: [monthId, week n in that month]. plan: a DA_PLANS id.
    With SCHOOL_YEAR_START 2026-08-10, weeks 1–4 are August and weeks 9–12 are October. */
 window.DA_WEEK_LINKS = {
-  ones: daSeaLinks(),
-  twos: daSeaLinks(),
-  threes: Object.assign(daSeaLinks(), {9: {plan: "room11-3s-fall"}, 10: {plan: "room11-3s-hygiene"}}),
-  vpk: Object.assign(daSeaLinks(), {9: {plan: "room7-vpk-fall"}}),
-  fours: daSeaLinks(),
-  fives: daSeaLinks()
+  ones: Object.assign(daSeaLinks(), {11: {plan: "w11-ones-pumpkin"}}),
+  twos: Object.assign(daSeaLinks(), {11: {plan: "w11-twos-pumpkin"}}),
+  threes: Object.assign(daSeaLinks(), {9: {plan: "room11-3s-fall"}, 10: {plan: "room11-3s-hygiene"}, 11: {plan: "w11-threes-pumpkin"}}),
+  vpk: Object.assign(daSeaLinks(), {9: {plan: "room7-vpk-fall"}, 11: {plan: "w11-vpk-pumpkin"}}),
+  fours: Object.assign(daSeaLinks(), {11: {plan: "w11-fours-pumpkin"}}),
+  fives: Object.assign(daSeaLinks(), {11: {plan: "w11-fives-pumpkin"}})
 };
 /* Optional text after the calendar month, keyed by month number (10 = October → "October: Fall"). */
 window.DA_MONTH_THEMES = {
@@ -197,5 +197,8 @@ window.DA_MONTH_THEMES = {
 };
 /* Which plan activities are Movement instead of Centers. Index matches DA_PLANS[].activities. */
 window.DA_PLAN_SLOTS = {
-  "room7-vpk-fall": {activities: ["centers", "movement", "centers", "centers"]}
+  "room7-vpk-fall": {activities: ["centers", "movement", "centers", "centers"]},
+  "w11-ones-pumpkin": {activities: ["movement", "centers"]},
+  "w11-twos-pumpkin": {activities: ["centers", "movement"]},
+  "w11-vpk-pumpkin": {activities: ["movement", "centers"]}
 };

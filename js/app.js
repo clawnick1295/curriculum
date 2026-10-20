@@ -268,6 +268,7 @@ function weekScreen(model){
   const fridge = model.sample ? `<a class="btn ghost" href="#/fridge/${a.id}/${model.sample.monthId}/${model.sample.n}">🧲 Fridge card</a>` : "";
   return nav(a.name) + `<main class="wrap weekpage" id="week-template" style="--c:${a.color}">
     <p class="crumb no-print"><a href="#/">Home</a> › <a href="#/age/${a.id}">${U.esc(a.name)}</a> › Week ${model.weekN}</p>
+    ${model.banner ? `<img class="weekbanner" src="${U.esc(model.banner)}" alt="" loading="lazy">` : ""}
     <section class="card weekhead weekhero">
       <div>${U.ch(DA.AGE_CH[a.id], "ageheadch")}</div>
       <div><small>${model.room ? "Room " + U.esc(model.room) + " · " : ""}${U.esc(a.name)} · Week ${model.weekN}${model.range ? " · " + U.esc(model.range.label) : ""}</small>

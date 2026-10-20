@@ -158,8 +158,8 @@ DA.data = {
     const activities = [];
     const slotOf = (window.DA_PLAN_SLOTS && DA_PLAN_SLOTS[plan.id] && DA_PLAN_SLOTS[plan.id].activities) || [];
     if (plan.circle) activities.push(this.act("circle", "", "Circle time", plan.circle, []));
-    if (plan.steam) activities.push(this.act("centers", "", plan.steam.name, plan.steam.desc, [], {image: plan.steam.img}));
-    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, "", c.supplies || [], {image: c.img})));
+    if (plan.steam) activities.push(this.act("centers", "", plan.steam.name, plan.steam.desc, plan.steam.supplies || [], {image: plan.steam.img, standards: plan.steam.standards}));
+    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, c.desc || "", c.supplies || [], {image: c.img, standards: c.standards})));
     (plan.activities || []).forEach((a, i) => activities.push(this.act(slotOf[i] || "centers", "", a.name, a.desc, a.supplies || [], {image: a.img, imageNote: a.imgNote, standards: a.standards})));
     if (plan.days) {
       Object.keys(plan.days).forEach(day => {
@@ -171,13 +171,14 @@ DA.data = {
     return {
       age, weekN, range,
       theme, subtitle: plan.theme && plan.theme !== theme ? plan.theme : "",
-      overview: "",
+      overview: plan.overview || "",
+      banner: plan.banner || "",
       letter: plan.letter || "",
-      number: "", shape: "", color: "",
+      number: plan.number || "", shape: plan.shape || "", color: plan.color || "",
       words, song: plan.song || "", songVideo: plan.songVideo || "", songPoster: plan.songPoster || "",
       book: null, character: null,
       activities, focus: null,
-      home: [], ask: [],
+      home: plan.home || [], ask: plan.ask || [],
       objectives: plan.objectives || null,
       letterPlan: plan.letterPlan || "",
       plan, sample: null,

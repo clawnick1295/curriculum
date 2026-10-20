@@ -1,5 +1,8 @@
 /* Lesson plans transcribed from teacher PDFs (Oct 2026). Text kept as written (light spelling fixes only).
    ageId links a plan to a dashboard age group; null = not stated on the PDF. */
+const FALL_K_SONG = "Kick the Leaves! (Fall · Letter K) — original chant, Davie Academy\n\nHOOK (everyone):\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 1:\nCrunchy leaves are falling down,\nred and orange all around.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 2:\nPumpkins sitting big and round,\nacorns tumble to the ground.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nVerse 3:\nFly a kite up in the breeze,\nkids go jumping in the leaves.\nKick, kick, kick the leaves!\nK says \"kuh, kuh, kuh!\"\n\nEnding:\nK is for kick! K is for kite!\nK is for kids! Kuh, kuh, kuh!";
+const FALL_K_SONG_VIDEO = "media/fall_k_song.mp4";
+const FALL_K_SONG_POSTER = "media/fall_k_song_poster.jpg";
 window.DA_PLANS = [
 { id:"fall-kk-unlabeled", room:"", age:"(not filled in)", ageId:null, hidden:true, theme:"Fall – Seasonal Changes", letter:"Kk", source:"Lesson plan PDF #1 (5 pages; room/age left as 'Type here')",
   circle:"Discuss the changes that happen during fall, such as cooler weather, leaves changing colors, falling leaves, and shorter days. Review the four seasons and encourage children to share what they notice about the weather and trees outside. Talk about fall colors and appropriate clothing for cooler weather.",
@@ -26,7 +29,8 @@ window.DA_PLANS = [
    {name:"Ball Toss", desc:"Students will toss a ball and count how many balls were caught in the tape."},
    {name:"Counting with Blocks", desc:"Students will walk around a table and when the music stops they will add the amount of blocks on the number they stop on."},
    {name:"Alphabet Bingo", desc:"Students will play bingo using their alphabet letters."}],
-  notes:"The marble-painting craft lists only shaving cream and paint (no marbles listed)."},
+  notes:"The marble-painting craft lists only shaving cream and paint (no marbles listed).",
+  song: FALL_K_SONG, songVideo: FALL_K_SONG_VIDEO, songPoster: FALL_K_SONG_POSTER},
 { id:"room11-3s-fall", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Seasonal Changes – Fall", short:"Fall", letter:"Kk", source:"Lesson plan PDF #3, pages 1–3",
   circle:"Begin reviewing date, weather, weekly vocabulary words, emotion chart and classroom rules/expectations (using anchor charts). Use manipulatives relating to weekly theme to relate to number, color, shape and letter of the week. Review days of the week, months of the year, and follow VPK dialogic reading plan. On Mondays, assign classroom jobs. End circle time with transition song of the week (relating to theme). Inform students that upon hearing the song, it means to be prepared to transition for the week.",
   objectives:["Understand the changes seen in the season of fall.","Associate certain colors with fall (orange, yellow, red, brown).","Associate certain images with fall (pumpkins, leaves, scarecrow, etc).","List changes seen during fall."],
@@ -43,7 +47,8 @@ window.DA_PLANS = [
    {name:"Ten Apples Up on Top", desc:"Students will count how many apples belong to each animal's head, using fingerprints to mimic the apples and dotting in a straight line going up."},
    {name:"Apple Patterns", desc:"Students will recognize patterns and use fingerprints to correctly continue the pattern. Colors will be green and red to mimic apples."},
    {name:"Big v. Medium v. Small", desc:"Students will take different size leaves and sort them into the correct groups based on size."}],
-  notes:"Large/small group columns are marked 'X' but the text layout doesn't show which column each X is in. Pages 4–6 are a blank plan (all N/A)."},
+  notes:"Large/small group columns are marked 'X' but the text layout doesn't show which column each X is in. Pages 4–6 are a blank plan (all N/A).",
+  song: FALL_K_SONG, songVideo: FALL_K_SONG_VIDEO, songPoster: FALL_K_SONG_POSTER},
 { id:"room11-3s-hygiene", room:"11", age:"3 Year Olds", ageId:"threes", theme:"Personal Hygiene – handwashing, potty wiping, bath time, hair and teeth brushing", letter:"Mm", source:"Lesson plan PDF #3, pages 7–9",
   circle:"Begin reviewing date, weather, weekly vocabulary words, emotion chart and classroom rules/expectations (using anchor charts). Use manipulatives relating to weekly theme to relate to number, color, shape and letter of the week. Review days of the week, months of the year, and follow VPK dialogic reading plan. On Mondays, assign classroom jobs. End circle time with transition song of the week (relating to theme). Inform students that upon hearing the song, it means to be prepared to transition for the week.",
   objectives:["Know routines for hygiene habits.","Know the importance of hygiene, and what it means.","Be able to teach a friend or family member a hygiene routine.","List the different examples of personal hygiene."],

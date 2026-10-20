@@ -174,7 +174,7 @@ DA.data = {
       overview: "",
       letter: plan.letter || "",
       number: "", shape: "", color: "",
-      words, song: "", songVideo: "", songPoster: "",
+      words, song: plan.song || "", songVideo: plan.songVideo || "", songPoster: plan.songPoster || "",
       book: null, character: null,
       activities, focus: null,
       home: [], ask: [],

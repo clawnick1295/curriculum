@@ -1,0 +1,78 @@
+/* Week 9 · Fall Leaves & Pumpkins · Letter Ll. Transcribed from the teachers' Fall lesson plans (Ones, Twos, 3s, 4s), Nov 2026.
+   Each STEAM / craft / activity: name, why (purpose + benefits), desc (what children do), supplies, img. */
+(function(){
+const I = (age, k) => `media/activities/w9/${age}_${k}.webp`;
+const P = [
+{ id:"w9-ones-fall", age:"Ones", ageId:"ones", theme:"Fall Leaves & Pumpkins", short:"Fall Leaves & Pumpkins", letter:"Ll",
+  overview:"Children explore fall leaves and pumpkins, recognize autumn colors, build vocabulary, and practice fine and gross motor skills through hands-on play.",
+  circle:"Alphabet, colors, numbers, shapes, weather, days of the week, and fall leaves/pumpkins. Book of the week: You're My Little Pumpkin by Nicola Edwards. Finger play: Way Up High in the Apple Tree.",
+  letterPlan:"L is for leaves. Children see the letter L, hear its sound, and connect it with words like leaf.",
+  objectives:["Explore fall leaves and pumpkins with the senses.","Recognize autumn colors.","Build early vocabulary.","Practice fine and gross motor skills.","Strengthen sensory exploration, creativity, and early math skills."],
+  steam:{name:"Fall Treasures Exploration", why:"Hands-on sensory play builds curiosity, early sorting, and fine motor control.", desc:"Children explore fall leaves, pumpkins, pinecones, and other autumn materials with their senses, noticing colors, shapes, sizes, and textures.", supplies:["Fall leaves","Small pumpkins","Pinecones","Low sensory tray"], img:I("ones","steam")},
+  crafts:[
+   {name:"Color Mixing Pumpkin Paint", why:"Squishing paint in a sealed bag shows color mixing with no mess and strengthens little hands.", desc:"Red and yellow paint go in a sealed Ziploc bag taped over a pumpkin cutout. Children squish it until it turns orange.", supplies:["Ziploc bag","Pumpkin cutout","Red and yellow paint","Tape"], img:I("ones","craft1")},
+   {name:"Q-Tip Fall Tree Art", why:"Dabbing with a Q-tip builds the pincer grasp and introduces fall colors.", desc:"Children dab red, orange, and yellow dots onto a paper tree to make fall leaves.", supplies:["Q-tips","Paint","Construction paper"], img:I("ones","craft2")},
+   {name:"L is for Leaf", why:"Connects the letter L to a real leaf children can touch, building early letter awareness.", desc:"Children glue natural leaves onto a large letter L.", supplies:["Construction paper","Glue","Natural leaves"], img:I("ones","craft3")}],
+  activities:[
+   {name:"Pumpkin Counting", why:"Builds number recognition, counting, and early math skills.", desc:"Children match numbered pumpkins with number cards.", supplies:["Numbered paper pumpkins","Number cards"], img:I("ones","act1")},
+   {name:"Pumpkin Paper Collage", why:"Builds fine motor skills, creativity, and color recognition.", desc:"Children glue orange paper pieces onto a pumpkin outline.", supplies:["Pumpkin outline","Orange paper pieces","Glue"], img:I("ones","act2")},
+   {name:"Fall Leaf Transfer", why:"Builds hand-eye coordination, concentration, and fine motor strength.", desc:"Children use tongs to move colorful leaves between baskets.", supplies:["Tongs","Colorful leaves","Two baskets"], img:I("ones","act3")},
+   {name:"Fall Leaves Pom-Pom Color Sorting", why:"Practices color recognition, counting, and fine motor skills.", desc:"Children place colorful pom-poms onto matching paper leaves.", supplies:["Pom-poms","Paper leaves in fall colors"], img:I("ones","act4")}],
+  home:[["Leaf walk","Collect a few leaves outside and name the colors together."],["L sound","Say \"L, l, leaf\" as you hold up a leaf."],["Count pumpkins","Count pumpkins or round fruit at the store: 1, 2, 3."]],
+  ask:["fall leaves","pumpkins","the letter L"]},
+
+{ id:"w9-twos-fall", age:"Twos", ageId:"twos", theme:"Fall – Leaves & Pumpkins", short:"Fall Leaves & Pumpkins", letter:"Ll",
+  overview:"Children build social, language, and thinking skills while learning about fall leaves, the parts of a pumpkin, and the letter Ll through hands-on activities.",
+  circle:"Introduce the new theme and letter of the week, sing and dance to our morning song, review ABCs, numbers 1–20, shapes and colors, and talk about emotions and weather.",
+  letterPlan:"Letter of the week: Ll. L for leaf and L for lemon.",
+  objectives:["Learn about fall leaves.","Identify parts of a pumpkin.","Practice the letter Ll.","Build social, language, and thinking skills."],
+  steam:{name:"Cinnamon Playdough", why:"Smelling and squeezing dough builds hand strength, senses, and new describing words.", desc:"Children poke, squeeze, roll, and stamp shapes into the dough while smelling the autumn spices.", supplies:["Flour","Salt","Water","Vegetable oil","Ground cinnamon"], img:I("twos","steam")},
+  crafts:[
+   {name:"L for Lemon", why:"Links the letter L to a familiar fruit and practices gluing.", desc:"Children glue lemon cut-outs onto a letter L.", supplies:["Construction paper","L cut-out","Glue","Lemon cut-outs"], img:I("twos","craft1")},
+   {name:"Fork Painted Pumpkin", why:"Painting with a fork builds grip, control, and texture awareness.", desc:"Children dip a plastic fork in orange paint and press it to make a pumpkin.", supplies:["Plastic fork","Orange paint","Paper"], img:I("twos","craft2")},
+   {name:"Fall Tree", why:"Pinching a clothespin strengthens the fingers used later for writing.", desc:"Children hold a pom-pom with a clothespin and dab fall-colored leaves onto a tree.", supplies:["Pom-poms","Clothespins","Paint","Construction paper"], img:I("twos","craft3")}],
+  activities:[
+   {name:"Colorful Ball Toss", why:"Builds color recognition, hand-eye coordination, gross motor skills, and concentration.", desc:"Children toss small colorful balls at matching colored circles on the wall.", supplies:["Small colorful balls","Colored paper circles","Tape"], img:I("twos","act1")},
+   {name:"Matching Letters", why:"Builds letter recognition, matching, and fine motor skills.", desc:"Children pick a letter leaf, name the letter, and match it to the same letter leaf on the paper.", supplies:["Letter leaves","Letter mat"], img:I("twos","act2")},
+   {name:"Leaf Matching", why:"Practices problem solving and visual matching, like a first puzzle.", desc:"Children find the two pieces that make a whole leaf.", supplies:["Paper leaves cut in two"], img:I("twos","act3")},
+   {name:"Save the Pumpkins", why:"Using tweezers builds the pincer grasp, focus, and patience.", desc:"Children use tweezers to pick up pom-poms and place them into a jar.", supplies:["Tweezers","Orange pom-poms","Jar"], img:I("twos","act4")}],
+  home:[["Leaf hunt","Find a red, a yellow, and a brown leaf on a walk."],["L words","Say L words together: leaf, lemon, lion."],["Sniff and tell","Smell cinnamon or a pumpkin and talk about how it smells."]],
+  ask:["cinnamon playdough","the letter L","the fall tree"]},
+
+{ id:"w9-threes-fall", age:"3 Year Olds", ageId:"threes", theme:"Fall Leaves & Pumpkins", short:"Fall Leaves & Pumpkins", letter:"Ll",
+  overview:"Children talk about the changes of fall: cooler weather, colorful leaves, and pumpkins. They describe pumpkins and practice counting, sorting, painting, and teamwork.",
+  circle:"Discuss the changes we see during fall, including cooler weather, colorful leaves, and pumpkins. Review the four seasons and name fall colors (red, orange, yellow, brown). Introduce pumpkins: shapes, sizes, colors, and textures, where they grow, and how we use them. Book of the week: We're Going on a Leaf Hunt by Steve Metzger. Finger play: Five Little Pumpkins.",
+  objectives:["Identify fall colors and seasonal changes.","Describe pumpkins by color, shape, size, and texture.","Practice fine motor skills through painting.","Explore color mixing and creative expression.","Develop teamwork, sharing, and turn-taking.","Use describing words such as pumpkin, stem, round, smooth, and orange."],
+  steam:{name:"Pinecone Bird Feeders", why:"Teaches caring for animals in colder weather while building hand control with a butter knife.", desc:"Children spread seed butter into the pinecone, roll it in birdseed, and hang it outside for the birds.", supplies:["Pinecones","Butter knives","Sunflower or seed butter","Birdseed","String"], img:I("threes","steam")},
+  crafts:[
+   {name:"Decorate Your Pumpkin", why:"Crumpling and gluing tissue paper builds hand strength and creativity.", desc:"Children decorate a paper pumpkin with tissue paper.", supplies:["Tissue paper","Orange construction paper","Glue"], img:I("threes","craft1")},
+   {name:"Leaf Rubbing", why:"Shows leaf shapes and veins up close and builds steady crayon control.", desc:"Children rub a crayon over paper taped on a leaf to reveal its shape.", supplies:["Leaves","Crayons","Paper","Tape"], img:I("threes","craft2")},
+   {name:"Beaded Corn", why:"Threading beads builds fine motor skills, patterns, and focus.", desc:"Children thread fall-colored beads onto a pipe cleaner to make corn.", supplies:["Pipe cleaners","Fall color beads"], img:I("threes","craft3")}],
+  activities:[
+   {name:"Pumpkin Number Sense", why:"Connects a numeral to the right amount, building number sense.", desc:"Each pumpkin has a number and children stack that many math cubes.", supplies:["Numbered paper pumpkins","Math cubes"], img:I("threes","act1")},
+   {name:"Sorting Pumpkins by Size", why:"Builds comparing and sorting skills, an early math step.", desc:"Children sort pumpkins into big and small.", supplies:["Pumpkins in different sizes"], img:I("threes","act2")},
+   {name:"Pumpkin Balance", why:"Practices counting, sorting, and number sense.", desc:"Children collect fall leaves, count them, and sort them into baskets by color.", supplies:["Fall leaves","Baskets","Balance scale","Small pumpkin"], img:I("threes","act3")}],
+  home:[["Fall colors","Name red, orange, yellow, and brown things on a walk."],["Pumpkin talk","Describe a pumpkin together: round, smooth, orange, stem."],["Feed the birds","Talk about how birds find food when it gets cold."]],
+  ask:["our bird feeders","sorting pumpkins","leaf rubbings"],
+  notes:"No letter activity was listed for the 3s beyond the letter of the week L,l. The 'Pumpkin Balance' description is about counting and sorting leaves, as written."},
+
+{ id:"w9-fours-fall", age:"Fours", ageId:"fours", theme:"Fall Leaves & Pumpkins", short:"Fall Leaves & Pumpkins", letter:"Ll",
+  overview:"Children explore pumpkins, fall colors, and seasonal changes, and strengthen letter sounds, numbers, sight words, and calendar skills.",
+  circle:"Good Morning Song, Days of the Week, and Months of the Year. Introduce the Letter of the Week with Jack Hartmann's song, practice letter sounds, review numbers, and identify our sight word. Discuss pumpkins, fall leaves, colors, and seasonal changes. Book of the week: Pumpkin Jack by Will Hubbell (pumpkin life cycle). Finger play: Five Little Pumpkins. Review classroom expectations.",
+  objectives:["Explore pumpkins and identify fall colors.","Recognize seasonal changes.","Strengthen letter and sound recognition.","Identify numbers, sight words, and calendar skills.","Develop listening, communication, and social skills."],
+  steam:{name:"Ziploc Bag Explosion", why:"Children predict and observe a real chemical reaction, building early science thinking.", desc:"Baking soda wrapped in a paper towel goes into a Ziploc bag of vinegar. Children seal it, step back, and watch the gas expand the bag until it pops.", supplies:["Ziploc bags","Baking soda","Vinegar","Paper towels"], img:I("fours","steam")},
+  crafts:[
+   {name:"Pumpkin Name Craft", why:"Children practice recognizing and building their own name.", desc:"Children color a pumpkin template and glue on the letters of their name.", supplies:["Pumpkin template","Crayons","Marker","Glue"], img:I("fours","craft1")},
+   {name:"L is for Ladybug", why:"Ties the letter L to a fun picture and builds a careful pincer grip.", desc:"Children turn a letter L into a ladybug with Q-tip paint dots.", supplies:["Q-tips","Craft paper","Paint"], img:I("fours","craft2")},
+   {name:"Yarn Pumpkins", why:"Cutting and placing yarn builds scissor skills and hand control.", desc:"Children cut yarn and glue it along a pumpkin outline.", supplies:["Pumpkin outline","Yarn","Glue","Scissors"], img:I("fours","craft3")}],
+  activities:[
+   {name:"Pumpkin Dough", why:"Encourages sensory exploration, language, and creativity.", desc:"Children squeeze and shape pumpkin dough and describe its texture, color, and smell.", supplies:["Pumpkin playdough","Rolling pins","Cutters"], img:I("fours","act1")},
+   {name:"Spoon Focus", why:"Builds focus, balance, and steady hands.", desc:"Children carry a spoon full of rice along a cut-out path to the finish line.", supplies:["Spoons","Rice","Cut-out path board"], img:I("fours","act2")},
+   {name:"Prepositions & Name Writing", group:"Monday", why:"Builds vocabulary, spatial awareness, and communication.", desc:"In two small groups, children use a box and their bodies to show inside, outside, on top, under, in front of, and behind while classmates name the position.", supplies:["Large box"], img:I("fours","act3")},
+   {name:"ABC Match / Teen Number Line-Up", group:"Wednesday", why:"Builds letter matching and teen-number order through hands-on play.", desc:"Group one matches magnetic uppercase letters to their lowercase partners on a tray. Group two lines up big pumpkin number cards 11 to 20 on the floor, then hops along the line counting aloud.", supplies:["Magnetic uppercase and lowercase letters","Cookie sheet or magnet board","Pumpkin number cards 11-20"], img:I("fours","act4")}],
+  home:[["Kitchen fizz","Mix baking soda and vinegar in a cup and talk about the bubbles."],["Where is it?","Play a game: put a toy in, on, under, or behind a box and name the spot."],["Name hunt","Find the letters of your child's name on signs and boxes."]],
+  ask:["the bag explosion","inside, on top, and under","our pumpkin name craft"],
+  notes:"The 4s plan names a 'sight word' in circle but doesn't list which word. The PDF's cut-and-paste item was reframed as a hands-on magnetic letter and number-card line-up."}
+];
+P.forEach(p => DA_PLANS.push(p));
+})();

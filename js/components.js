@@ -29,9 +29,6 @@ DA.ui = {
     </article>`;
   },
   brand(sub){ return `<a class="brand" href="#/"><img class="logoimg" src="logo.svg" alt="Davie Academy"><small>${sub||"Curriculum Dashboard"}</small></a>`; },
-  /* One place to build shopping links. Search links don't go stale; add DA_CONFIG.AMAZON_TAG later for Associates. */
-  amazonUrl(item){ const t=(DA_CONFIG.AMAZON_TAG||"").trim(); return "https://www.amazon.com/s?k="+encodeURIComponent(item)+(t?"&tag="+encodeURIComponent(t):""); },
-  buy(item){ return `<a class="buy" href="${DA.ui.amazonUrl(item)}" target="_blank" rel="noopener" aria-label="Find ${DA.ui.esc(item)} on Amazon" title="Find on Amazon">🛒</a>`; },
-  supplies(list){ return `<ul class="checklist">${list.map(m=>`<li><label><input type="checkbox"> ${m}</label>${DA.ui.buy(m)}</li>`).join("")}</ul>`; },
+  supplies(list){ return `<ul class="checklist">${list.map(m=>`<li><label><input type="checkbox"> ${m}</label></li>`).join("")}</ul>`; },
   photo(src,alt,note){ return src?`<figure class="photo"><img src="${src}" alt="${DA.ui.esc(alt)}" loading="lazy">${note?`<figcaption>${note}</figcaption>`:""}</figure>`:""; }
 };

@@ -97,6 +97,7 @@ DA.data = {
       standards: extra.standards || "",
       video: extra.video || "",
       image: extra.image || "",
+      why: extra.why || "",
       imageNote: extra.imageNote || ""
     };
   },
@@ -129,7 +130,8 @@ DA.data = {
     const n = Number(model.weekN);
     const month = model.range && model.range.mon ? model.range.mon.getMonth() + 1 : 0;
     model.sign = (window.DA_SIGNS && DA_SIGNS[n]) || null;
-    model.spanishWord = (window.DA_SPANISH_WORDS && DA_SPANISH_WORDS[n]) || null;
+    model.spanishWord = null; // Letter of the week only (no word of the week).
+    model.words = [];
     model.feelings = (window.DA_OLLIE && DA_OLLIE[n]) || null;
     const heart = month && window.DA_HEART && DA_HEART[month];
     model.heart = heart && (heart.en || heart.es) ? heart : null;
@@ -172,9 +174,9 @@ DA.data = {
     const activities = [];
     const slotOf = (window.DA_PLAN_SLOTS && DA_PLAN_SLOTS[plan.id] && DA_PLAN_SLOTS[plan.id].activities) || [];
     if (plan.circle) activities.push(this.act("circle", "", "Circle time", plan.circle, []));
-    if (plan.steam) activities.push(this.act("centers", "", plan.steam.name, plan.steam.desc, plan.steam.supplies || [], {image: plan.steam.img, standards: plan.steam.standards}));
-    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, c.desc || "", c.supplies || [], {image: c.img, standards: c.standards})));
-    (plan.activities || []).forEach((a, i) => activities.push(this.act(slotOf[i] || "centers", "", a.name, a.desc, a.supplies || [], {image: a.img, imageNote: a.imgNote, standards: a.standards})));
+    if (plan.steam) activities.push(this.act("steam", "", plan.steam.name, plan.steam.desc, plan.steam.supplies || [], {image: plan.steam.img, standards: plan.steam.standards, why: plan.steam.why}));
+    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, c.desc || "", c.supplies || [], {image: c.img, standards: c.standards, why: c.why})));
+    (plan.activities || []).forEach((a, i) => activities.push(this.act(slotOf[i] || "activity", "", (a.group ? a.group + ": " : "") + a.name, a.desc, a.supplies || [], {image: a.img, imageNote: a.imgNote, standards: a.standards, why: a.why})));
     if (plan.days) {
       Object.keys(plan.days).forEach(day => {
         (plan.days[day] || []).forEach(text => activities.push(this.act("circle", day, text, "", [])));

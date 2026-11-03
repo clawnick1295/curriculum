@@ -1,9 +1,9 @@
 /* Router. Age groups open a 52-week school year. Each week uses one template. */
 (function(){
 const D = DA.data, U = DA.ui, $ = s => document.querySelector(s);
-const SLOT_LABEL = {circle:"Circle", centers:"Centers", art:"Art", movement:"Movement", outdoor:"Outdoor", book:"Book"};
-const SLOT_ORDER = ["circle","centers","art","movement","outdoor"];
-const SLOT_CH = {circle:"circle", centers:"sensory", art:"art", movement:"movement", outdoor:"movement", book:"story"};
+const SLOT_LABEL = {circle:"Circle Time", steam:"STEAM", centers:"Centers", art:"Arts & Crafts", activity:"Activities", movement:"Movement", outdoor:"Outdoor", book:"Book"};
+const SLOT_ORDER = ["circle","steam","centers","art","activity","movement","outdoor"];
+const SLOT_CH = {circle:"circle", steam:"science", activity:"math", centers:"sensory", art:"art", movement:"movement", outdoor:"movement", book:"story"};
 const DAY_ORDER = ["Mon","Tue","Wed","Thu","Fri"];
 const DAY_NAME = {Mon:"Monday", Tue:"Tuesday", Wed:"Wednesday", Thu:"Thursday", Fri:"Friday"};
 const nav = (role) => `<header class="top">${U.brand(role)}<nav>
@@ -20,7 +20,7 @@ function home(){
    <a class="hometour" href="#/tour"><b>Tour day</b><span>See a sample week, our characters, and the family song.</span></a>
    <a class="homeready" href="#/grows">How your child grows with us</a>
    <a class="homeready" href="#/readiness">Kindergarten readiness</a>
-   <section class="hero"><input id="q" class="search" type="search" placeholder="Search themes, books, activities, words…"></section>
+   <section class="hero"><input id="q" class="search" type="search" placeholder="Search themes, books, activities…"></section>
    <div id="results"></div></main>`;
 }
 function ageTile(a){
@@ -85,13 +85,17 @@ function obsBox(model, act){
   return `<label class="observed"><input type="checkbox" data-obs="${encodeURIComponent(id)}" ${on ? "checked" : ""}> Observed</label>`;
 }
 function activityCard(model, act){
-  const mats = act.materials && act.materials.length ? `<h4>Materials</h4>${U.supplies(act.materials)}` : "";
+  /* One layout for every activity/craft card: title, photo, why it matters, what to do, supplies. data-ed fields are teacher-editable. */
+  const k = actKey(act);
+  const ed = f => `data-ed="${U.esc(k + "|" + f)}"`;
+  const mats = act.materials && act.materials.length ? `<h4>Supplies</h4><ul class="checklist">${act.materials.map((m, i) => `<li><label><input type="checkbox"> <span class="sup" ${ed("sup" + i)}>${U.esc(m)}</span></label></li>`).join("")}</ul>` : "";
   const pic = act.image ? U.photo(act.image, act.title, act.imageNote) : "";
   const vid = act.video ? U.video(act.video) : "";
-  const steps = act.steps ? `<p>${U.esc(act.steps)}</p>` : "";
+  const why = act.why ? `<p class="why"><b>Why it matters:</b> <span ${ed("why")}>${U.esc(act.why)}</span></p>` : "";
+  const steps = act.steps ? `<p class="steps" ${ed("steps")}>${U.esc(act.steps)}</p>` : "";
   return `<article class="card act act-${act.slot}">
-    <header class="hh">${U.ch(SLOT_CH[act.slot] || "circle", "hd")}<div><span class="tag">${SLOT_LABEL[act.slot] || ""}</span><h3>${U.esc(act.title)}</h3></div></header>
-    ${pic}${steps}${mats}${vid}
+    <header class="hh">${U.ch(SLOT_CH[act.slot] || "circle", "hd")}<div><span class="tag">${SLOT_LABEL[act.slot] || ""}</span><h3 ${ed("title")}>${U.esc(act.title)}</h3></div></header>
+    ${pic}${why}${steps}${mats}${vid}
     <div class="actfoot">${stdTag(act.standards)}${obsBox(model, act)}</div>
   </article>`;
 }
@@ -132,14 +136,14 @@ function weekActivities(model){
   const slots = SLOT_ORDER.map(slot => {
     const items = model.activities.filter(a => !a.day && a.slot === slot);
     if (!items.length) return "";
-    return `<section class="slotblock"><h3 class="sec hh">${U.ch(SLOT_CH[slot], "hd")}${SLOT_LABEL[slot]}</h3><div class="acts">${items.map(a => activityCard(model, a)).join("")}</div></section>`;
+    return `<section class="slotblock" id="sec-${slot}" data-jump="${SLOT_LABEL[slot]}"><h3 class="sec hh">${U.ch(SLOT_CH[slot], "hd")}${SLOT_LABEL[slot]}</h3><div class="acts">${items.map(a => activityCard(model, a)).join("")}</div></section>`;
   }).join("");
   const days = DAY_ORDER.map(d => {
     const items = model.activities.filter(a => a.day === d);
     if (!items.length) return "";
     return `<section class="dayblock"><h3 class="sec">${DAY_NAME[d]}</h3><div class="acts">${items.map(a => activityCard(model, a)).join("")}</div></section>`;
   }).join("");
-  const dayWrap = days ? `<section class="dayswrap"><h2 class="sec">Days</h2>${days}</section>` : "";
+  const dayWrap = days ? `<section class="dayswrap" id="sec-days" data-jump="Days"><h2 class="sec">Days</h2>${days}</section>` : "";
   return slots + dayWrap;
 }
 function checklist(model){
@@ -233,8 +237,6 @@ function familyBlock(model){
   const lyric = model.song ? `<p class="lyrics">${U.esc(model.song)}</p>` : "";
   const video = model.songVideo ? U.video(model.songVideo, model.songPoster) : `<div class="video-ph">${U.ch("music","sm")}<small>${DA.t("songSoon")}</small></div>`;
   return `<section class="card family" id="family">
-    ${words ? `<h3>${DA.t("word")}</h3>${words}` : ""}
-    ${spanishWordCard(model)}
     ${askHtml}${homeHtml}
     ${challengeCard(model)}
     ${signCard(model)}
@@ -255,7 +257,6 @@ function sheetHTML(model){
   const meta = [];
   if (model.letter) meta.push(`<div><small>Letter</small><b>${U.esc(model.letter)}</b></div>`);
   if (model.number || model.shape) meta.push(`<div><small>Number/Shape</small><b>${U.esc([model.number, model.shape].filter(Boolean).join(" · "))}</b></div>`);
-  if (model.words && model.words.length) meta.push(`<div><small>Word of the week</small><b>${U.esc(model.words.map(w => Array.isArray(w) ? w[0] : w).join(", "))}</b></div>`);
   const slots = SLOT_ORDER.map(slot => {
     const items = model.activities.filter(a => a.slot === slot && !a.day);
     if (!items.length) return "";
@@ -292,23 +293,13 @@ function step(n, title, body, ck){
   return `<section class="card step"><div class="stepn">${n}</div><div class="stepb"><h3 class="hh">${ck ? U.ch(ck, "hd") : ""}${U.esc(title)}</h3>${body}<label class="done"><input type="checkbox"> Done</label></div></section>`;
 }
 function todayBlock(p){
+  /* Plan weeks: only today's special reminders here; every activity renders once below in the shared card layout. */
   if (!p) return "";
   const d = DAYS[new Date().getDay()];
   const dayItems = (p.days && p.days[d]) || [];
   const mon = d === "Mon" && /Mondays/.test(p.circle || "");
-  let i = 1;
-  const steps = [];
-  if (p.circle) steps.push(step(i++, "Circle time", `<p>${U.esc(p.circle)}</p>`, "circle"));
-  if (p.letterPlan) steps.push(step(i++, "Letter " + p.letter, `<p>${U.esc(p.letterPlan)}</p>`, "letter"));
-  if (p.steam) steps.push(step(i++, "STEAM: " + p.steam.name, `<div class="media2">${U.photo(p.steam.img, p.steam.name)}<p>${U.esc(p.steam.desc)}</p></div>`, "steam"));
-  (p.crafts || []).forEach(c => steps.push(step(i++, "Craft: " + c.name, `<div class="media2">${U.photo(c.img, c.name)}<div>${c.supplies ? "<h4>Supplies</h4>" + U.supplies(c.supplies) : ""}</div></div>`, "craft")));
-  (p.activities || []).forEach(a => steps.push(step(i++, (a.group ? a.group + ": " : "Activity: ") + a.name, `<div class="media2">${U.photo(a.img, a.name, a.imgNote)}<div><p>${U.esc(a.desc || "")}</p>${a.supplies ? "<h4>Supplies</h4>" + U.supplies(a.supplies) : ""}</div></div>`, "activity")));
-  return `<section class="today" id="today-view"><h2 class="sec">Today</h2>
-    <section class="card todayhead"><div><small>Today is ${d} · This week's plan</small><h2>${U.esc(p.short || (p.theme || "").split(" – ")[0])}</h2>
-      <div class="ofweek"><div class="chip"><small>Letter of the week</small><b>${U.esc(p.letter || "")}</b></div></div></div></section>
-    ${(dayItems.length || mon) ? `<section class="card callout"><h3>Special for ${d}</h3><ul class="big">${mon ? "<li>Assign classroom jobs</li>" : ""}${dayItems.map(x => `<li>${U.esc(x)}</li>`).join("")}</ul></section>` : ""}
-    ${steps.join("")}
-    <p class="note">Done boxes reset when you reload.</p></section>`;
+  if (!dayItems.length && !mon) return "";
+  return `<section class="card callout" id="today-view"><h3>Special for ${d}</h3><ul class="big">${mon ? "<li>Assign classroom jobs</li>" : ""}${dayItems.map(x => `<li>${U.esc(x)}</li>`).join("")}</ul></section>`;
 }
 function comingSoon(model){
   const a = model.age;
@@ -329,9 +320,9 @@ function weekScreen(model){
   if (!model.ready) return comingSoon(model);
   const a = model.age;
   const purl = D.parentUrlForWeek(a.id, model.weekN);
-  const letter = model.letter || model.letterPlan ? `<section class="card field"><h3>Letter</h3>${model.letter ? `<div class="chip"><b>${U.esc(model.letter)}</b></div>` : ""}${model.letterPlan ? `<p>${U.esc(model.letterPlan)}</p>` : ""}</section>` : "";
+  const letter = model.letter || model.letterPlan ? `<section class="card field" id="sec-letter" data-jump="Letter of the Week"><h3>Letter of the week</h3>${model.letter ? `<div class="chip"><b data-ed="letter|chip">${U.esc(model.letter)}</b></div>` : ""}${model.letterPlan ? `<p data-ed="letter|plan">${U.esc(model.letterPlan)}</p>` : ""}</section>` : "";
   const words = wordList(model.words);
-  const objectives = model.objectives && model.objectives.length ? `<section class="card field"><h3>Learning objectives</h3><ul class="big">${model.objectives.map(o => `<li>${U.esc(o)}</li>`).join("")}</ul></section>` : "";
+  const objectives = model.objectives && model.objectives.length ? `<section class="card field"><h3>Learning objectives</h3><ul class="big">${model.objectives.map((o, i) => `<li data-ed="obj|${i}">${U.esc(o)}</li>`).join("")}</ul></section>` : "";
   const domains = model.focus && model.focus.length ? `<p class="domains">${model.focus.map(f => `<span>${U.esc(f)}</span>`).join("")}</p>` : "";
   const fridge = model.sample ? `<a class="btn ghost" href="#/fridge/${a.id}/${model.sample.monthId}/${model.sample.n}">🧲 Fridge card</a>` : "";
   return nav(a.name) + `<main class="wrap weekpage" id="week-template" style="--c:${a.color}">
@@ -340,21 +331,22 @@ function weekScreen(model){
     <section class="card weekhead weekhero">
       <div>${U.ch(DA.AGE_CH[a.id], "ageheadch")}</div>
       <div><small>${model.room ? "Room " + U.esc(model.room) + " · " : ""}${U.esc(a.name)} · Week ${model.weekN}${model.range ? " · " + U.esc(model.range.label) : ""}</small>
-        <h2>${U.esc(model.theme)}</h2>
-        ${model.subtitle ? `<p>${U.esc(model.subtitle)}</p>` : ""}
-        ${model.overview ? `<p>${U.esc(model.overview)}</p>` : ""}
+        <h2 data-ed="hero|theme">${U.esc(model.theme)}</h2>
+        ${model.subtitle ? `<p data-ed="hero|subtitle">${U.esc(model.subtitle)}</p>` : ""}
+        ${model.overview ? `<p data-ed="hero|overview">${U.esc(model.overview)}</p>` : ""}
         ${domains}</div>
       <div class="qrbox no-print">${U.qr(purl, 3)}<small>Family page</small></div>
     </section>
     <div class="toolbar no-print"><button class="btn" id="print-week" onclick="print()">Print this week</button>
+      <button class="btn ghost" id="edit-toggle" type="button">✏️ Edit</button>
       <a class="btn ghost" href="#/parent/${a.id}/w/${model.weekN}">👪 Family page</a>${fridge}
       <button class="btn ghost" id="copy">📋 Copy family message</button></div>
+    <nav class="jumptabs no-print" id="jumptabs" aria-label="Sections on this page"></nav>
     ${challengeCard(model)}
     ${feelingsCard(model)}
     ${todayBlock(model.plan)}
-    ${model.plan ? "" : letter}
+    ${letter}
     ${numberShapeField(model)}
-    ${words ? `<section class="card field"><h3>Word of the week</h3>${words}</section>` : ""}
     ${bookField(model)}
     ${characterField(model)}
     ${weekActivities(model)}
@@ -367,7 +359,7 @@ function weekMessage(model){
   const words = (model.words || []).map(w => Array.isArray(w) ? `${w[0]}${w[1] ? " (" + w[1] + ")" : ""}` : w).filter(Boolean).join(", ");
   const home = familyHome(model).map(h => Array.isArray(h) ? `${h[0]}: ${h[1]}` : h).join("\n");
   const ask = familyAsk(model).join(", ");
-  return `This week at ${DA_CONFIG.schoolName} (${model.age.name}): "${model.theme}"\n\n${model.overview || ""}\n\nWord of the week: ${words || "(coming soon)"}\n\n${home}\n\nAsk me about: ${ask}\n\nFamily page: ${D.parentUrlForWeek(model.age.id, model.weekN)}`;
+  return `This week at ${DA_CONFIG.schoolName} (${model.age.name}): "${model.theme}"\n\n${model.overview || ""}${model.letter ? "\n\nLetter of the week: " + model.letter : ""}\n\n${home}\n\nAsk me about: ${ask}\n\nFamily page: ${D.parentUrlForWeek(model.age.id, model.weekN)}`;
 }
 function langToggle(){
   const on = DA.lang.get();
@@ -646,6 +638,8 @@ function render(){
       if (cb.checked) celebrate(cb);
     });
   }
+  if (ctx && DA.edits) DA.edits.mount(ctx.ageId, ctx.weekN);
+  jumpTabs();
   bindMotion();
 }
 let motionIO = null;
@@ -775,5 +769,27 @@ function weekContext(p){
   }
   return null;
 }
+
+/* Sticky section tabs on week pages: built from the sections actually on the page. */
+function jumpTabs(){
+  const bar = document.getElementById("jumptabs");
+  if (!bar) return;
+  const order = ["sec-letter", "sec-circle", "sec-steam", "sec-centers", "sec-art", "sec-activity", "sec-movement", "sec-outdoor", "sec-days"];
+  const secs = [...document.querySelectorAll("[data-jump]")].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+  if (secs.length < 2) { bar.remove(); return; }
+  bar.innerHTML = secs.map(s => `<a href="#" data-to="${s.id}">${U.esc(s.dataset.jump)}</a>`).join("");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  bar.addEventListener("click", e => {
+    const t = e.target.closest("a[data-to]");
+    if (!t) return;
+    e.preventDefault();
+    const el = document.getElementById(t.dataset.to);
+    const y = el.getBoundingClientRect().top + scrollY - bar.offsetHeight - 12;
+    scrollTo({top: y, behavior: reduce ? "auto" : "smooth"});
+    bar.querySelectorAll("a").forEach(a => a.classList.toggle("on", a === t));
+    t.scrollIntoView({block: "nearest", inline: "center", behavior: reduce ? "auto" : "smooth"});
+  });
+}
 addEventListener("hashchange", render); addEventListener("DOMContentLoaded", render);
 })();
+

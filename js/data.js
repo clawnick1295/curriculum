@@ -7,8 +7,9 @@ window.DA_CONFIG = {
   // Week 1 is the week that contains this date (Monday–Friday). Change only this date to move the school year.
   SCHOOL_YEAR_START: "2026-08-10",
   donationsSignupUrl: "#signup-coming-soon",
-  // Amazon Associates tag (e.g. "davieacademy-20"). Leave empty for plain search links.
-  AMAZON_TAG: ""
+  // Shared teacher edits: paste the Google Apps Script web-app URL here (see tools/edits-apps-script.gs).
+  // Leave "" and edits save only on the device that made them.
+  EDIT_API_URL: ""
 };
 window.DA_DOMAINS = ["Physical Development","Approaches to Learning","Social and Emotional Development",
  "Language and Literacy","Mathematical Thinking","Scientific Inquiry","Social Studies","Creative Expression Through the Arts"];
@@ -173,21 +174,21 @@ function daSeaLinks(){
   };
 }
 window.DA_WEEK_THEMES = {
-  ones: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
-  twos: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
-  threes: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall", 10: "Personal Hygiene", 11: "Pumpkin Patch"})),
+  ones: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall Leaves & Pumpkins", 11: "Pumpkin Patch"})),
+  twos: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall Leaves & Pumpkins", 11: "Pumpkin Patch"})),
+  threes: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall Leaves & Pumpkins", 10: "Personal Hygiene", 11: "Pumpkin Patch"})),
   vpk: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall", 11: "Pumpkin Patch"})),
-  fours: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"})),
+  fours: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {9: "Fall Leaves & Pumpkins", 11: "Pumpkin Patch"})),
   fives: daWeekThemes(Object.assign({}, DA_SEA_THEMES, {11: "Pumpkin Patch"}))
 };
 /* Week content. sample: [monthId, week n in that month]. plan: a DA_PLANS id.
    With SCHOOL_YEAR_START 2026-08-10, weeks 1–4 are August and weeks 9–12 are October. */
 window.DA_WEEK_LINKS = {
-  ones: Object.assign(daSeaLinks(), {11: {plan: "w11-ones-pumpkin"}}),
-  twos: Object.assign(daSeaLinks(), {11: {plan: "w11-twos-pumpkin"}}),
-  threes: Object.assign(daSeaLinks(), {9: {plan: "room11-3s-fall"}, 10: {plan: "room11-3s-hygiene"}, 11: {plan: "w11-threes-pumpkin"}}),
+  ones: Object.assign(daSeaLinks(), {9: {plan: "w9-ones-fall"}, 11: {plan: "w11-ones-pumpkin"}}),
+  twos: Object.assign(daSeaLinks(), {9: {plan: "w9-twos-fall"}, 11: {plan: "w11-twos-pumpkin"}}),
+  threes: Object.assign(daSeaLinks(), {9: {plan: "w9-threes-fall"}, 10: {plan: "room11-3s-hygiene"}, 11: {plan: "w11-threes-pumpkin"}}),
   vpk: Object.assign(daSeaLinks(), {9: {plan: "room7-vpk-fall"}, 11: {plan: "w11-vpk-pumpkin"}}),
-  fours: Object.assign(daSeaLinks(), {11: {plan: "w11-fours-pumpkin"}}),
+  fours: Object.assign(daSeaLinks(), {9: {plan: "w9-fours-fall"}, 11: {plan: "w11-fours-pumpkin"}}),
   fives: Object.assign(daSeaLinks(), {11: {plan: "w11-fives-pumpkin"}})
 };
 /* Optional text after the calendar month, keyed by month number (10 = October → "October: Fall"). */

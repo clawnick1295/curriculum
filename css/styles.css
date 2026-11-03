@@ -278,3 +278,18 @@ ul.big{padding-left:1.2em}ul.big li{margin:8px 0;font-size:1.15rem}
   .reveal,.reveal.in{opacity:1 !important;transform:none !important;animation:none !important;transition:none !important}
   .pop-host{display:none !important}
 }
+/* Shared card layout + teacher edit mode (da-v13) */
+.act .why{background:#fff4e6;border-left:4px solid #F7931E;border-radius:10px;padding:.5rem .75rem;margin:.5rem 0}
+.act .why b{color:#022A4F}
+.act .photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}
+.editbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;border:2px dashed #F7931E}
+body.editing [data-ed]{outline:2px dashed #F7931E;outline-offset:2px;border-radius:6px;background:#fffaf2;cursor:text;min-width:1em;display:inline-block}
+body.editing p[data-ed],body.editing h2[data-ed],body.editing h3[data-ed]{display:block}
+[data-ed].is-edited{box-shadow:inset 0 -2px 0 rgba(247,147,30,.5)}
+
+/* sticky section tabs */
+.jumptabs{position:sticky;top:0;z-index:20;display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -4px 14px;padding:10px 4px;background:#fff;border-bottom:2px solid #f1e3d0}
+.jumptabs::-webkit-scrollbar{display:none}
+.jumptabs a{flex:0 0 auto;min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;border:2px solid var(--navy);color:var(--navy);font-weight:800;text-decoration:none;white-space:nowrap}
+.jumptabs a.on,.jumptabs a:active{background:var(--orange);border-color:var(--orange)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}

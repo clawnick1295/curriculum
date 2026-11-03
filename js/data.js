@@ -9,7 +9,7 @@ window.DA_CONFIG = {
   donationsSignupUrl: "#signup-coming-soon",
   // Shared teacher edits: paste the Google Apps Script web-app URL here (see tools/edits-apps-script.gs).
   // Leave "" and edits save only on the device that made them.
-  EDIT_API_URL: ""
+  EDIT_API_URL: "https://script.google.com/macros/s/AKfycbzDNYyJvnW5ZOwi7TPpz4XYd-95iuxQ_mnW3ZG5Y0fasKOhz0kTFz_rfHLKdaCIjCUN/exec"
 };
 window.DA_DOMAINS = ["Physical Development","Approaches to Learning","Social and Emotional Development",
  "Language and Literacy","Mathematical Thinking","Scientific Inquiry","Social Studies","Creative Expression Through the Arts"];

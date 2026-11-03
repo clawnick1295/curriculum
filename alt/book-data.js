@@ -19,6 +19,12 @@ window.BOOK=[
   ],
   "steam": {
    "name": "Fall Treasures Exploration",
+   "dev": {
+    "emotional": "Calm, curious play in a safe space.",
+    "physical": "Grasping and picking up builds fine motor control.",
+    "cognitive": "Notices colors, shapes, sizes, and textures.",
+    "language": "Hears and copies words like leaf, bumpy, orange."
+   },
    "why": "Hands-on sensory play builds curiosity, early sorting, and fine motor control.",
    "desc": "Children explore fall leaves, pumpkins, pinecones, and other autumn materials with their senses, noticing colors, shapes, sizes, and textures.",
    "supplies": [
@@ -32,6 +38,11 @@ window.BOOK=[
   "crafts": [
    {
     "name": "Color Mixing Pumpkin Paint",
+    "dev": {
+     "physical": "Squishing strengthens hands and fingers.",
+     "cognitive": "Sees red and yellow turn orange: cause and effect.",
+     "language": "Names colors with a teacher."
+    },
     "why": "Squishing paint in a sealed bag shows color mixing with no mess and strengthens little hands.",
     "desc": "Red and yellow paint go in a sealed Ziploc bag taped over a pumpkin cutout. Children squish it until it turns orange.",
     "supplies": [
@@ -44,6 +55,11 @@ window.BOOK=[
    },
    {
     "name": "Q-Tip Fall Tree Art",
+    "dev": {
+     "emotional": "Pride in making their own tree.",
+     "physical": "Dabbing builds an early pincer grip.",
+     "cognitive": "Explores fall colors."
+    },
     "why": "Dabbing with a Q-tip builds the pincer grasp and introduces fall colors.",
     "desc": "Children dab red, orange, and yellow dots onto a paper tree to make fall leaves.",
     "supplies": [
@@ -55,6 +71,11 @@ window.BOOK=[
    },
    {
     "name": "L is for Leaf",
+    "dev": {
+     "physical": "Placing leaves builds hand-eye control.",
+     "cognitive": "First look at the shape of L.",
+     "language": "Hears the /l/ sound in leaf."
+    },
     "why": "Connects the letter L to a real leaf children can touch, building early letter awareness.",
     "desc": "Children glue natural leaves onto a large letter L.",
     "supplies": [
@@ -68,6 +89,11 @@ window.BOOK=[
   "activities": [
    {
     "name": "Pumpkin Counting",
+    "dev": {
+     "social": "Takes turns with a friend.",
+     "cognitive": "Early number matching and one-to-one.",
+     "language": "Hears number words."
+    },
     "why": "Builds number recognition, counting, and early math skills.",
     "desc": "Children match numbered pumpkins with number cards.",
     "supplies": [
@@ -78,6 +104,11 @@ window.BOOK=[
    },
    {
     "name": "Pumpkin Paper Collage",
+    "dev": {
+     "emotional": "Joy and pride in their own art.",
+     "physical": "Peeling and pressing paper builds fine motor skills.",
+     "cognitive": "Learns the color orange."
+    },
     "why": "Builds fine motor skills, creativity, and color recognition.",
     "desc": "Children glue orange paper pieces onto a pumpkin outline.",
     "supplies": [
@@ -89,6 +120,11 @@ window.BOOK=[
    },
    {
     "name": "Fall Leaf Transfer",
+    "dev": {
+     "emotional": "Patience when a leaf slips.",
+     "physical": "Tongs build hand strength and coordination.",
+     "cognitive": "Focus and simple sorting."
+    },
     "why": "Builds hand-eye coordination, concentration, and fine motor strength.",
     "desc": "Children use tongs to move colorful leaves between baskets.",
     "supplies": [
@@ -100,6 +136,11 @@ window.BOOK=[
    },
    {
     "name": "Fall Leaves Pom-Pom Color Sorting",
+    "dev": {
+     "physical": "Picking up pom-poms builds pincer grasp.",
+     "cognitive": "Matches colors, an early sorting skill.",
+     "language": "Names colors."
+    },
     "why": "Practices color recognition, counting, and fine motor skills.",
     "desc": "Children place colorful pom-poms onto matching paper leaves.",
     "supplies": [
@@ -147,6 +188,12 @@ window.BOOK=[
   ],
   "steam": {
    "name": "Cinnamon Playdough",
+   "dev": {
+    "social": "Shares tools at the table.",
+    "emotional": "Calming, sensory play.",
+    "physical": "Rolling and squeezing strengthen hands.",
+    "language": "Describes smells and shapes."
+   },
    "why": "Smelling and squeezing dough builds hand strength, senses, and new describing words.",
    "desc": "Children poke, squeeze, roll, and stamp shapes into the dough while smelling the autumn spices.",
    "supplies": [
@@ -161,6 +208,11 @@ window.BOOK=[
   "crafts": [
    {
     "name": "L for Lemon",
+    "dev": {
+     "physical": "Gluing and placing builds fine motor control.",
+     "cognitive": "Recognizes the letter L.",
+     "language": "Hears /l/ in lemon."
+    },
     "why": "Links the letter L to a familiar fruit and practices gluing.",
     "desc": "Children glue lemon cut-outs onto a letter L.",
     "supplies": [
@@ -173,6 +225,11 @@ window.BOOK=[
    },
    {
     "name": "Fork Painted Pumpkin",
+    "dev": {
+     "emotional": "Pride in a finished pumpkin.",
+     "physical": "Pressing and printing builds grip and control.",
+     "cognitive": "Explores pattern and texture."
+    },
     "why": "Painting with a fork builds grip, control, and texture awareness.",
     "desc": "Children dip a plastic fork in orange paint and press it to make a pumpkin.",
     "supplies": [
@@ -184,6 +241,11 @@ window.BOOK=[
    },
    {
     "name": "Fall Tree",
+    "dev": {
+     "emotional": "Self-expression through art.",
+     "physical": "Clothespin grip builds finger strength.",
+     "cognitive": "Explores fall colors."
+    },
     "why": "Pinching a clothespin strengthens the fingers used later for writing.",
     "desc": "Children hold a pom-pom with a clothespin and dab fall-colored leaves onto a tree.",
     "supplies": [
@@ -198,6 +260,11 @@ window.BOOK=[
   "activities": [
    {
     "name": "Colorful Ball Toss",
+    "dev": {
+     "social": "Waits for a turn and cheers friends.",
+     "physical": "Throwing builds gross motor and aim.",
+     "cognitive": "Matches colors."
+    },
     "why": "Builds color recognition, hand-eye coordination, gross motor skills, and concentration.",
     "desc": "Children toss small colorful balls at matching colored circles on the wall.",
     "supplies": [
@@ -209,6 +276,10 @@ window.BOOK=[
    },
    {
     "name": "Matching Letters",
+    "dev": {
+     "cognitive": "Visual matching of letter shapes.",
+     "language": "Names letters aloud."
+    },
     "why": "Builds letter recognition, matching, and fine motor skills.",
     "desc": "Children pick a letter leaf, name the letter, and match it to the same letter leaf on the paper.",
     "supplies": [
@@ -219,6 +290,11 @@ window.BOOK=[
    },
    {
     "name": "Leaf Matching",
+    "dev": {
+     "emotional": "Persistence until it fits.",
+     "physical": "Fitting pieces builds hand-eye control.",
+     "cognitive": "Early puzzle and part-whole thinking."
+    },
     "why": "Practices problem solving and visual matching, like a first puzzle.",
     "desc": "Children find the two pieces that make a whole leaf.",
     "supplies": [
@@ -228,6 +304,11 @@ window.BOOK=[
    },
    {
     "name": "Save the Pumpkins",
+    "dev": {
+     "emotional": "Patience and a sense of success.",
+     "physical": "Tweezers build pincer grip for later writing.",
+     "cognitive": "Focus and counting."
+    },
     "why": "Using tweezers builds the pincer grasp, focus, and patience.",
     "desc": "Children use tweezers to pick up pom-poms and place them into a jar.",
     "supplies": [
@@ -277,6 +358,12 @@ window.BOOK=[
   ],
   "steam": {
    "name": "Pinecone Bird Feeders",
+   "dev": {
+    "social": "Caring for living things together.",
+    "physical": "Spreading and rolling build hand control.",
+    "cognitive": "Learns how animals get food in colder weather.",
+    "language": "Talks about birds and seasons."
+   },
    "why": "Teaches caring for animals in colder weather while building hand control with a butter knife.",
    "desc": "Children spread seed butter into the pinecone, roll it in birdseed, and hang it outside for the birds.",
    "supplies": [
@@ -291,6 +378,11 @@ window.BOOK=[
   "crafts": [
    {
     "name": "Decorate Your Pumpkin",
+    "dev": {
+     "emotional": "Creative choices and pride.",
+     "physical": "Crumpling and gluing build hand strength.",
+     "cognitive": "Explores fall colors and shapes."
+    },
     "why": "Crumpling and gluing tissue paper builds hand strength and creativity.",
     "desc": "Children decorate a paper pumpkin with tissue paper.",
     "supplies": [
@@ -302,6 +394,11 @@ window.BOOK=[
    },
    {
     "name": "Leaf Rubbing",
+    "dev": {
+     "physical": "Steady crayon pressure builds control.",
+     "cognitive": "Sees leaf shapes and veins appear.",
+     "language": "Describes what shows up."
+    },
     "why": "Shows leaf shapes and veins up close and builds steady crayon control.",
     "desc": "Children rub a crayon over paper taped on a leaf to reveal its shape.",
     "supplies": [
@@ -314,6 +411,11 @@ window.BOOK=[
    },
    {
     "name": "Beaded Corn",
+    "dev": {
+     "emotional": "Focus and patience.",
+     "physical": "Threading builds fine motor skills.",
+     "cognitive": "Makes color patterns."
+    },
     "why": "Threading beads builds fine motor skills, patterns, and focus.",
     "desc": "Children thread fall-colored beads onto a pipe cleaner to make corn.",
     "supplies": [
@@ -326,6 +428,11 @@ window.BOOK=[
   "activities": [
    {
     "name": "Pumpkin Number Sense",
+    "dev": {
+     "physical": "Stacking cubes builds fine motor control.",
+     "cognitive": "Links a numeral to a quantity.",
+     "language": "Counts aloud."
+    },
     "why": "Connects a numeral to the right amount, building number sense.",
     "desc": "Each pumpkin has a number and children stack that many math cubes.",
     "supplies": [
@@ -336,6 +443,11 @@ window.BOOK=[
    },
    {
     "name": "Sorting Pumpkins by Size",
+    "dev": {
+     "social": "Works with a partner.",
+     "cognitive": "Compares and sorts by size.",
+     "language": "Uses big, small, bigger."
+    },
     "why": "Builds comparing and sorting skills, an early math step.",
     "desc": "Children sort pumpkins into big and small.",
     "supplies": [
@@ -345,6 +457,11 @@ window.BOOK=[
    },
    {
     "name": "Pumpkin Balance",
+    "dev": {
+     "social": "Shares baskets and takes turns.",
+     "physical": "Collecting and carrying build gross motor skills.",
+     "cognitive": "Counts and sorts by color."
+    },
     "why": "Practices counting, sorting, and number sense.",
     "desc": "Children collect fall leaves, count them, and sort them into baskets by color.",
     "supplies": [
@@ -395,6 +512,12 @@ window.BOOK=[
   ],
   "steam": {
    "name": "Ziploc Bag Explosion",
+   "dev": {
+    "social": "Works safely as a group.",
+    "emotional": "Manages excitement while waiting.",
+    "cognitive": "Predicts and observes a chemical reaction.",
+    "language": "Explains what happened and why."
+   },
    "why": "Children predict and observe a real chemical reaction, building early science thinking.",
    "desc": "Baking soda wrapped in a paper towel goes into a Ziploc bag of vinegar. Children seal it, step back, and watch the gas expand the bag until it pops.",
    "supplies": [
@@ -408,6 +531,11 @@ window.BOOK=[
   "crafts": [
    {
     "name": "Pumpkin Name Craft",
+    "dev": {
+     "emotional": "Pride in their own name.",
+     "physical": "Coloring and gluing build fine motor control.",
+     "cognitive": "Recognizes and orders letters in their name."
+    },
     "why": "Children practice recognizing and building their own name.",
     "desc": "Children color a pumpkin template and glue on the letters of their name.",
     "supplies": [
@@ -420,6 +548,11 @@ window.BOOK=[
    },
    {
     "name": "L is for Ladybug",
+    "dev": {
+     "physical": "Q-tip dots build a tripod grip.",
+     "cognitive": "Recognizes the letter L.",
+     "language": "Hears /l/ in ladybug."
+    },
     "why": "Ties the letter L to a fun picture and builds a careful pincer grip.",
     "desc": "Children turn a letter L into a ladybug with Q-tip paint dots.",
     "supplies": [
@@ -431,6 +564,11 @@ window.BOOK=[
    },
    {
     "name": "Yarn Pumpkins",
+    "dev": {
+     "emotional": "Persistence with a tricky material.",
+     "physical": "Cutting yarn builds scissor skills.",
+     "cognitive": "Follows an outline and plans placement."
+    },
     "why": "Cutting and placing yarn builds scissor skills and hand control.",
     "desc": "Children cut yarn and glue it along a pumpkin outline.",
     "supplies": [
@@ -445,6 +583,12 @@ window.BOOK=[
   "activities": [
    {
     "name": "Pumpkin Dough",
+    "dev": {
+     "social": "Shares tools with friends.",
+     "emotional": "Calming sensory play.",
+     "physical": "Squeezing and shaping strengthen hands.",
+     "language": "Describes texture, color, and smell."
+    },
     "why": "Encourages sensory exploration, language, and creativity.",
     "desc": "Children squeeze and shape pumpkin dough and describe its texture, color, and smell.",
     "supplies": [
@@ -456,6 +600,11 @@ window.BOOK=[
    },
    {
     "name": "Spoon Focus",
+    "dev": {
+     "emotional": "Calm persistence to the finish.",
+     "physical": "Balance and steady hand control.",
+     "cognitive": "Focus and self-control."
+    },
     "why": "Builds focus, balance, and steady hands.",
     "desc": "Children carry a spoon full of rice along a cut-out path to the finish line.",
     "supplies": [
@@ -467,6 +616,12 @@ window.BOOK=[
    },
    {
     "name": "Prepositions & Name Writing",
+    "dev": {
+     "social": "Takes turns and names a friend's spot.",
+     "physical": "Moves body into each position.",
+     "cognitive": "Understands spatial ideas.",
+     "language": "Learns inside, under, behind, and more."
+    },
     "group": "Monday",
     "why": "Builds vocabulary, spatial awareness, and communication.",
     "desc": "In two small groups, children use a box and their bodies to show inside, outside, on top, under, in front of, and behind while classmates name the position.",
@@ -477,6 +632,12 @@ window.BOOK=[
    },
    {
     "name": "ABC Match / Teen Number Line-Up",
+    "dev": {
+     "social": "Works in a small group.",
+     "physical": "Hopping builds gross motor skills.",
+     "cognitive": "Matches letters and orders numbers 11-20.",
+     "language": "Names letters and counts aloud."
+    },
     "group": "Wednesday",
     "why": "Builds letter matching and teen-number order through hands-on play.",
     "desc": "Group one matches magnetic uppercase letters to their lowercase partners on a tray. Group two lines up big pumpkin number cards 11 to 20 on the floor, then hops along the line counting aloud.",

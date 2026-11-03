@@ -1,12 +1,14 @@
 (function(){
 const root = document.getElementById("book");
+const AREAS = [["social","Social"],["emotional","Emotional"],["physical","Physical"],["cognitive","Cognitive"],["language","Language"]];
+const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> ${esc(s.dev[k])}</li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const books = window.BOOK || [];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function spread(s, n, label){
   const sup = s.supplies && s.supplies.length ? `<h3>You'll need</h3><ul>${s.supplies.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
   return `<section class="page spread"><div class="ph"><img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy"><span class="tag">${esc(label)}</span></div>
-    <div class="copy"><p class="num">${n}</p><h2>${esc(s.name)}</h2>${s.why ? `<p class="why">${esc(s.why)}</p>` : ""}<p class="what">${esc(s.desc)}</p>${sup}</div></section>`;
+    <div class="copy"><p class="num">${n}</p><h2>${esc(s.name)}</h2>${s.why || s.dev ? `<div class="whybox"><p class="why">Why it matters. ${esc(s.why || "")}</p>${devHtml(s)}</div>` : ""}<p class="what">${esc(s.desc)}</p>${sup}</div></section>`;
 }
 function bookPages(p){
   const pg = [`<section class="page cover"><div><img class="owl" src="owl.svg" alt="Davie Academy"><p class="kick">${esc(p.age)} · Week 9</p><p class="big">${esc(p.letter)}</p><h1>${esc(p.theme)}</h1><p>${esc(p.overview)}</p></div></section>`];

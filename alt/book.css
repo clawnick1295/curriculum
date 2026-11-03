@@ -37,3 +37,10 @@ body{font-family:Georgia,"Iowan Old Style","Palatino",serif;background:#0b1d30;c
 .ctrl a{background:var(--orange);color:var(--navy)}
 @media(max-width:760px){.spread{grid-template-columns:1fr;grid-template-rows:42dvh 1fr}.copy{justify-content:flex-start;padding-bottom:5.5rem}.copy ul{columns:1}.copy .num{font-size:3rem}}
 @media(prefers-reduced-motion:reduce){.pages{scroll-behavior:auto}}
+
+.whybox{margin:0 0 1rem}.whybox .why{margin-bottom:.6rem}
+.copy ul.dev{list-style:none;margin:0 0 0 1.3rem;padding:0;display:grid;gap:.3rem;font-size:1rem;line-height:1.4;columns:1}
+.dev li{display:grid;grid-template-columns:7.5rem 1fr;gap:.6rem}
+.dev b{font:800 .72rem system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding-top:.2rem}
+.d-social b{color:#1F6FB2}.d-emotional b{color:#C2185B}.d-physical b{color:#2E7D32}.d-cognitive b{color:#6A1B9A}.d-language b{color:#B85C00}
+@media(max-width:760px){.dev li{grid-template-columns:6.2rem 1fr}}

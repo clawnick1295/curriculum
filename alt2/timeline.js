@@ -1,5 +1,7 @@
 (function(){
 const $ = s => document.querySelector(s);
+const AREAS = [["social","Social"],["emotional","Emotional"],["physical","Physical"],["cognitive","Cognitive"],["language","Language"]];
+const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> ${esc(s.dev[k])}</li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const plans = window.FALL || [];
 function stops(p){
@@ -13,7 +15,7 @@ function stops(p){
 function stop(s, i){
   const sup = s.supplies && s.supplies.length ? `<ul class="chips">${s.supplies.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
   return `<section class="stop"><div class="dot">${i + 1}</div><div class="lane">${esc(s.lane)}</div>
-    <div class="box${s.img ? "" : " noimg"}"><div class="txt"><h2>${esc(s.name)}</h2>${s.why ? `<p class="why">${esc(s.why)}</p>` : ""}<p class="what">${esc(s.desc || s.what)}</p>${sup}</div>${s.img ? `<img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy">` : ""}</div></section>`;
+    <div class="box${s.img ? "" : " noimg"}"><div class="txt"><h2>${esc(s.name)}</h2>${s.why || s.dev ? `<div class="whybox"><p class="why">Why it matters: ${esc(s.why || "")}</p>${devHtml(s)}</div>` : ""}<p class="what">${esc(s.desc || s.what)}</p>${sup}</div>${s.img ? `<img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy">` : ""}</div></section>`;
 }
 function render(){
   const id = location.hash.replace(/^#\/?/, "");

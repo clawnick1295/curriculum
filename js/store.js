@@ -98,6 +98,7 @@ DA.data = {
       video: extra.video || "",
       image: extra.image || "",
       why: extra.why || "",
+      dev: extra.dev || null,
       imageNote: extra.imageNote || ""
     };
   },
@@ -174,9 +175,9 @@ DA.data = {
     const activities = [];
     const slotOf = (window.DA_PLAN_SLOTS && DA_PLAN_SLOTS[plan.id] && DA_PLAN_SLOTS[plan.id].activities) || [];
     if (plan.circle) activities.push(this.act("circle", "", "Circle time", plan.circle, []));
-    if (plan.steam) activities.push(this.act("steam", "", plan.steam.name, plan.steam.desc, plan.steam.supplies || [], {image: plan.steam.img, standards: plan.steam.standards, why: plan.steam.why}));
-    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, c.desc || "", c.supplies || [], {image: c.img, standards: c.standards, why: c.why})));
-    (plan.activities || []).forEach((a, i) => activities.push(this.act(slotOf[i] || "activity", "", (a.group ? a.group + ": " : "") + a.name, a.desc, a.supplies || [], {image: a.img, imageNote: a.imgNote, standards: a.standards, why: a.why})));
+    if (plan.steam) activities.push(this.act("steam", "", plan.steam.name, plan.steam.desc, plan.steam.supplies || [], {image: plan.steam.img, standards: plan.steam.standards, why: plan.steam.why, dev: plan.steam.dev}));
+    (plan.crafts || []).forEach(c => activities.push(this.act("art", "", c.name, c.desc || "", c.supplies || [], {image: c.img, standards: c.standards, why: c.why, dev: c.dev})));
+    (plan.activities || []).forEach((a, i) => activities.push(this.act(slotOf[i] || "activity", "", (a.group ? a.group + ": " : "") + a.name, a.desc, a.supplies || [], {image: a.img, imageNote: a.imgNote, standards: a.standards, why: a.why, dev: a.dev})));
     if (plan.days) {
       Object.keys(plan.days).forEach(day => {
         (plan.days[day] || []).forEach(text => activities.push(this.act("circle", day, text, "", [])));

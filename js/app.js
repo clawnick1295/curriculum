@@ -1,6 +1,7 @@
 /* Router. Age groups open a 52-week school year. Each week uses one template. */
 (function(){
 const D = DA.data, U = DA.ui, $ = s => document.querySelector(s);
+const DEV_AREAS = [["social", "Social"], ["emotional", "Emotional"], ["physical", "Physical"], ["cognitive", "Cognitive"], ["language", "Language"]];
 const SLOT_LABEL = {circle:"Circle Time", steam:"STEAM", centers:"Centers", art:"Arts & Crafts", activity:"Activities", movement:"Movement", outdoor:"Outdoor", book:"Book"};
 const SLOT_ORDER = ["circle","steam","centers","art","activity","movement","outdoor"];
 const SLOT_CH = {circle:"circle", steam:"science", activity:"math", centers:"sensory", art:"art", movement:"movement", outdoor:"movement", book:"story"};
@@ -91,7 +92,8 @@ function activityCard(model, act){
   const mats = act.materials && act.materials.length ? `<h4>Supplies</h4><ul class="checklist">${act.materials.map((m, i) => `<li><label><input type="checkbox"> <span class="sup" ${ed("sup" + i)}>${U.esc(m)}</span></label></li>`).join("")}</ul>` : "";
   const pic = act.image ? U.photo(act.image, act.title, act.imageNote) : "";
   const vid = act.video ? U.video(act.video) : "";
-  const why = act.why ? `<p class="why"><b>Why it matters:</b> <span ${ed("why")}>${U.esc(act.why)}</span></p>` : "";
+  const devs = act.dev ? DEV_AREAS.filter(([k]) => act.dev[k]).map(([k, l]) => `<li class="dev dev-${k}"><span class="devtag">${l}</span> <span ${ed("dev-" + k)}>${U.esc(act.dev[k])}</span></li>`).join("") : "";
+  const why = act.why || devs ? `<div class="why"><p><b>Why it matters:</b> <span ${ed("why")}>${U.esc(act.why || "")}</span></p>${devs ? `<ul class="devlist">${devs}</ul>` : ""}</div>` : "";
   const steps = act.steps ? `<p class="steps" ${ed("steps")}>${U.esc(act.steps)}</p>` : "";
   return `<article class="card act act-${act.slot}">
     <header class="hh">${U.ch(SLOT_CH[act.slot] || "circle", "hd")}<div><span class="tag">${SLOT_LABEL[act.slot] || ""}</span><h3 ${ed("title")}>${U.esc(act.title)}</h3></div></header>

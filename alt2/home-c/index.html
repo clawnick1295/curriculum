@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Davie Academy · Curriculum</title><meta name="robots" content="noindex"><link rel="icon" href="../owl.svg"><link rel="stylesheet" href="../home.css"><style>
+.split{display:grid;grid-template-columns:260px 1fr;gap:1.2rem;max-width:1100px;margin:0 auto}
+.side{display:grid;gap:.5rem;align-content:start}
+.age{display:flex;align-items:center;gap:.6rem;background:#fff;border-radius:16px;padding:.5rem .8rem;font-weight:800;color:var(--navy);border:3px solid transparent}
+.age img{height:48px}.age.on{border-color:var(--orange)}.age small{display:block;color:#567;font-weight:700}
+.abc{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1.2rem}.abc button{width:40px;height:40px;border-radius:12px;border:0;font:inherit;font-weight:900;background:#e6ebf0;color:#9aa}
+.abc button.has{background:var(--navy);color:var(--orange);cursor:pointer}.abc button.sel{background:var(--orange);color:var(--navy)}
+.mh{color:var(--navy);margin:1rem 0 .5rem}.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.6rem}
+.ml{font-weight:900;color:var(--orange);font-size:1.3rem}
+@media(max-width:760px){.split{grid-template-columns:1fr}.side{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto}}
+</style></head><body><header class="tb"><a href="./"><img src="../owl.svg" alt="Davie Academy"></a><span>Davie Academy · Curriculum</span></header><main><div class="split"><aside class="side" id="side"></aside><section id="app"></section></div></main>
+<script src="../home-data.js"></script><script>
+const H=HOME;let L="";
+function r(){const id=location.hash.slice(2)||"ones",a=H.ages.find(x=>x.id==id)||H.ages[0];
+document.getElementById("side").innerHTML=H.ages.map(x=>(x.soon?'<div class="age soon">':'<a class="age '+(x==a?"on":"")+'" href="#/'+x.id+'">')+'<img src="'+x.char+'" alt=""><span>'+x.name+'<small>'+(x.soon?"Coming soon":x.sub)+'</small></span>'+(x.soon?"</div>":"</a>")).join("");
+const all=H.months.flatMap(m=>m.themes),has=new Set(all.map(t=>t.letter[0]));
+let h='<div class="kick">Option C · '+a.name+'</div><h1>Browse by letter or month</h1><div class="abc">'+[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].map(c=>'<button class="'+(has.has(c)?"has":"")+(L==c?" sel":"")+'" '+(has.has(c)?'onclick="L=L==\''+c+'\'?\'\':\''+c+'\';r()"':"disabled")+'>'+c+'</button>').join("")+'</div>';
+H.months.forEach(m=>{const ts=m.themes.filter(t=>!L||t.letter[0]==L);if(ts.length)h+='<h2 class="mh">'+m.title+'</h2><div class="list">'+ts.map(t=>'<a class="theme" href="'+H.link(a.id,t)+'"><span class="ml">'+t.letter+'</span><span>'+t.icon+' '+t.theme+'<small>Week '+t.w+'</small></span><span class="go">›</span></a>').join("")+'</div>'});
+document.getElementById("app").innerHTML=h}
+addEventListener("hashchange",r);r();
+</script></body></html>

@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Davie Academy · Curriculum</title><meta name="robots" content="noindex"><link rel="icon" href="../owl.svg"><link rel="stylesheet" href="../home.css"><style>
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}@media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}.tile .top{height:120px}.tile .top img{height:110px}}
+.tile{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 6px 20px rgba(2,42,79,.1);position:relative;padding-bottom:.8rem}
+.tile .top{height:150px;display:grid;place-items:center}.tile .top img{height:140px;filter:drop-shadow(0 6px 6px rgba(0,0,0,.2))}
+.tile b{display:block;font-size:1.4rem;color:var(--navy);padding:.6rem 1rem 0}.tile small{padding:0 1rem;color:#567;font-weight:700}
+.mo{position:relative;padding-left:40px;margin-bottom:1.6rem}.mo:before{content:"";position:absolute;left:14px;top:8px;bottom:0;width:6px;border-radius:6px;background:repeating-linear-gradient(var(--orange) 0 14px,transparent 14px 22px)}
+.mo h2{margin:0 0 .6rem;color:var(--navy)}.mo h2:before{content:"";position:absolute;left:4px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 3px var(--orange)}
+.list{display:grid;gap:.6rem}.sb{background:var(--navy);color:var(--orange);border-radius:10px;padding:.15rem .5rem;font-weight:900;font-size:.9rem}
+.back{display:inline-block;margin-bottom:.6rem;font-weight:800;color:var(--orange)}
+</style></head><body><header class="tb"><a href="./"><img src="../owl.svg" alt="Davie Academy"></a><span>Davie Academy · Curriculum</span></header><main><div class="wrap" id="app"></div></main>
+<script src="../home-data.js"></script><script>
+const H=HOME,app=document.getElementById("app");
+function r(){const id=location.hash.slice(2),a=H.ages.find(x=>x.id==id&&!x.soon);
+if(!a){app.innerHTML='<div class="kick">Option A · Pick a classroom</div><h1>Which class are you?</h1><div class="tiles">'+H.ages.map(x=>(x.soon?'<div class="tile soon">':'<a class="tile" href="#/'+x.id+'">')+'<div class="top" style="background:'+x.color+'33"><img src="'+x.char+'" alt=""></div><b>'+x.name+'</b><small>'+x.sub+'</small> '+(x.soon?'<span class="badge">Coming soon</span></div>':'</a>')).join("")+'</div>';}
+else{app.innerHTML='<a class="back" href="#/">‹ All classes</a><div class="kick">'+a.sub+'</div><h1>'+a.name+' · Themes</h1>'+H.months.map(m=>'<section class="mo"><h2>'+m.title+'</h2><div class="list">'+m.themes.map(t=>'<a class="theme" href="'+H.link(a.id,t)+'"><span class="ic">'+t.icon+'</span><span>'+t.theme+'<small>Week '+t.w+'</small></span><span class="sb">'+t.letter+'</span><span class="go" style="margin-left:.3rem">›</span></a>').join("")+'</div></section>').join("");}
+scrollTo(0,0)}addEventListener("hashchange",r);r();
+</script></body></html>

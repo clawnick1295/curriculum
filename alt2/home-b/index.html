@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Davie Academy · Curriculum</title><meta name="robots" content="noindex"><link rel="icon" href="../owl.svg"><link rel="stylesheet" href="../home.css"><style>
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding:.3rem 1.2rem 1rem}
+.tabs a,.tabs span{flex:0 0 auto;color:#fff;border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:.55rem 1.1rem;font-weight:800}
+.tabs a.on{background:var(--orange);border-color:var(--orange);color:var(--navy)}.tabs span{opacity:.5}
+.intro{display:flex;align-items:center;gap:1rem}.intro img{height:110px}
+details{background:#fff;border-radius:22px;margin-bottom:1rem;box-shadow:0 6px 20px rgba(2,42,79,.08);overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:1rem 1.2rem;font-weight:900;color:var(--navy);font-size:1.2rem;display:flex;justify-content:space-between}
+summary:after{content:"＋";color:var(--orange)}details[open] summary:after{content:"－"}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.9rem;padding:0 1.2rem 1.2rem}
+.card{background:var(--cream);border-radius:20px;padding:1rem;text-align:center;color:var(--navy);font-weight:800}
+.big{width:92px;height:92px;margin:0 auto .6rem;border-radius:26px;background:var(--navy);color:var(--orange);display:grid;place-items:center;font-size:2.6rem;font-weight:900;box-shadow:0 7px 0 #01182e}
+.card small{display:block;color:#567}
+</style></head><body><header class="tb"><a href="./"><img src="../owl.svg" alt="Davie Academy"></a><span>Davie Academy · Curriculum</span></header><nav class="tabs" id="tabs"></nav><main><div class="wrap" id="app"></div></main>
+<script src="../home-data.js"></script><script>
+const H=HOME;
+function r(){const id=location.hash.slice(2)||"ones",a=H.ages.find(x=>x.id==id)||H.ages[0];
+document.getElementById("tabs").innerHTML=H.ages.map(x=>x.soon?'<span>'+x.name+' · soon</span>':'<a href="#/'+x.id+'" class="'+(x==a?"on":"")+'">'+x.name+'</a>').join("");
+document.getElementById("app").innerHTML='<div class="intro"><img src="'+a.char+'" alt=""><div><div class="kick">Option B · '+a.sub+'</div><h1>'+a.name+' themes by month</h1></div></div>'+H.months.map(m=>'<details open><summary>'+m.title+' · '+m.themes.length+' week'+(m.themes.length>1?"s":"")+'</summary><div class="grid">'+m.themes.map(t=>'<a class="card" href="'+H.link(a.id,t)+'"><div class="big">'+t.letter+'</div>'+t.icon+' '+t.theme+'<small>Week '+t.w+'</small></a>').join("")+'</div></details>').join("")}
+addEventListener("hashchange",r);r();
+</script></body></html>

@@ -8,14 +8,29 @@
 .mh{color:var(--navy);margin:1rem 0 .5rem}.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.6rem}
 .ml{font-weight:900;color:var(--orange);font-size:1.3rem}
 @media(max-width:760px){.split{grid-template-columns:1fr}.side{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto}}
+.search{display:flex;gap:.5rem;align-items:center;margin:0 0 1rem;flex-wrap:wrap}
+.search input[type=search]{flex:1 1 260px;font:inherit;font-size:1.1rem;padding:.8rem 1rem .8rem 2.6rem;border-radius:16px;border:3px solid var(--navy);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23F7931E' stroke-width='3'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") no-repeat .8rem center}
+.search input[type=search]:focus{outline:none;border-color:var(--orange)}.search label{white-space:nowrap;font-weight:800;color:var(--navy);display:flex;gap:.35rem;align-items:center}
+.hit{display:block;font-size:.8rem;color:#B85C00;font-weight:700;margin-top:.15rem}.empty{background:#fff;border-radius:18px;padding:1.2rem;text-align:center;color:#567;font-weight:700}
 </style></head><body><header class="tb"><a href="./"><img src="../owl.svg" alt="Davie Academy"></a><span>Davie Academy · Curriculum</span></header><main><div class="split"><aside class="side" id="side"></aside><section id="app"></section></div></main>
-<script src="../home-data.js"></script><script>
-const H=HOME;let L="";
+<script src="../../js/data.js"></script><script src="../plans.js"></script><script src="../home-data.js"></script><script>
+const H=HOME;let L="",Q="",ALL=false;
+function texts(o,out){if(Array.isArray(o)){o.forEach(x=>typeof x=="string"?out.push(x):texts(x,out))}else if(o&&typeof o=="object"){for(const k of ["title","name"])if(typeof o[k]=="string")out.push(o[k]);for(const k of ["materials","supplies"])if(Array.isArray(o[k]))o[k].forEach(x=>out.push(String(x)));for(const k in o)if(o[k]&&typeof o[k]=="object"&&!["materials","supplies"].includes(k))texts(o[k],out)}return out}
+function idx(age,t){if(t._i&&t._i[age])return t._i[age];t._i=t._i||{};let src;
+ if(t.fall)src=(window.FALL||[]).find(p=>p.ageId==age);else{const wk=((window.DA_MONTHS||[])[0]||{weeks:[]}).weeks.find(w=>w.n==t.w);src=wk}
+ return t._i[age]=texts(src||{},[]).filter((x,i,a)=>x&&a.indexOf(x)==i)}
+const norm=x=>x.toLowerCase();
+function match(age,t){if(!Q)return {ok:true};const q=norm(Q).replace(/^week\s*/,"");
+ if(norm(t.theme).includes(norm(Q)))return {ok:true};if(norm(t.letter).includes(q)&&q.length<=2)return {ok:true,why:"Letter "+t.letter};
+ if(String(t.w)==q)return {ok:true,why:"Week "+t.w};const h=idx(age,t).find(x=>norm(x).includes(norm(Q)));return h?{ok:true,why:"Includes: "+h}:{ok:false}}
+function card(a,t,m){return '<a class="theme" href="'+H.link(a.id,t)+'"><span class="ml">'+t.letter+'</span><span>'+t.icon+' '+t.theme+'<small>'+(ALL?a.name+' · ':'')+'Week '+t.w+'</small>'+(m&&m.why?'<span class="hit">'+m.why.replace(/[<>&]/g,"")+'</span>':'')+'</span><span class="go">›</span></a>'}
+function results(){const id=location.hash.slice(2)||"ones",a=H.ages.find(x=>x.id==id)||H.ages[0],ages=ALL?H.ages:[a];let h="",n=0;
+ H.months.forEach(m=>{let c="";ages.forEach(ag=>m.themes.forEach(t=>{if(L&&t.letter[0]!=L)return;const r=match(ag.id,t);if(r.ok){n++;c+=card(ag,t,r)}}));if(c)h+='<h2 class="mh">'+m.title+'</h2><div class="list">'+c+'</div>'});
+ document.getElementById("res").innerHTML=n?h:'<div class="empty">No themes match “'+Q.replace(/[<>&]/g,"")+'”'+(ALL?'':' for '+a.name)+'. Try another word'+(ALL?'':' or turn on All ages')+'.</div>'}
 function r(){const id=location.hash.slice(2)||"ones",a=H.ages.find(x=>x.id==id)||H.ages[0];
-document.getElementById("side").innerHTML=H.ages.map(x=>(x.soon?'<div class="age soon">':'<a class="age '+(x==a?"on":"")+'" href="#/'+x.id+'">')+'<img src="'+x.char+'" alt=""><span>'+x.name+'<small>'+(x.soon?"Coming soon":x.sub)+'</small></span>'+(x.soon?"</div>":"</a>")).join("");
-const all=H.months.flatMap(m=>m.themes),has=new Set(all.map(t=>t.letter[0]));
-let h='<div class="kick">Option C · '+a.name+'</div><h1>Browse by letter or month</h1><div class="abc">'+[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].map(c=>'<button class="'+(has.has(c)?"has":"")+(L==c?" sel":"")+'" '+(has.has(c)?'onclick="L=L==\''+c+'\'?\'\':\''+c+'\';r()"':"disabled")+'>'+c+'</button>').join("")+'</div>';
-H.months.forEach(m=>{const ts=m.themes.filter(t=>!L||t.letter[0]==L);if(ts.length)h+='<h2 class="mh">'+m.title+'</h2><div class="list">'+ts.map(t=>'<a class="theme" href="'+H.link(a.id,t)+'"><span class="ml">'+t.letter+'</span><span>'+t.icon+' '+t.theme+'<small>Week '+t.w+'</small></span><span class="go">›</span></a>').join("")+'</div>'});
-document.getElementById("app").innerHTML=h}
+document.getElementById("side").innerHTML=H.ages.map(x=>'<a class="age '+(x==a?"on":"")+'" href="#/'+x.id+'"><img src="'+x.char+'" alt=""><span>'+x.name+'<small>'+x.sub+'</small></span></a>').join("");
+const has=new Set(H.months.flatMap(m=>m.themes).map(t=>t.letter[0]));
+document.getElementById("app").innerHTML='<div class="kick">Option C · '+a.name+'</div><h1>Find a theme</h1><div class="search"><input id="q" type="search" placeholder="Search themes, letters, weeks, activities, supplies…" aria-label="Search" value="'+Q.replace(/"/g,"&quot;")+'"><label><input id="all" type="checkbox" '+(ALL?"checked":"")+'> All ages</label></div><div class="abc">'+[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].map(c=>'<button class="'+(has.has(c)?"has":"")+(L==c?" sel":"")+'" '+(has.has(c)?'onclick="L=L==\''+c+'\'?\'\':\''+c+'\';r()"':"disabled")+'>'+c+'</button>').join("")+'</div><div id="res"></div>';
+const q=document.getElementById("q");q.oninput=()=>{Q=q.value.trim();results()};document.getElementById("all").onchange=e=>{ALL=e.target.checked;results()};results()}
 addEventListener("hashchange",r);r();
 </script></body></html>

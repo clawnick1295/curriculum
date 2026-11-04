@@ -1,21 +1,24 @@
 (function(){
 const $ = s => document.querySelector(s);
 const AREAS = [["social","Social"],["emotional","Emotional"],["physical","Physical"],["cognitive","Cognitive"],["language","Language"]];
-const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> ${esc(s.dev[k])}</li>`).join("")}</ul>` : "";
+const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> <span data-ed="${s.id}|dev-${k}">${esc(s.dev[k])}</span></li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const plans = window.FALL || [];
 function stops(p){
-  const out = [{lane:"Morning circle", name:"Circle time", what:p.circle}];
-  if (p.letterPlan) out.push({lane:"Letter of the week", name:"Letter " + p.letter, what:p.letterPlan});
-  if (p.steam) out.push(Object.assign({lane:"STEAM"}, p.steam));
-  p.crafts.forEach(c => out.push(Object.assign({lane:"Arts & crafts"}, c)));
-  p.activities.forEach(a => out.push(Object.assign({lane:a.group ? "Activity · " + a.group : "Activity"}, a)));
+  const out = [{id:"circle", lane:"Morning circle", name:"Circle time", what:p.circle}];
+  if (p.letterPlan) out.push({id:"letter", lane:"Letter of the week", name:"Letter " + p.letter, what:p.letterPlan});
+  if (p.steam) out.push(Object.assign({id:"steam", lane:"STEAM"}, p.steam));
+  p.crafts.forEach((c, i) => out.push(Object.assign({id:"craft-" + i, lane:"Arts & crafts"}, c)));
+  p.activities.forEach((a, i) => out.push(Object.assign({id:"act-" + i, lane:a.group ? "Activity · " + a.group : "Activity"}, a)));
   return out;
 }
 function stop(s, i){
-  const sup = s.supplies && s.supplies.length ? `<ul class="chips">${s.supplies.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+  const sup = s.supplies && s.supplies.length ? `<ul class="chips">${s.supplies.map((x, n) => `<li><span data-ed="${s.id}|sup-${n}">${esc(x)}</span></li>`).join("")}</ul>` : "";
+  const why = s.why ? `<p class="why">Why it matters: <span data-ed="${s.id}|why">${esc(s.why)}</span></p>` : "";
+  const notes = devHtml(s);
+  const whybox = (s.why || s.dev) ? `<div class="whybox">${why}${notes}</div>` : "";
   return `<section class="stop"><div class="dot">${i + 1}</div><div class="lane">${esc(s.lane)}</div>
-    <div class="box${s.img ? "" : " noimg"}"><div class="txt"><h2>${esc(s.name)}</h2>${s.why || s.dev ? `<div class="whybox"><p class="why">Why it matters: ${esc(s.why || "")}</p>${devHtml(s)}</div>` : ""}<p class="what">${esc(s.desc || s.what)}</p>${sup}</div>${s.img ? `<img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy">` : ""}</div></section>`;
+    <div class="box${s.img ? "" : " noimg"}"><div class="txt"><h2 data-ed="${s.id}|name">${esc(s.name)}</h2>${whybox}<p class="what" data-ed="${s.id}|what">${esc(s.desc || s.what || "")}</p>${sup}</div>${s.img ? `<img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy">` : ""}</div></section>`;
 }
 function render(){
   const id = location.hash.replace(/^#\/?/, "");
@@ -29,6 +32,7 @@ function render(){
       <div class="tl">${stops(p).map(stop).join("")}</div>`;
   }
   scrollTo(0, 0);
+  if (window.ALT2Edit) ALT2Edit.mount(p ? p.ageId : "");
 }
 addEventListener("hashchange", render); render();
 })();

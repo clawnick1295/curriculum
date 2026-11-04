@@ -2,6 +2,15 @@
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;font-family:ui-rounded,"SF Pro Rounded","Nunito","Segoe UI",system-ui,sans-serif;background:var(--navy);color:var(--ink)}
 .tb{display:flex;align-items:center;gap:.8rem;padding:.8rem 1.2rem;color:#fff;font-weight:800;letter-spacing:.02em}
+.tb span{min-width:0}
+.edit-toggle{margin-left:auto;flex:0 0 auto;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:.45rem .9rem;font:inherit;font-weight:800;cursor:pointer}
+body.editing .edit-toggle{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.edit-bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin:0 1rem .6rem;background:#fff;color:var(--navy);border:2px dashed var(--orange);border-radius:16px;padding:.7rem 1rem}
+.edit-bar[hidden]{display:none}
+.edit-bar p{margin:0;line-height:1.4}
+.edit-bar button{font:inherit;font-weight:800;border-radius:999px;border:2px solid var(--navy);background:#fff;color:var(--navy);padding:.45rem .85rem;cursor:pointer}
+body.editing [data-ed]{outline:2px dashed var(--orange);outline-offset:2px;border-radius:6px}
+[data-ed].is-edited{box-shadow:inset 0 -2px 0 rgba(247,147,30,.55)}
 .logo img{height:44px;background:#fff;border-radius:12px;padding:4px}
 .ages{display:flex;gap:.5rem;overflow-x:auto;padding:.3rem 1.2rem 1rem;scrollbar-width:none}
 .ages a{flex:0 0 auto;text-decoration:none;color:#fff;border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:.55rem 1.1rem;font-weight:800}

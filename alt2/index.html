@@ -1,6 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Davie Academy · Our Day Timeline</title><meta name="robots" content="noindex"><link rel="icon" href="owl.svg"><link rel="stylesheet" href="timeline.css"></head>
-<body><header class="tb"><a class="logo" href="#/"><img src="owl.svg" alt="Davie Academy"></a><span>Our Day · Fall Timeline</span></header>
-<nav class="ages" id="ages"></nav><main id="app"></main>
+<body><header class="tb"><a class="logo" href="#/"><img src="owl.svg" alt="Davie Academy"></a><span>Our Day · Fall Timeline</span><button type="button" id="edit-toggle" class="edit-toggle" hidden>✏️ Edit</button></header>
+<nav class="ages" id="ages"></nav>
+<div id="edit-bar" class="edit-bar" hidden><p><b>Editing.</b> Tap any text to change it. Changes save when you tap away. <span id="edit-status"></span></p><button type="button" id="edit-reset">↺ Reset this classroom</button></div>
+<main id="app"></main>
 <footer class="ft">Davie Academy · Week 9 · Each age group follows its own plan.</footer>
-<script src="plans.js"></script><script src="timeline.js"></script></body></html>
+<script src="../js/data.js"></script><script src="plans.js"></script><script src="edits.js"></script><script src="timeline.js"></script>
+<script>if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('../sw.js',{scope:'../'}).catch(()=>{});</script></body></html>

@@ -9,10 +9,6 @@ const AGES = [
   {id:"fours", name:"Fours", sub:"4-year-olds", color:"#29b6f6", char:"panther_literacy.webp"}
 ];
 const THEMES = [
-  {slug:"manatee-mornings", month:"Under the Sea in South Florida", theme:"Manatee Mornings", letter:"Mm", icon:"🐋", week:1, kind:"sea"},
-  {slug:"sea-turtle-beach", month:"Under the Sea in South Florida", theme:"Sea Turtle Beach", letter:"Tt", icon:"🐢", week:2, kind:"sea"},
-  {slug:"coral-reef-colors", month:"Under the Sea in South Florida", theme:"Coral Reef Colors", letter:"Ff", icon:"🐠", week:3, kind:"sea"},
-  {slug:"beach-buddies", month:"Under the Sea in South Florida", theme:"Beach Buddies & Hermit Crabs", letter:"Cc", icon:"🦀", week:4, kind:"sea"},
   {slug:"fall-leaves-pumpkins", month:"Fall", theme:"Fall Leaves & Pumpkins", letter:"Ll", icon:"🍂", week:9, kind:"fall"}
 ];
 const OLD_ROOT = /^(director|tour|grows|readiness|week|parent|today|plan|pplan|fridge)(\/|$)/;

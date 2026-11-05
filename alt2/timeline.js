@@ -189,7 +189,7 @@ function timelinePage(ageId, theme){
   if (!a || !p) return themesPage(ageId);
   setAges(AGES.map(x => `<a href="${themeHref(x.id, theme)}" class="${x.id === ageId ? "on" : ""}">${esc(x.name)}</a>`).join(""));
   $("#app").innerHTML = `<p class="crumb"><a href="#/">Home</a> › <a href="${themesHref(ageId)}">${esc(a.name)}</a> › ${esc(p.theme)}</p>
-    <div class="hero"><div class="letters" aria-label="Letter of the week ${esc(letterPair(p.letter).text)}">${letterPair(p.letter).html}</div><div><small>${esc(p.age)}</small><h1>${esc(p.theme)}</h1><p>${esc(p.overview)}</p></div></div>
+    <div class="hero homehero"><div><small>${esc(p.age)}</small><h1>${esc(p.theme)}</h1><p>${esc(p.overview)}</p></div></div>
     <div class="tl">${stops(p).map(stop).join("")}</div>`;
 }
 

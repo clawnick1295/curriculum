@@ -43,3 +43,25 @@ main{background:var(--cream);border-radius:28px 28px 0 0;min-height:70vh;padding
 .dev{list-style:none;margin:0;padding:0;display:grid;gap:.25rem;font-size:.92rem;line-height:1.35}
 .dev li{display:flex;gap:.5rem;align-items:baseline}.dev b{flex:0 0 84px;text-align:center;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#fff;border-radius:999px;padding:.12rem .3rem}
 .d-social b{background:#1F6FB2}.d-emotional b{background:#C2185B}.d-physical b{background:#2E7D32}.d-cognitive b{background:#6A1B9A}.d-language b{background:#B85C00}
+
+#ages:empty{display:none}
+.kick{color:var(--orange);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin:0 0 .25rem}
+.homehero{grid-template-columns:1fr}
+.crumb{max-width:980px;margin:0 auto 1rem;font-weight:800;color:var(--navy)}
+.crumb a{color:var(--orange);text-decoration:none}
+.agehead{max-width:980px;margin:0 auto 1.4rem;display:flex;gap:1rem;align-items:center}
+.agehead img{height:92px;width:92px;object-fit:contain;filter:drop-shadow(0 6px 6px rgba(0,0,0,.15))}
+.agehead h1{margin:.1rem 0 .25rem;color:var(--navy);font-size:clamp(1.6rem,4vw,2.3rem)}
+.agehead p{margin:0;line-height:1.4}
+.monthblock{max-width:980px;margin:0 auto 1.5rem}
+.monthblock h2{margin:0 0 .7rem;color:var(--navy);font-size:1.25rem}
+.themelist{display:grid;gap:.65rem}
+.themerow{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:.8rem;background:#fff;border-radius:18px;padding:.95rem 1rem;text-decoration:none;color:var(--navy);box-shadow:0 4px 14px rgba(2,42,79,.08);border-left:10px solid var(--c,var(--orange));font-weight:800}
+.themerow .ic{font-size:1.7rem}
+.themerow .tt{font-size:1.2rem;line-height:1.25;overflow-wrap:anywhere}
+.themerow .sb{background:var(--navy);color:var(--orange);border-radius:12px;padding:.3rem .7rem;font-weight:900;font-size:1.05rem}
+.themerow .go{color:var(--orange);font-size:1.5rem;font-weight:900}
+.pick a{border-top:8px solid var(--c,var(--orange))}
+.pick a b{padding:.75rem 1rem .15rem}
+.pick a .sub{display:block;padding:0 1rem .85rem;color:#567;font-weight:700;font-size:.92rem}
+@media(max-width:700px){.agehead{align-items:flex-start}.agehead img{height:72px;width:72px}.themerow .tt{font-size:1.12rem}}

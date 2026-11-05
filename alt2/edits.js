@@ -6,7 +6,7 @@ const LS = "da-edits-alt2-v1", PASS = "da-edit-pass", QUEUE = "da-edits-alt2-que
 const url = () => ((window.DA_CONFIG && DA_CONFIG.EDIT_API_URL) || "").trim();
 const readJSON = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } };
 const writeJSON = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
-let remoteLoaded = false, remoteLoading = null, editing = false, cur = "", bound = false;
+let remoteLoaded = false, remoteLoading = null, editing = false, curAge = "", curWeek = 9, bound = false;
 
 function all(){ return readJSON(LS, {}); }
 function setLocal(key, value){
@@ -58,7 +58,7 @@ function save(key, value){
   status("Saving…");
   flushQueue().then(() => { if (!Object.keys(readJSON(QUEUE, {})).length) status("Saved for everyone ✓"); });
 }
-function prefix(){ return cur ? "alt2:" + cur + ":w9:" : ""; }
+function prefix(){ return curAge ? "alt2:" + curAge + ":w" + curWeek + ":" : ""; }
 function nodes(){ return Array.from(document.querySelectorAll("#app [data-ed]")); }
 function apply(){
   const m = all(), p = prefix();
@@ -94,7 +94,7 @@ function askPass(){
   return true;
 }
 function resetRoom(){
-  if (!cur) return;
+  if (!curAge) return;
   if (!confirm("Reset this classroom back to the original plan? This removes its edits" + (url() ? " for everyone." : " on this device."))) return;
   const m = all(), p = prefix();
   Object.keys(m).filter(k => k.startsWith(p)).forEach(k => save(k, null));
@@ -107,7 +107,7 @@ function bind(){
   const toggle = document.getElementById("edit-toggle");
   const reset = document.getElementById("edit-reset");
   if (toggle) toggle.onclick = () => {
-    if (!cur) return;
+    if (!curAge) return;
     if (!editing && !askPass()) return;
     setEditing(!editing);
   };
@@ -115,7 +115,7 @@ function bind(){
   if (app) {
     app.addEventListener("focusout", e => {
       const el = e.target.closest && e.target.closest("[data-ed]");
-      if (!el || !editing || !cur) return;
+      if (!el || !editing || !curAge) return;
       const v = el.textContent.replace(/\s+/g, " ").trim();
       const orig = el.getAttribute("data-orig");
       const key = prefix() + el.dataset.ed;
@@ -136,14 +136,15 @@ function bind(){
   window.addEventListener("online", flushQueue);
 }
 window.ALT2Edit = {
-  mount(ageId){
-    cur = ageId || "";
+  mount(ageId, weekN){
+    curAge = ageId || "";
+    curWeek = weekN || 9;
     bind();
     const b = document.getElementById("edit-toggle");
-    if (b) b.hidden = !cur;
-    if (!cur) { setEditing(false); return; }
+    if (b) b.hidden = !curAge;
+    if (!curAge) { setEditing(false); return; }
     apply();
-    loadRemote().then(() => { if (cur === ageId) apply(); });
+    loadRemote().then(() => { if (curAge === ageId && curWeek === (weekN || 9)) apply(); });
     flushQueue();
     if (editing) setEditing(true);
   }

@@ -179,7 +179,7 @@ window.FALL=[
   "letter": "Ll",
   "overview": "Children build social, language, and thinking skills while learning about fall leaves, the parts of a pumpkin, and the letter Ll through hands-on activities.",
   "circle": "Introduce the new theme and letter of the week, sing and dance to our morning song, review ABCs, numbers 1–20, shapes and colors, and talk about emotions and weather.",
-  "letterPlan": "Letter of the week: Ll. L for leaf and L for lemon.",
+  "letterPlan": "L for leaf and L for lemon.",
   "objectives": [
    "Learn about fall leaves.",
    "Identify parts of a pumpkin.",

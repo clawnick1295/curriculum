@@ -24,7 +24,7 @@ const P = [
 { id:"w9-twos-fall", age:"Twos", ageId:"twos", theme:"Fall – Leaves & Pumpkins", short:"Fall Leaves & Pumpkins", letter:"Ll",
   overview:"Children build social, language, and thinking skills while learning about fall leaves, the parts of a pumpkin, and the letter Ll through hands-on activities.",
   circle:"Introduce the new theme and letter of the week, sing and dance to our morning song, review ABCs, numbers 1–20, shapes and colors, and talk about emotions and weather.",
-  letterPlan:"Letter of the week: Ll. L for leaf and L for lemon.",
+  letterPlan:"L for leaf and L for lemon.",
   objectives:["Learn about fall leaves.","Identify parts of a pumpkin.","Practice the letter Ll.","Build social, language, and thinking skills."],
   steam:{name:"Cinnamon Playdough", dev:{social:"Shares tools at the table.",emotional:"Calming, sensory play.",physical:"Rolling and squeezing strengthen hands.",language:"Describes smells and shapes."}, why:"Smelling and squeezing dough builds hand strength, senses, and new describing words.", desc:"Children poke, squeeze, roll, and stamp shapes into the dough while smelling the autumn spices.", supplies:["Flour","Salt","Water","Vegetable oil","Ground cinnamon"], img:I("twos","steam")},
   crafts:[

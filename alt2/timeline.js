@@ -15,6 +15,28 @@ const OLD_ROOT = /^(director|tour|grows|readiness|week|parent|today|plan|pplan|f
 const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> <span data-ed="${s.id}|dev-${k}">${esc(s.dev[k])}</span></li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fallPlans = () => window.FALL || [];
+function letterPair(raw){
+  const letters = String(raw || "").replace(/[^A-Za-z]/g, "");
+  if (!letters) return {upper:"", lower:"", html:"", text:""};
+  const upper = letters[0].toUpperCase();
+  const lower = (letters[1] || letters[0]).toLowerCase();
+  return {
+    upper,
+    lower,
+    text: upper + " · " + lower,
+    html: `<span class="lu">${esc(upper)}</span><span class="ll">${esc(lower)}</span>`
+  };
+}
+function letterPlanText(plan, pair){
+  let t = String(plan || "").trim();
+  if (!t && pair.upper) return "";
+  // Avoid joined forms like "Ll" in displayed plan copy
+  if (pair.upper) {
+    const joined = pair.upper + pair.lower;
+    t = t.replace(new RegExp("\\b" + joined + "\\b", "g"), pair.text);
+  }
+  return t;
+}
 
 function atAlt2(){
   return /\/alt2(\/index\.html)?\/?$/.test(location.pathname);
@@ -98,7 +120,7 @@ function seaPlan(ageId, theme){
     letter: theme.letter,
     overview: week.overview || "",
     circle: t.circle ? t.circle.steps : "",
-    letterPlan: theme.letter ? ("Letter of the week: " + theme.letter + ".") : "",
+    letterPlan: theme.letter ? ("Letter of the week: " + letterPair(theme.letter).text + ".") : "",
     steam: null,
     crafts,
     activities
@@ -116,7 +138,11 @@ function planFor(ageId, theme){
 
 function stops(p){
   const out = [{id:"circle", lane:"Morning circle", name:"Circle time", what:p.circle}];
-  if (p.letterPlan) out.push({id:"letter", lane:"Letter of the week", name:"Letter " + p.letter, what:p.letterPlan});
+  const pair = letterPair(p.letter);
+  if (pair.upper || p.letterPlan) {
+    out.push({id:"letter", lane:"Letter of the week", name: pair.text || "Letter", what: letterPlanText(p.letterPlan, pair)});
+  }
+  out.push({id:"book", lane:"Book of the Week", name:"Book of the Week", what:""});
   if (p.steam) out.push(Object.assign({id:"steam", lane:"STEAM"}, p.steam));
   (p.crafts || []).forEach((c, i) => out.push(Object.assign({id:"craft-" + i, lane:"Arts & crafts"}, c)));
   (p.activities || []).forEach((a, i) => out.push(Object.assign({id:"act-" + i, lane:a.group ? "Activity · " + a.group : "Activity"}, a)));
@@ -149,7 +175,7 @@ function themesPage(ageId){
   if (!a) return dashboard();
   setAges(AGES.map(x => `<a href="${themesHref(x.id)}" class="${x.id === ageId ? "on" : ""}">${esc(x.name)}</a>`).join(""));
   const groups = monthGroups().map(m => `<section class="monthblock"><h2>${esc(m.title)}</h2><div class="themelist">${m.themes.map(t =>
-    `<a class="themerow" style="--c:${a.color}" href="${themeHref(ageId, t)}"><span class="ic">${t.icon}</span><span class="tt">${esc(t.theme)}</span><span class="sb">${esc(t.letter)}</span><span class="go" aria-hidden="true">›</span></a>`
+    `<a class="themerow" style="--c:${a.color}" href="${themeHref(ageId, t)}"><span class="ic">${t.icon}</span><span class="tt">${esc(t.theme)}</span><span class="sb" aria-label="Letter ${esc(letterPair(t.letter).text)}">${letterPair(t.letter).html}</span><span class="go" aria-hidden="true">›</span></a>`
   ).join("")}</div></section>`).join("");
   $("#app").innerHTML = `<p class="crumb"><a href="#/">Home</a> › ${esc(a.name)}</p>
     <section class="agehead"><img src="${esc(mediaUrl("media/chars/" + a.char))}" alt="">
@@ -163,7 +189,7 @@ function timelinePage(ageId, theme){
   if (!a || !p) return themesPage(ageId);
   setAges(AGES.map(x => `<a href="${themeHref(x.id, theme)}" class="${x.id === ageId ? "on" : ""}">${esc(x.name)}</a>`).join(""));
   $("#app").innerHTML = `<p class="crumb"><a href="#/">Home</a> › <a href="${themesHref(ageId)}">${esc(a.name)}</a> › ${esc(p.theme)}</p>
-    <div class="hero"><div class="letter">${esc(p.letter)}</div><div><small>${esc(p.age)}</small><h1>${esc(p.theme)}</h1><p>${esc(p.overview)}</p></div></div>
+    <div class="hero"><div class="letters" aria-label="Letter of the week ${esc(letterPair(p.letter).text)}">${letterPair(p.letter).html}</div><div><small>${esc(p.age)}</small><h1>${esc(p.theme)}</h1><p>${esc(p.overview)}</p></div></div>
     <div class="tl">${stops(p).map(stop).join("")}</div>`;
 }
 

@@ -10,7 +10,7 @@ window.HOME={
   {title:"Under the Sea in South Florida",label:"Sample month",themes:[
    {w:1,theme:"Manatee Mornings",letter:"Mm",icon:"🐋"},{w:2,theme:"Sea Turtle Beach",letter:"Tt",icon:"🐢"},
    {w:3,theme:"Coral Reef Colors",letter:"Ff",icon:"🐠"},{w:4,theme:"Beach Buddies & Hermit Crabs",letter:"Cc",icon:"🦀"}]},
-  {title:"Fall",label:"Fall",themes:[{w:9,theme:"Fall Leaves & Pumpkins",icon:"🍂",letter:"Ll",fall:true}]}
+  {title:"Fall",label:"Fall",themes:[{w:9,theme:"Fall Leaves & Pumpkins",icon:"🍂",letter:"Ll",fall:true},{w:10,theme:"Fall Seasonal Changes",icon:"🍁",letter:"Kk",fall:true,slug:"fall-seasonal-changes"}]}
  ],
- link(age,t){return t.fall?"../#/"+age:"../../#/age/"+age+"/"+t.w}
+ link(age,t){return t.fall?"../#/"+age+(t.slug?"/"+t.slug:""):"../../#/age/"+age+"/"+t.w}
 };

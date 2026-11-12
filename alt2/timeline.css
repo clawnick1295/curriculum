@@ -58,7 +58,7 @@ main{background:var(--cream);border-radius:28px 28px 0 0;min-height:70vh;padding
 .monthblock{max-width:980px;margin:0 auto 1.5rem}
 .monthblock h2{margin:0 0 .7rem;color:var(--navy);font-size:1.25rem}
 .themelist{display:grid;gap:.65rem}
-.themerow{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:.8rem;background:#fff;border-radius:18px;padding:.95rem 1rem;text-decoration:none;color:var(--navy);box-shadow:0 4px 14px rgba(2,42,79,.08);border-left:10px solid var(--c,var(--orange));font-weight:800}
+.themerow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.8rem;background:#fff;border-radius:18px;padding:.95rem 1rem;text-decoration:none;color:var(--navy);box-shadow:0 4px 14px rgba(2,42,79,.08);border-left:10px solid var(--c,var(--orange));font-weight:800}
 .themerow .ic{font-size:1.7rem}
 .themerow .tt{font-size:1.2rem;line-height:1.25;overflow-wrap:anywhere}
 .themerow .sb{background:var(--navy);color:var(--orange);border-radius:12px;padding:.3rem .55rem;font-weight:900;font-size:1.05rem;display:inline-flex;gap:.35rem;align-items:baseline}

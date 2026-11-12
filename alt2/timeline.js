@@ -9,12 +9,14 @@ const AGES = [
   {id:"fours", name:"Fours", sub:"4-year-olds", color:"#29b6f6", char:"panther_literacy.webp"}
 ];
 const THEMES = [
-  {slug:"fall-leaves-pumpkins", month:"Fall", theme:"Fall Leaves & Pumpkins", letter:"Ll", icon:"🍂", week:9, kind:"fall"}
+  {slug:"fall-leaves-pumpkins", month:"Fall", theme:"Fall Leaves & Pumpkins", letter:"Ll", icon:"🍂", week:9, kind:"fall"},
+  {slug:"fall-seasonal-changes", month:"Fall", theme:"Fall Seasonal Changes", letter:"Kk", icon:"🍁", week:10, kind:"seasonal"}
 ];
 const OLD_ROOT = /^(director|tour|grows|readiness|week|parent|today|plan|pplan|fridge)(\/|$)/;
 const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> <span data-ed="${s.id}|dev-${k}">${esc(s.dev[k])}</span></li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fallPlans = () => window.FALL || [];
+const seasonalPlans = () => window.FALL_SEASONAL || [];
 function letterPair(raw){
   const letters = String(raw || "").replace(/[^A-Za-z]/g, "");
   if (!letters) return {upper:"", lower:"", html:"", text:""};
@@ -133,6 +135,10 @@ function planFor(ageId, theme){
     const p = fallPlans().find(x => x.ageId === ageId);
     return p || null;
   }
+  if (theme.kind === "seasonal") {
+    const p = seasonalPlans().find(x => x.ageId === ageId);
+    return p || null;
+  }
   return seaPlan(ageId, theme);
 }
 
@@ -175,7 +181,7 @@ function themesPage(ageId){
   if (!a) return dashboard();
   setAges(AGES.map(x => `<a href="${themesHref(x.id)}" class="${x.id === ageId ? "on" : ""}">${esc(x.name)}</a>`).join(""));
   const groups = monthGroups().map(m => `<section class="monthblock"><h2>${esc(m.title)}</h2><div class="themelist">${m.themes.map(t =>
-    `<a class="themerow" style="--c:${a.color}" href="${themeHref(ageId, t)}"><span class="ic">${t.icon}</span><span class="tt">${esc(t.theme)}</span><span class="sb" aria-label="Letter ${esc(letterPair(t.letter).text)}">${letterPair(t.letter).html}</span><span class="go" aria-hidden="true">›</span></a>`
+    `<a class="themerow" style="--c:${a.color}" href="${themeHref(ageId, t)}"><span class="ic">${t.icon}</span><span class="tt">${esc(t.theme)}</span><span class="go" aria-hidden="true">›</span></a>`
   ).join("")}</div></section>`).join("");
   $("#app").innerHTML = `<p class="crumb"><a href="#/">Home</a> › ${esc(a.name)}</p>
     <section class="agehead"><img src="${esc(mediaUrl("media/chars/" + a.char))}" alt="">

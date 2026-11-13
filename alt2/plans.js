@@ -1,5 +1,6 @@
-/* Fall plans for the main site (alt2 flow). Source of truth: Amy's PDFs sent 2026-11-12.
-   window.FALL = Fall Leaves & Pumpkins; window.FALL_SEASONAL = Fall Seasonal Changes. */
+/* Plans for the main site (alt2 flow). Source of truth: Amy's PDFs.
+   Sent 2026-11-12: window.FALL = Fall Leaves & Pumpkins; window.FALL_SEASONAL = Fall Seasonal Changes.
+   Sent 2026-11-13: window.MY_FAMILY = My Family; window.WILD_PETS = Wild Animals vs. Pets; window.HYGIENE = Personal Hygiene. */
 window.FALL=[
  {
   "id": "w9-ones-fall",
@@ -1329,6 +1330,1882 @@ window.FALL_SEASONAL=[
      "Tape for a line"
     ],
     "img": "../media/activities/fall-seasonal/fours_act4.webp"
+   }
+  ]
+ }
+];
+/* My Family: from Amy's 11/13/2026 PDFs */
+window.MY_FAMILY=[
+ {
+  "id": "fam-ones",
+  "age": "Ones",
+  "ageId": "ones",
+  "theme": "My Family",
+  "short": "My Family",
+  "letter": "Oo",
+  "overview": "Children get to know the special people in their lives through family photos, songs, and simple hands-on play.",
+  "circle": "Start circle time with a basket of family photos and sing \"Where Is Mama?\" to the tune of \"Where Is Thumbkin?\", holding up each photo: \"Where is Mama? Where is Mama? / Here she is! Here she is! / I love my Mama, I love my Mama, / Yes I do, yes I do.\" Pause after each verse so babies can reach for or pat the photos. Share the book of the week a page or two at a time, and close the same way every day by singing \"Goodbye, Family\" while waving to the photo basket, so the routine becomes something babies can predict and join in on. Book of the week: Families by Shelley Rotner and Sheila M. Kelly.",
+  "letterPlan": "O is for open arms. Sit babies on the floor in a small group and hold up a big, round O. Say \"O!\" slowly and clearly while tracing the shape in the air, then invite each baby to pat the O with an open hand. Sing to the tune of \"Where Is Thumbkin?\": \"O is for open arms / O is for open arms / Hug your family, hug your family / O, O, O,\" opening your arms into a big round O and hugging yourself or a stuffed animal. Repeat with other O words babies can act out: open (arms wide), over (lift a baby's arms up and over), and oval (trace a round shape on a tummy or palm). Finish by tracing a gentle O on each baby's hand while saying the O sound, so the shape, the sound, and the family warmth all land together.",
+  "objectives": [
+   "Social and emotional: recognize and respond to familiar family members by smiling, reaching, vocalizing, or seeking comfort.",
+   "Language and literacy: listen and respond when family members are named by looking, pointing, gesturing, or trying words like mama or dada.",
+   "Social studies: begin to recognize themselves and family members in photos, mirrors, or classroom displays."
+  ],
+  "steam": {
+   "name": "My Family Sensory Bin",
+   "dev": {
+    "emotional": "Comfort and joy in finding familiar faces.",
+    "physical": "Digging and grabbing build hand strength.",
+    "cognitive": "Learns that hidden things are still there.",
+    "language": "Hears family names and object words."
+   },
+   "why": "Finding family photos hidden in the bin builds early memory, hand strength, and family words.",
+   "desc": "Fill a shallow bin with shredded paper or colored rice, then hide the laminated family photos, figurines, mitten, spoon, and doll throughout it. Set the bin on the floor between two babies and let them dig, grab, and explore. As each item is uncovered, name the person or object out loud (\"Where is Mama? You found her!\"), and when a toy disappears back under the filler, encourage the baby to look for it.",
+   "supplies": [
+    "Shallow plastic sensory bin",
+    "Large shredded paper or colored rice",
+    "Laminated photos of each baby's family",
+    "Chunky family figurines (people and pets)",
+    "A soft mitten",
+    "A wooden spoon",
+    "A small fabric doll",
+    "Damp cloth or wipes for cleanup"
+   ],
+   "img": "../media/activities/my-family/ones_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "My Family Tree",
+    "dev": {
+     "emotional": "Pride in a tree made from their own hand.",
+     "physical": "Pressing and fingerpainting build hand control.",
+     "cognitive": "Explores fall colors."
+    },
+    "why": "A handprint tree builds hand control and gives families a keepsake made from their child's own hand.",
+    "desc": "The teacher paints each child's hand and forearm brown and presses it onto paper to make a tree trunk and branches. Children then fingerpaint red, orange, yellow, and green leaves around the branches. Done one-on-one.",
+    "supplies": [
+     "White construction or printer paper (8.5x11)",
+     "Brown paint",
+     "Red, orange, yellow, and green paint"
+    ],
+    "img": "../media/activities/my-family/ones_craft1.webp"
+   },
+   {
+    "name": "My Family Wreath",
+    "dev": {
+     "emotional": "Joy in making a gift for family.",
+     "physical": "Painting strengthens grip.",
+     "cognitive": "Explores colors."
+    },
+    "why": "Painting a family wreath builds grip and color words and makes a gift to share at home.",
+    "desc": "Children paint a paper plate with blue, yellow, purple, green, and red paint. When it is dry, the teacher glues a big red paper heart in the middle, punches a hole at the top, and adds a pipe cleaner loop for hanging.",
+    "supplies": [
+     "Paper plates",
+     "Blue, yellow, purple, green, and red paint",
+     "Red construction paper heart (fits the middle of the plate)",
+     "Pipe cleaners",
+     "Hole punch"
+    ],
+    "img": "../media/activities/my-family/ones_craft2.webp"
+   },
+   {
+    "name": "House Painting",
+    "dev": {
+     "emotional": "Sees their own family in their art.",
+     "physical": "Brushing builds hand control.",
+     "cognitive": "Sees squares, triangles, and rectangles."
+    },
+    "why": "Painting a house around their family photo connects shapes and home to the people they love.",
+    "desc": "Children paint a construction paper house made from squares, triangles, and rectangles. A square window in the middle holds a photo of the child or the child's family, and the house is labeled \"My Family.\"",
+    "supplies": [
+     "Construction paper house (squares, triangles, rectangles) labeled \"My Family\"",
+     "Square window cutout with a photo of the child or family",
+     "Paint (any color)"
+    ],
+    "img": "../media/activities/my-family/ones_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Family Pom-Pom Match",
+    "group": "Small group",
+    "dev": {
+     "physical": "Placing pom-poms builds the pincer grasp.",
+     "cognitive": "One-to-one correspondence and early counting.",
+     "language": "Hears number words."
+    },
+    "why": "Placing one pom-pom on each person builds one-to-one correspondence, the first step in counting.",
+    "desc": "Children place one pom-pom on each laminated family member cutout, building one-to-one correspondence and early counting skills.",
+    "supplies": [
+     "Laminated family member cutouts",
+     "Large pom-poms"
+    ],
+    "img": "../media/activities/my-family/ones_act1.webp"
+   },
+   {
+    "name": "Who's in Your Family?",
+    "group": "Small group",
+    "dev": {
+     "social": "Shares family with teachers and friends.",
+     "emotional": "Builds a sense of belonging.",
+     "language": "Points to and names familiar faces."
+    },
+    "why": "Naming faces in family photos builds early language and a sense of belonging.",
+    "desc": "Children explore photos of their own family members while teachers help them recognize and name familiar faces. Through pointing, naming, and simple conversation, children build early language, strengthen family connections, and feel that they belong.",
+    "supplies": [
+     "Photos of each child's family"
+    ],
+    "img": "../media/activities/my-family/ones_act2.webp"
+   },
+   {
+    "name": "Count Your Family",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Counts people and matches numbers.",
+     "language": "Hears number words."
+    },
+    "why": "Counting the people in a family group builds number recognition and one-to-one correspondence.",
+    "desc": "Children look at different groups of family members and, with teacher guidance, count the people in each group and match it to the right number.",
+    "supplies": [
+     "Family group pictures",
+     "Number cards"
+    ],
+    "img": "../media/activities/my-family/ones_act3.webp"
+   },
+   {
+    "name": "Build Your Family a House",
+    "group": "Large group",
+    "dev": {
+     "social": "Plays side by side with friends.",
+     "physical": "Stacking builds hand-eye coordination.",
+     "cognitive": "Explores space, shape, and balance."
+    },
+    "why": "Stacking blocks into a family house builds fine motor skills, spatial awareness, and imaginative play.",
+    "desc": "Children stack and arrange colorful building blocks to make houses for their families. As they build, they connect their families to the homes they share.",
+    "supplies": [
+     "Large colorful building blocks"
+    ],
+    "img": "../media/activities/my-family/ones_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "fam-twos",
+  "age": "Twos",
+  "ageId": "twos",
+  "theme": "My Family",
+  "short": "My Family",
+  "letter": "Oo",
+  "overview": "Children explore who is in their family, how families are alike and different, and the special things families do together.",
+  "circle": "Children look at family photographs, find familiar faces, and talk about the special people in their lives. They do a family fingerplay, count family members in a pretend house, and look at pictures of things families enjoy doing together. Children share who they love and practice family words. Book of the week: The Family Book by Todd Parr.",
+  "letterPlan": "O is for our family. Each child decorates a large letter O with colorful crayons and stickers while learning that the word \"our\" begins with O. With teacher help, children place a family photo in the center of their O and practice saying \"O is for Our Family!\"",
+  "objectives": [
+   "Social and emotional: build a sense of identity and belonging by recognizing family members and their relationships.",
+   "Social studies: explore different family structures and begin to understand family roles and relationships.",
+   "Individual development and identity: notice how families are alike and different and appreciate their own family and others'."
+  ],
+  "steam": {
+   "name": "Building a Home for My Family",
+   "dev": {
+    "social": "Builds and shares ideas with friends.",
+    "physical": "Stacking and balancing build coordination.",
+    "cognitive": "Tests which blocks make a stronger house and counts blocks.",
+    "language": "Talks about walls, doors, and towers."
+   },
+   "why": "Building a home tests balance and strength and gives toddlers a hands-on way to talk about family.",
+   "desc": "Children use colorful blocks of different shapes and sizes to design and build a home for their families. With teacher guidance, they stack, balance, and arrange blocks into walls, doors, and towers, find out which blocks make their houses stronger, and count the blocks they use. When the houses are done, they place family photos or toy people inside.",
+   "supplies": [
+    "Large colorful building blocks",
+    "Soft foam blocks",
+    "Laminated family photos",
+    "Toy people (large, toddler-safe)"
+   ],
+   "img": "../media/activities/my-family/twos_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Block House Building",
+    "dev": {
+     "physical": "Gripping and stamping build hand strength.",
+     "cognitive": "Sees square and rectangle prints."
+    },
+    "why": "Stamping with blocks builds grip and shows how shapes make a house.",
+    "desc": "Children dip large Lego blocks in paint and stamp them onto a house outline to fill in the walls and roof.",
+    "supplies": [
+     "House outline on paper",
+     "Paint (a variety of colors for each child)",
+     "Large Lego blocks for stamping"
+    ],
+    "img": "../media/activities/my-family/twos_craft1.webp"
+   },
+   {
+    "name": "O is for Octopus",
+    "dev": {
+     "physical": "Gluing builds fine motor control.",
+     "cognitive": "Sees the round shape of O and counts 8 legs.",
+     "language": "Hears \"O is for octopus.\""
+    },
+    "why": "Turning the letter O into an octopus makes the letter shape memorable and fun.",
+    "desc": "Children glue 8 paper tentacles to the bottom of a blue or purple letter O cutout, then add googly eyes to make an octopus.",
+    "supplies": [
+     "Letter O cut from blue or purple construction paper",
+     "8 construction paper tentacles per child",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/my-family/twos_craft2.webp"
+   },
+   {
+    "name": "I Love You to Pieces!",
+    "dev": {
+     "emotional": "Shows love for family.",
+     "physical": "Picking up small squares builds the pincer grasp.",
+     "cognitive": "Explores red, pink, and orange."
+    },
+    "why": "Filling a heart with paper pieces builds fine motor skills and makes a love note for home.",
+    "desc": "Children glue 1-inch squares of red, pink, and orange paper inside a heart outline labeled \"I love you to pieces!\" to take home to their family.",
+    "supplies": [
+     "Heart outline labeled \"I love you to pieces!\" at the top and bottom",
+     "Red, pink, and orange construction paper squares (about 1 inch)",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/my-family/twos_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Build a Home",
+    "group": "Large group",
+    "dev": {
+     "social": "Works together as a team.",
+     "emotional": "Feels love, comfort, and belonging.",
+     "cognitive": "Problem-solves as the house grows.",
+     "language": "Talks about what makes a home."
+    },
+    "why": "Building one house together builds teamwork and starts a conversation about home and family.",
+    "desc": "Children work together to build a house with colorful building blocks. As they build, the teacher talks about what makes a house feel like a home and the special ways families spend time together.",
+    "supplies": [
+     "Colorful building blocks"
+    ],
+    "img": "../media/activities/my-family/twos_act1.webp"
+   },
+   {
+    "name": "Shape Family",
+    "group": "Small group",
+    "dev": {
+     "physical": "Placing tiles builds hand control.",
+     "cognitive": "Names shapes, colors, and body parts.",
+     "language": "Talks about family members."
+    },
+    "why": "Building family members from shapes connects math words to the people children love.",
+    "desc": "Children use colorful magnetic tiles to build their family members, exploring shapes, colors, and body parts. The teacher has them name familiar features and talks about how every family member is unique and special. Safety: check tiles for cracks before use.",
+    "supplies": [
+     "Magnetic tiles"
+    ],
+    "img": "../media/activities/my-family/twos_act2.webp"
+   },
+   {
+    "name": "Popsicle Stick House Matching",
+    "group": "Small group",
+    "dev": {
+     "physical": "Placing sticks builds fine motor control.",
+     "cognitive": "Matches colors and shapes and builds focus."
+    },
+    "why": "Copying a house with craft sticks builds color matching, shape awareness, and concentration.",
+    "desc": "Children use colorful craft sticks to copy the houses shown on activity cards. With teacher guidance, they match colors, explore shapes, and carefully arrange the sticks to build each house.",
+    "supplies": [
+     "Colorful craft sticks",
+     "House activity cards"
+    ],
+    "img": "../media/activities/my-family/twos_act3.webp"
+   },
+   {
+    "name": "Counting Family Members",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Counts 1 to 5 with one-to-one pointing.",
+     "language": "Says number words aloud."
+    },
+    "why": "Lining up and counting family pictures builds counting from 1 to 5.",
+    "desc": "Children line up laminated pictures of family members, point to each one, and count aloud from 1 to 5 with their teachers.",
+    "supplies": [
+     "Laminated family member pictures"
+    ],
+    "img": "../media/activities/my-family/twos_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "fam-threes",
+  "age": "3 Year Olds",
+  "ageId": "threes",
+  "theme": "My Family",
+  "short": "My Family",
+  "letter": "Oo",
+  "overview": "Children celebrate their families: who is in them, what they love doing together, and how every family is unique.",
+  "circle": "Children share family photographs, name their family members, and describe the special things they enjoy doing together. Throughout the week, the group talks about love, kindness, and helping one another, and celebrates what makes every family unique. Book of the week: Love Makes a Family by Sophie Beer.",
+  "letterPlan": "O is for our home. Children hunt for letter O cards hidden around the classroom. Each time they find one, they bring it to a large paper house labeled \"Our Home\" and place it inside. As they collect the letters, the teacher has them name the letter O, make its sound, and count how many they have found.",
+  "objectives": [
+   "Social and emotional: build identity and belonging by recognizing family members, describing relationships, and sharing experiences.",
+   "Social studies: explore different family structures and roles and understand that every family is unique and special.",
+   "Language: grow vocabulary by naming family members, describing family activities, and talking about home."
+  ],
+  "steam": {
+   "name": "Build a Family Sensory Bin",
+   "dev": {
+    "social": "Plays out family scenes with friends.",
+    "cognitive": "Counts, compares sizes, names shapes, and solves simple problems.",
+    "language": "Names family members and activities."
+   },
+   "why": "Acting out family scenes builds counting, sorting, and storytelling about home.",
+   "desc": "Children explore a family sensory bin filled with objects that stand for their homes and loved ones. They use family figurines, toy houses, and blocks to build family scenes, name family members, and talk about things they enjoy doing together. As they sort, arrange, and explore, they count, compare sizes, name shapes, and solve simple problems.",
+   "supplies": [
+    "Large sensory bin",
+    "Large family figurines",
+    "Toy houses",
+    "Soft fabric pieces",
+    "Large building blocks",
+    "Laminated family photos",
+    "Child-safe toy household items"
+   ],
+   "img": "../media/activities/my-family/threes_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Cardstock House",
+    "dev": {
+     "physical": "Squeezing droppers and blowing build control.",
+     "cognitive": "Watches paint spread and colors mix."
+    },
+    "why": "Blowing paint through a straw is a playful way to build breath control and explore color.",
+    "desc": "Children drop thinned paint onto white cardstock with droppers or small spoons, then blow through a straw to spread it into walls, a roof, and a yard for their family's house. Remind children to blow out, never sip.",
+    "supplies": [
+     "White cardstock",
+     "Brown, black, green, yellow, orange, and red washable paint",
+     "Drinking straws",
+     "Droppers or small spoons",
+     "Water to thin the paint",
+     "Paint trays"
+    ],
+    "img": "../media/activities/my-family/threes_craft1.webp"
+   },
+   {
+    "name": "O is for Owl",
+    "dev": {
+     "physical": "Gluing pieces builds fine motor control.",
+     "cognitive": "Builds an owl from circles and shapes.",
+     "language": "Hears \"O is for owl.\""
+    },
+    "why": "Building an owl from circles links the round letter O to a word children love.",
+    "desc": "Children glue two large paper circles onto paper for the owl's body and head, then add teardrop wings, yellow feet, a yellow beak, and googly eyes.",
+    "supplies": [
+     "White construction or printer paper (8.5x11)",
+     "2 large construction paper circles (any color)",
+     "2 construction paper teardrops for wings",
+     "2 yellow paper feet",
+     "Yellow paper beak",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/my-family/threes_craft2.webp"
+   },
+   {
+    "name": "Peas in a Pod",
+    "dev": {
+     "emotional": "Pride in their family.",
+     "physical": "Drawing faces builds pencil grip.",
+     "cognitive": "Counts one pea per family member."
+    },
+    "why": "Making one pea per family member links counting to the people in their family.",
+    "desc": "Children glue 3 to 5 light green circles, one for each family member, onto a green semicircle pod labeled \"My family, we are like peas in a pod!\", then draw a face on each pea.",
+    "supplies": [
+     "Large green construction paper semicircles labeled \"My family, we are like peas in a pod!\"",
+     "Light green paper circles (about 2 inches, 3 to 5 per child)",
+     "Black or brown marker",
+     "Liquid glue or glue sticks"
+    ],
+    "img": "../media/activities/my-family/threes_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Octopus Tentacle Counting",
+    "group": "Small group",
+    "dev": {
+     "physical": "Finger painting dots builds control.",
+     "cognitive": "Matches numbers to quantities."
+    },
+    "why": "Counting tentacles and painting matching dots connects numbers to amounts.",
+    "desc": "Children count the 8 tentacles on a paper octopus, then use their fingers to paint the matching number of dots on it.",
+    "supplies": [
+     "Paper octopus with 8 tentacles (one per child)",
+     "Washable paint for finger dots"
+    ],
+    "img": "../media/activities/my-family/threes_act1.webp"
+   },
+   {
+    "name": "Shaving Cream Letter O Tracing",
+    "group": "Small group",
+    "dev": {
+     "physical": "Finger tracing builds pre-writing strokes.",
+     "cognitive": "Recognizes the letter O.",
+     "language": "Says the letter name and sound."
+    },
+    "why": "Tracing O in shaving cream is a sensory way to learn the letter shape and sound.",
+    "desc": "Children trace the round shape of the letter O in shaving cream on the table with their fingers while practicing its name and sound. Keep shaving cream away from eyes and mouths.",
+    "supplies": [
+     "Shaving cream",
+     "Table or tray"
+    ],
+    "img": "../media/activities/my-family/threes_act2.webp"
+   },
+   {
+    "name": "Playdough Family Creation",
+    "group": "Small group",
+    "dev": {
+     "physical": "Rolling and shaping build hand strength.",
+     "cognitive": "Explores body parts and faces.",
+     "language": "Names the people in their family."
+    },
+    "why": "Molding family members from playdough builds hand strength and family vocabulary.",
+    "desc": "Children roll, shape, and mold colorful playdough into themselves and their family members, exploring body parts and facial features while naming the special people in their families.",
+    "supplies": [
+     "Colorful playdough"
+    ],
+    "img": "../media/activities/my-family/threes_act3.webp"
+   },
+   {
+    "name": "Family Member Counting",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Counts and matches totals to numerals.",
+     "language": "Says number words."
+    },
+    "why": "Counting family members and matching the numeral builds early math.",
+    "desc": "Children count family members, recognize numbers, and match the total number of people to the right numeral with teacher guidance.",
+    "supplies": [
+     "Family member pictures",
+     "Numeral cards"
+    ],
+    "img": "../media/activities/my-family/threes_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "fam-fours",
+  "age": "Fours",
+  "ageId": "fours",
+  "theme": "My Family",
+  "short": "My Family",
+  "letter": "Oo",
+  "overview": "Children explore family roles, traditions, and the many different ways families care for each other.",
+  "circle": "Children explore the theme through discussion, interactive games, and group activities. They play \"Family Charades,\" acting out family activities like cooking, cleaning, reading, and playing together while classmates guess. Throughout the week, the group talks about kindness, love, teamwork, and helping one another, and celebrates the different ways families care for each other. Book of the week: The Great Big Book of Families by Mary Hoffman.",
+  "letterPlan": "O is for our family. Together the class names the uppercase and lowercase letter O, practices its sound, and talks about how the word \"our\" begins with O. Each child shares something special about their family, such as a favorite activity, tradition, or memory, and with teacher help the class connects these ideas to the phrase \"Our Family\" in a class word web.",
+  "objectives": [
+   "Social and emotional: recognize family members and describe their roles.",
+   "Language and literacy: use words to describe family members and share personal experiences.",
+   "Social studies: understand that families have different structures, traditions, and cultures."
+  ],
+  "steam": {
+   "name": "Designing a Home for My Family",
+   "dev": {
+    "social": "Explains their plan to friends.",
+    "physical": "Cutting and taping build fine motor skills.",
+    "cognitive": "Plans, builds, and tests what makes a house strong.",
+    "language": "Uses words like room, wall, and stable."
+   },
+   "why": "Planning and building a family home is real engineering: plan, build, test, and improve.",
+   "desc": "Children become little architects. They plan their house first, thinking about how many rooms they need and where their family spends time together, then build it, exploring shapes, sizes, and structures and testing ways to make it strong and stable. When the homes are done, they use family figurines to show the people who live inside.",
+   "supplies": [
+    "Craft sticks",
+    "Large building blocks",
+    "Cardboard pieces",
+    "Masking tape",
+    "Construction paper",
+    "Child-safe scissors",
+    "Glue",
+    "Toy family figurines"
+   ],
+   "img": "../media/activities/my-family/fours_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Shape Family",
+    "dev": {
+     "physical": "Gluing and drawing build fine motor skills.",
+     "cognitive": "Builds people from shapes."
+    },
+    "why": "Building family members from shapes mixes math and art.",
+    "desc": "Children glue construction paper shapes onto paper labeled \"My Shape Family\" to build each person in their family, then add faces and details with markers.",
+    "supplies": [
+     "White paper labeled \"My Shape Family\"",
+     "Shapes cut from different colors of construction paper",
+     "Glue sticks",
+     "Markers"
+    ],
+    "img": "../media/activities/my-family/fours_craft1.webp"
+   },
+   {
+    "name": "Family Portrait",
+    "dev": {
+     "emotional": "Pride in their family.",
+     "physical": "Drawing builds pencil grip.",
+     "language": "Tells who is in the picture."
+    },
+    "why": "Drawing and describing a family portrait builds fine motor skills and storytelling.",
+    "desc": "Children draw a portrait of their family with crayons, colored pencils, and markers, then tell the teacher who is in it.",
+    "supplies": [
+     "White construction or printer paper (8.5x11)",
+     "Crayons",
+     "Colored pencils",
+     "Markers"
+    ],
+    "img": "../media/activities/my-family/fours_craft2.webp"
+   },
+   {
+    "name": "O is for Octopus",
+    "dev": {
+     "physical": "Gluing builds fine motor control.",
+     "cognitive": "Sees the round O and counts 8 legs.",
+     "language": "Hears \"O is for octopus.\""
+    },
+    "why": "Turning the letter O into an octopus makes the letter shape memorable.",
+    "desc": "Children glue a purple letter O onto construction paper for the octopus head, add 8 paper tentacles underneath, and draw a face with markers.",
+    "supplies": [
+     "Construction paper (any color)",
+     "Purple letter O cutout (about half the size of the paper)",
+     "8 construction paper tentacles per child",
+     "Markers",
+     "Glue sticks"
+    ],
+    "img": "../media/activities/my-family/fours_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Counting Families",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Counts, groups, and compares quantities.",
+     "language": "Uses words like more and fewer."
+    },
+    "why": "Sorting family cutouts into groups of two, three, and four builds counting and comparing.",
+    "desc": "Children count laminated family member cutouts and sort them into groups of two, three, and four. With teacher guidance, they name the quantities and compare how many people are in each group.",
+    "supplies": [
+     "Laminated family member cutouts"
+    ],
+    "img": "../media/activities/my-family/fours_act1.webp"
+   },
+   {
+    "name": "Graphing Families",
+    "group": "Large group",
+    "dev": {
+     "social": "Shares about their family with the class.",
+     "cognitive": "Builds a graph and counts totals."
+    },
+    "why": "Graphing who is in each family is a first look at collecting and counting data.",
+    "desc": "Each child uses sticky notes to show which family members are in their family on a giant anchor chart. The class counts the totals together at the end.",
+    "supplies": [
+     "Sticky notes",
+     "Giant anchor chart paper",
+     "Markers"
+    ],
+    "img": "../media/activities/my-family/fours_act2.webp"
+   },
+   {
+    "name": "Shaving Cream Letter O Tracing",
+    "group": "Large group",
+    "dev": {
+     "physical": "Finger tracing builds pre-writing strokes.",
+     "cognitive": "Recognizes the letter O.",
+     "language": "Says the letter name and sound."
+    },
+    "why": "Tracing O in shaving cream is a sensory way to learn the letter shape and sound.",
+    "desc": "Children trace the round shape of the letter O in shaving cream on the table with their fingers while practicing its name and sound. Keep shaving cream away from eyes and mouths.",
+    "supplies": [
+     "Shaving cream",
+     "Table or tray"
+    ],
+    "img": "../media/activities/my-family/fours_act3.webp"
+   },
+   {
+    "name": "Playdough Family Creation",
+    "group": "Small group",
+    "dev": {
+     "physical": "Rolling and shaping build hand strength.",
+     "cognitive": "Explores body parts and faces.",
+     "language": "Names the people in their family."
+    },
+    "why": "Molding family members from playdough builds hand strength and family vocabulary.",
+    "desc": "Children roll, shape, and mold colorful playdough into themselves and their family members, exploring body parts and facial features while naming the special people in their families.",
+    "supplies": [
+     "Colorful playdough"
+    ],
+    "img": "../media/activities/my-family/fours_act4.webp"
+   }
+  ]
+ }
+];
+
+/* Wild Animals vs. Pets: from Amy's 11/13/2026 PDFs */
+window.WILD_PETS=[
+ {
+  "id": "wild-ones",
+  "age": "Ones",
+  "ageId": "ones",
+  "theme": "Wild Animals vs. Pets",
+  "short": "Wild Animals vs. Pets",
+  "letter": "Nn",
+  "overview": "Children meet pets and wild animals through songs, stuffed animals, and splashy hands-on play, learning their names, sounds, and where they live.",
+  "circle": "Circle time opens with \"If You're a Dog and You Know It\" to the tune of \"If You're Happy and You Know It\": \"If you're a dog and you know it, say woof-woof! If you're a cat and you know it, say meow! If you're a bear and you know it, say grrr!\", with the teacher making each sound. The group then does the fingerplay \"Five Little Ducklings,\" counting down on the teacher's fingers. Next, the teacher passes around a few stuffed animals one at a time (a dog, a cat, a bear, a duck) so children can hold, pat, and hug them while the teacher names each one, makes its sound, and says whether it's a pet or a wild animal: \"A dog, woof! A dog can live in our home. A bear, grrr! A bear lives in the woods far away.\" Book of the week: Dear Zoo by Rod Campbell.",
+  "letterPlan": "N is for nest. Each child presses a few large, chunky card stock nest shapes onto a large letter N spread with glue, with teacher support. Materials are chunky and safe, with no small eggs, twigs, or loose string, and the teacher keeps the nest shapes within reach so children can grasp, press, and drop them on their own. The teacher names the letter, makes the /n/ sound, and repeats \"N is for nest,\" tying it back to circle time: nests are where birds and other animals live.",
+  "objectives": [
+   "Scientific exploration: look at, point to, or reach for pictures and toy animals, exploring pets and wild animals by sight, touch, and sound.",
+   "Language: respond to animal names and sounds, such as dog, cat, bear, or roar, by looking, pointing, babbling, or trying the word or sound.",
+   "Social and emotional: show gentle, caring actions toward stuffed pets and toy animals, such as patting, hugging, or feeding, with adult support."
+  ],
+  "steam": {
+   "name": "Duck Pond Water Play",
+   "dev": {
+    "physical": "Dropping, pushing, and squeezing build hand strength.",
+    "cognitive": "Sees ducks float, sink, and squirt.",
+    "language": "Hears in, float, and squeeze."
+   },
+   "why": "Dropping and squeezing rubber ducks shows cause and effect and builds early science words.",
+   "desc": "Children drop rubber ducks into the water, push them around, and squeeze or poke them to see if they float, sink, or squirt. They pull the ducks back out, put them in the basket, then drop them in again as long as interest holds. The teacher names what happens (\"In it goes,\" \"It floats,\" \"Squeeze, squeeze\") and holds a duck under the water, then lets it pop up so children can watch it bob back to the surface.",
+   "supplies": [
+    "Shallow water container with 1–2 inches of water",
+    "Rubber ducks",
+    "Towels on the floor beneath and beside the container",
+    "Small basket for the dry ducks"
+   ],
+   "img": "../media/activities/wild-pets/ones_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Paper Plate Turtle",
+    "dev": {
+     "physical": "Painting and pressing build hand control.",
+     "cognitive": "Builds a turtle from simple shapes."
+    },
+    "why": "Making a turtle from a plate and shapes builds hand control and animal words.",
+    "desc": "Children paint a small paper plate green for the shell. With teacher help, they glue on green paper arches for the head and legs and a triangle tail, then add googly eyes.",
+    "supplies": [
+     "Small paper plate",
+     "Green paint",
+     "Green construction paper cut into arches and a triangle tail",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/ones_craft1.webp"
+   },
+   {
+    "name": "Pet Paw Prints",
+    "dev": {
+     "physical": "Walking toys across paper builds coordination.",
+     "cognitive": "Sees how animal feet leave prints.",
+     "language": "Hears dog, cat, and paw."
+    },
+    "why": "Making paw prints with toy pets connects animals to the tracks they leave behind.",
+    "desc": "Children dip the feet of toy dogs and cats in brown paint and walk them across paper to make paw prints.",
+    "supplies": [
+     "Toy dogs and cats",
+     "Brown paint",
+     "White construction or printer paper (8.5x11)"
+    ],
+    "img": "../media/activities/wild-pets/ones_craft2.webp"
+   },
+   {
+    "name": "Pom-Pom Lions",
+    "dev": {
+     "physical": "Gripping a clothespin builds the pincer grasp.",
+     "cognitive": "Explores red, orange, and yellow."
+    },
+    "why": "Dabbing a lion's mane with pom-poms builds grip and color words.",
+    "desc": "Children use pom-poms held in clothespins to dab red, orange, and yellow paint around a lion face outline to make its mane.",
+    "supplies": [
+     "Pom-poms",
+     "Clothespins to hold the pom-poms",
+     "Red, orange, and yellow paint",
+     "Lion face outline (8.5x11)"
+    ],
+    "img": "../media/activities/wild-pets/ones_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Nest Building Sensory Play",
+    "group": "Large group",
+    "dev": {
+     "physical": "Grabbing and dropping build hand control.",
+     "cognitive": "Explores in and out.",
+     "language": "Hears \"N is for nest.\""
+    },
+    "why": "Filling a nest with soft materials is hands-on sensory play that links the letter N to a real home for animals.",
+    "desc": "Children build nests with loose, chunky materials. The teacher sets out a shallow bin of shredded paper, large pom-poms, felt scraps, and big wooden eggs, plus a few bowl-shaped baskets to use as nest bases. Children grab handfuls of the loose material, drop it into a basket, push it around, and put the wooden eggs in and take them out. The teacher names what happens (\"In it goes,\" \"Your nest,\" \"Where's the egg?\") and repeats \"N is for nest\" as children play.",
+    "supplies": [
+     "Shallow bin of shredded paper",
+     "Large pom-poms",
+     "Felt scraps",
+     "Big wooden eggs",
+     "Bowl-shaped baskets for nest bases"
+    ],
+    "img": "../media/activities/wild-pets/ones_act1.webp"
+   },
+   {
+    "name": "Feed the Wild Animals",
+    "group": "Large group",
+    "dev": {
+     "physical": "Aiming and dropping build hand-eye coordination.",
+     "language": "Hears animal sounds and \"In it goes!\""
+    },
+    "why": "Feeding a cardboard animal builds aim, hand control, and animal sounds.",
+    "desc": "Children feed a cardboard animal by dropping pretend food into its open mouth. They take chunky pretend food from a basket and push each piece in, and the teacher says \"In it goes!\" and makes the animal's sound each time.",
+    "supplies": [
+     "Cardboard animal with an open mouth",
+     "Chunky pretend food",
+     "Basket"
+    ],
+    "img": "../media/activities/wild-pets/ones_act2.webp"
+   },
+   {
+    "name": "Pet Washing Station",
+    "group": "Small group",
+    "dev": {
+     "emotional": "Practices gentle care for pets.",
+     "physical": "Scrubbing builds hand strength.",
+     "cognitive": "Sees dirty turn to clean."
+    },
+    "why": "Scrubbing toy pets clean builds hand strength and gentle, caring habits.",
+    "desc": "Children give their toy pets a bath. One large container holds soapy water for the bath, and another holds brown paint mixed with shaving cream for mud. Children use sponges or their hands to scrub the muddy pets clean.",
+    "supplies": [
+     "Toy pets",
+     "Large container of soapy water",
+     "Large container of brown paint mixed with shaving cream",
+     "Sponges"
+    ],
+    "img": "../media/activities/wild-pets/ones_act3.webp"
+   },
+   {
+    "name": "Animal Sound Sing-Along",
+    "group": "Large group",
+    "dev": {
+     "social": "Sings and moves with the group.",
+     "physical": "Patting and bouncing to the beat.",
+     "language": "Hears and tries animal sounds."
+    },
+    "why": "Singing animal songs with props builds listening, sound play, and early words.",
+    "desc": "The teacher sits on the floor with a basket of stuffed animals and leads a few short songs, holding up one animal at a time and making its sound so children can look, reach for it, and try the sound. Songs include \"Old MacDonald Had a Farm,\" pausing after each animal; \"If You're a Dog and You Know It,\" with children patting the rug or bouncing on the \"woof-woof\"; and \"Five Little Ducks,\" counting on fingers while children pat the toy duck. Between songs, the teacher passes each stuffed animal around so children can hold and squeeze it, naming it each time: \"A cat, meow! A lion, roar!\"",
+    "supplies": [
+     "Basket of stuffed animals (dog, cat, duck, lion)"
+    ],
+    "img": "../media/activities/wild-pets/ones_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "wild-twos",
+  "age": "Twos",
+  "ageId": "twos",
+  "theme": "Wild Animals vs. Pets",
+  "short": "Wild Animals vs. Pets",
+  "letter": "Nn",
+  "overview": "Children sort pets from wild animals, learn where each one lives, and practice gentle care for animals.",
+  "circle": "Circle time opens with \"If You're a Dog and You Know It\": \"If you're a dog and you know it, say woof-woof! If you're a cat and you know it, say meow! If you're a lion and you know it, say roar!\", with children making each sound and doing the matching action. The group then does the fingerplay \"Five Little Pets,\" counting down on their fingers. Next, the teacher sets out a basket of toy animals and two mats, one with a house picture and one with a picture of the wild. Children take turns choosing an animal, naming it, making its sound, and placing it on the mat where it belongs: \"A goldfish lives in a tank at home; a tiger lives in the jungle.\" Book of the week: From Head to Toe by Eric Carle.",
+  "letterPlan": "N is for nap. Each child rocks, pats, or tucks a soft chunky pet or wild animal toy against a large letter N, with teacher support. Materials are chunky and safe, with no small blankets, pillows, or loose fabric, and the teacher keeps the animal toys within reach so children can grasp, rock, and set them down on their own. The teacher names the letter, makes the /n/ sound, and repeats \"N is for nap,\" tying it back to circle time: pets nap in a bed at home and wild animals nap in a den or in the grass.",
+  "objectives": [
+   "Scientific exploration: name or point to pets and wild animals and say where each lives, such as a house, a farm, or the zoo.",
+   "Language: name several animals and make their sounds, and use words like pet, wild, soft, and big.",
+   "Social and emotional: show gentle care toward animals and follow simple safety rules, such as asking before touching an animal."
+  ],
+  "steam": {
+   "name": "Wild or Pet? Sorting Safari",
+   "dev": {
+    "physical": "Picking up and dropping build hand control.",
+    "cognitive": "Sorts animals into two groups.",
+    "language": "Hears and says wild, pet, and animal names."
+   },
+   "why": "Sorting toy animals into wild and pet is a first step in classifying, a core science skill.",
+   "desc": "Set both bins on the floor at the toddlers' level, a few inches apart, with the toy animals scattered nearby. Pick up one animal, hold it where children can see it, name it, and say where it lives (\"Lion. Lion lives in the wild.\"), then place it in the wild bin with a clear, slow motion. Model this with two or three animals before handing one to a child. When a child picks up an animal, name it and ask \"Wild or pet?\", then let them drop it wherever they choose.",
+   "supplies": [
+    "Two shallow bins, baskets, or large paper plates labeled \"Wild\" (tree picture) and \"Pets\" (house picture)",
+    "8–12 plastic toy animals: pets (dog, cat, goldfish, hamster, rabbit) and wild animals (lion, elephant, giraffe, zebra, tiger, bear)",
+    "Optional photos of the same animals for matching"
+   ],
+   "img": "../media/activities/wild-pets/twos_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Paper Plate Peacock",
+    "dev": {
+     "physical": "Placing feathers builds fine motor control.",
+     "cognitive": "Explores blue, green, yellow, and purple."
+    },
+    "why": "Fanning out colorful feathers builds fine motor skills and color words.",
+    "desc": "Children glue colorful feathers along the curved edge of a half paper plate for the tail, then add the blue body, a yellow triangle beak, and googly eyes.",
+    "supplies": [
+     "White paper plate cut in half",
+     "Blue construction paper peacock body (bowling pin shape)",
+     "Colorful feathers (blue, green, yellow, purple)",
+     "Googly eyes",
+     "Yellow paper triangle beak",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/twos_craft1.webp"
+   },
+   {
+    "name": "Paper Plate Tiger",
+    "dev": {
+     "physical": "Gluing squares builds the pincer grasp.",
+     "cognitive": "Builds a tiger face from shapes.",
+     "language": "Hears tiger, stripes, and orange."
+    },
+    "why": "Building a tiger face square by square builds hand control and animal words.",
+    "desc": "Children glue orange tissue or paper squares all over a paper plate, then add two orange circle ears, black stripes, googly eyes, and a black nose and mouth.",
+    "supplies": [
+     "Large paper plate",
+     "Orange tissue or construction paper squares",
+     "2 orange paper circles per child for ears (palm-size)",
+     "Black paper stripes (about ½ inch thick)",
+     "Googly eyes (2 per child)",
+     "Black paper nose and mouth",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/twos_craft2.webp"
+   },
+   {
+    "name": "Handprint Mouse",
+    "dev": {
+     "emotional": "Delight in seeing their own hand become a mouse.",
+     "physical": "Gluing small parts builds fine motor skills.",
+     "language": "Hears mouse, ears, and whiskers."
+    },
+    "why": "Turning their own handprint into a mouse builds fine motor skills and is a keepsake for home.",
+    "desc": "Children glue grey ears with pink insides onto a grey handprint cutout, then add googly eyes, a pink nose, and white pipe cleaner whiskers.",
+    "supplies": [
+     "Grey handprint cutout (one per child)",
+     "White pipe cleaners",
+     "Grey paper semicircle ears",
+     "Smaller pink paper semicircles for inner ears",
+     "Pink paper nose (about ½ inch)",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/twos_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Land, Air & Sea Sorting",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Sorts animals by where they live.",
+     "language": "Hears land, air, sea, and animal names."
+    },
+    "why": "Sorting animals by where they live shows children why an animal is wild.",
+    "desc": "Children sort wild animals into the place where each one lives: on land, in the air, or in the sea, while the teacher names each animal. The teacher connects it to the theme: birds fly through the air, and wild animals can live on land or in water.",
+    "supplies": [
+     "Toy wild animals (land, air, and sea)",
+     "Three sorting mats or bins: land, air, and sea"
+    ],
+    "img": "../media/activities/wild-pets/twos_act1.webp"
+   },
+   {
+    "name": "Animal Puzzles",
+    "group": "Small group",
+    "dev": {
+     "physical": "Fitting pieces builds hand-eye coordination.",
+     "cognitive": "Matches halves to make a whole.",
+     "language": "Hears animal names and sounds."
+    },
+    "why": "Two-piece puzzles build matching skills and animal words.",
+    "desc": "Laminated animal pictures are cut into 2-piece puzzles so they are easy to match. Children put the halves together while the teacher names the animal, makes its sound, and says whether it is a pet or a wild animal.",
+    "supplies": [
+     "Laminated animal pictures cut into 2-piece puzzles"
+    ],
+    "img": "../media/activities/wild-pets/twos_act2.webp"
+   },
+   {
+    "name": "House Pet or Wild Animal Sorting",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Sorts animals into two groups.",
+     "language": "Hears wild and pet."
+    },
+    "why": "Sorting pets into a dollhouse and wild animals outside makes the idea of wild versus pet concrete.",
+    "desc": "Children sort animals into two groups: pets go into the dollhouse, and wild animals go into a wild area. As they play, the teacher names each animal and asks \"Wild or pet?\" so children notice which animals live with people and which live out in the world.",
+    "supplies": [
+     "Dollhouse",
+     "A wild area (green mat or play grass)",
+     "Toy pets and wild animals"
+    ],
+    "img": "../media/activities/wild-pets/twos_act3.webp"
+   },
+   {
+    "name": "Animal Feeding",
+    "group": "Small group",
+    "dev": {
+     "physical": "Aiming and dropping build hand-eye coordination.",
+     "language": "Hears animal sounds and \"In it goes!\""
+    },
+    "why": "Feeding a cardboard animal builds aim, hand control, and animal sounds.",
+    "desc": "Children feed a cardboard animal by dropping pretend food into its open mouth. They take chunky pretend food from a basket and push each piece in, and the teacher says \"In it goes!\" and makes the animal's sound each time.",
+    "supplies": [
+     "Cardboard animal with an open mouth",
+     "Chunky pretend food",
+     "Basket"
+    ],
+    "img": "../media/activities/wild-pets/twos_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "wild-threes",
+  "age": "3 Year Olds",
+  "ageId": "threes",
+  "theme": "Wild Animals vs. Pets",
+  "short": "Wild Animals vs. Pets",
+  "letter": "Nn",
+  "overview": "Children compare wild animals and pets, ask where animals live, and explain why an animal is wild or tame.",
+  "circle": "Begin with a song to gather the group: \"If You're Happy and You Know It\" with animal sounds swapped in (\"If you're a lion and you know it, give a roar\"). Follow with a picture walk through the book of the week: show the cover and ask what animal they think is inside, then let the children roar, stomp, or hop for every animal that appears. Pause on the pets and the wild animals to point out which ones could live in a home with people and which belong out in the world (\"Would a lion fit in your house?\"). Book of the week: Brown Bear, Brown Bear, What Do You See? by Bill Martin Jr. and Eric Carle.",
+  "letterPlan": "N is for nap. Children lie their animal toys down for a nap, then name each one and decide whether it is wild or a pet as it settles in. The teacher dims the lights, makes the /n/ sound, and repeats \"N is for nap\" while tucking each animal in (\"The dog naps in a bed at home, the lion naps out in the grass\"), and children take turns choosing where each animal sleeps.",
+  "objectives": [
+   "Approaches to learning: show curiosity about animals and ask simple questions about where they live.",
+   "Language and literacy: use and respond to new animal words such as wild, pet, habitat, and tame.",
+   "Scientific inquiry: sort animals into groups by one attribute, such as wild or pet, and say why."
+  ],
+  "steam": {
+   "name": "Wild Animals vs. Pets Wash Station",
+   "dev": {
+    "physical": "Scrubbing and squeezing build hand strength.",
+    "cognitive": "Asks what happens to water, sponges, and floating animals.",
+    "language": "Names each animal and says wild or pet."
+   },
+   "why": "Washing and sorting toy animals mixes water science with classifying wild and pet.",
+   "desc": "Set the water bin on the floor with towels beside it and the two sorting bins a few feet away, and let each child choose an animal from a basket of dry toys. Children name the animal, then wash it, scrubbing, squeezing the sponge, and dunking it, while the teacher asks questions about the water: \"What happens when you squeeze the sponge?\" \"Is the lion heavier when he's wet?\" \"Which animals float?\" As each animal gets clean and dry, the child says whether it is wild or a pet and places it in a bin.",
+   "supplies": [
+    "Shallow tub with a few inches of lukewarm water",
+    "A squirt of tear-free baby wash or a drop of dish soap",
+    "8–12 plastic toy animals: pets (dog, cat, goldfish, hamster, rabbit) and wild animals (lion, elephant, giraffe, zebra, tiger, bear)",
+    "Small sponges, soft scrub brushes, and washcloths",
+    "Small towels or microfiber cloths for drying",
+    "Two bins labeled \"Wild\" (tree picture) and \"Pets\" (house picture)"
+   ],
+   "img": "../media/activities/wild-pets/threes_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "N is for Noodles!",
+    "dev": {
+     "physical": "Placing noodles builds fine motor control.",
+     "cognitive": "Traces the shape of N with noodles.",
+     "language": "Hears \"N is for noodles.\""
+    },
+    "why": "Covering an N with noodles is a hands-on way to learn the letter shape.",
+    "desc": "Children glue colorful noodles onto a letter N cutout mounted on paper labeled \"Nn is for Noodles!\"",
+    "supplies": [
+     "Construction paper labeled \"Nn is for Noodles!\"",
+     "Letter N cutout (about half the size of the paper)",
+     "Colorful noodles",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/threes_craft1.webp"
+   },
+   {
+    "name": "Bear Claw",
+    "dev": {
+     "physical": "Painting and gluing build hand control.",
+     "cognitive": "Counts paw pads and claws.",
+     "language": "Hears bear, claw, and paw."
+    },
+    "why": "Making a wearable bear paw invites pretend play and talk about wild animals.",
+    "desc": "Children paint the paper plate mitt brown, then glue on black circles for the paw pads and black claws. When it is dry, they slip a hand inside and become a bear.",
+    "supplies": [
+     "Two paper plates, trimmed and glued into a mitt children can slip a hand into",
+     "Brown paint",
+     "Black paper circles (3 small and 1 large per child)",
+     "Black paper claws",
+     "Liquid glue",
+     "Paint brushes"
+    ],
+    "img": "../media/activities/wild-pets/threes_craft2.webp"
+   },
+   {
+    "name": "Lion Craft",
+    "dev": {
+     "physical": "Cutting fringe builds scissor skills.",
+     "cognitive": "Builds a lion face from circles."
+    },
+    "why": "Snipping a lion's mane builds scissor skills and talk about wild animals.",
+    "desc": "Children glue the yellow circle in the middle of the big orange circle, snip fringe around the orange edge for a mane, add googly eyes, and draw a nose and mouth with marker.",
+    "supplies": [
+     "Large orange construction paper circle",
+     "Yellow construction paper circle (about half the size)",
+     "Googly eyes",
+     "Black or brown markers",
+     "Scissors",
+     "Liquid glue or glue sticks"
+    ],
+    "img": "../media/activities/wild-pets/threes_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Paint Your Own Snake",
+    "group": "Small group",
+    "dev": {
+     "emotional": "Freedom to create their own way.",
+     "physical": "Gripping a clothespin builds hand strength."
+    },
+    "why": "Dabbing scales with a clothespin brush builds grip and lets children create freely.",
+    "desc": "Each child paints a cut-out snake with green paint on a cotton ball clipped into a clothespin, dabbing and dragging to give it scales and texture. The teacher holds the snake steady and keeps the paint within reach, with no correcting as children cover it however they choose.",
+    "supplies": [
+     "Snake cutouts",
+     "Green paint",
+     "Cotton balls",
+     "Clothespins"
+    ],
+    "img": "../media/activities/wild-pets/threes_act1.webp"
+   },
+   {
+    "name": "Feed the Correct Letter",
+    "group": "Small group",
+    "dev": {
+     "physical": "Digging builds hand strength.",
+     "cognitive": "Recognizes letters.",
+     "language": "Says letter names and sounds."
+    },
+    "why": "Hunting for letter bones makes letter recognition a game.",
+    "desc": "Children dig through a large bin of pinto beans to find laminated dog bone cards, each with a different letter. When the teacher calls out a letter, children find that bone, say the letter's name and sound, and \"feed\" it to the dog. The teacher ties it back to the theme: dogs are pets that live in a home with people and eat from a bowl. Safety: watch closely so beans stay in the bin and out of mouths, noses, and ears.",
+    "supplies": [
+     "Large bin of pinto beans",
+     "Laminated dog bone cards with letters",
+     "Toy dog or dog picture with a bowl"
+    ],
+    "img": "../media/activities/wild-pets/threes_act2.webp"
+   },
+   {
+    "name": "Porcupine Number Counting",
+    "group": "Small group",
+    "dev": {
+     "physical": "Pinching clothespins builds finger strength.",
+     "cognitive": "Matches numbers and counts.",
+     "language": "Hears number words."
+    },
+    "why": "Clipping numbered spikes builds counting and the finger strength needed for writing.",
+    "desc": "Children clip numbered clothespins along the back of a laminated porcupine picture, adding spikes one at a time. The teacher names each number, counts the spikes already in place, and lets the child clip it wherever they choose. The teacher ties it back to the theme: porcupines are wild animals that live out in the world, not in a home with people.",
+    "supplies": [
+     "Laminated porcupine picture",
+     "Clothespins with numbers"
+    ],
+    "img": "../media/activities/wild-pets/threes_act3.webp"
+   },
+   {
+    "name": "Letter N Writing Practice",
+    "group": "Small group",
+    "dev": {
+     "physical": "Forming lines builds pre-writing strokes.",
+     "cognitive": "Learns the shape of N.",
+     "language": "Says the /n/ sound."
+    },
+    "why": "Making N in many ways builds the muscle memory for writing it.",
+    "desc": "Children practice making the letter N at stations: tracing a large N with a finger in a tray of sand or salt, rolling playdough sticks into an N, building N with popsicle sticks on an outline, and tracing N with a dry-erase marker on a laminated card. The teacher models the strokes at each station and says the /n/ sound as children write.",
+    "supplies": [
+     "Shallow tray of sand or salt",
+     "Playdough",
+     "Popsicle sticks and a letter N outline",
+     "Laminated N cards and dry-erase markers"
+    ],
+    "img": "../media/activities/wild-pets/threes_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "wild-fours",
+  "age": "Fours",
+  "ageId": "fours",
+  "theme": "Wild Animals vs. Pets",
+  "short": "Wild Animals vs. Pets",
+  "letter": "Nn",
+  "overview": "Children investigate what wild animals and pets need to live, build habitats, and explain their thinking.",
+  "circle": "Gather the group with \"Animal Action\" sung to the tune of \"The Wheels on the Bus\" to get everyone moving. Then do a picture walk of the book of the week, asking what the children notice about the chameleon and why it keeps changing, then read straight through, stopping on a few pages to ask questions that push their thinking: \"Why does the chameleon want a color of his own?\" \"Could a chameleon be a pet at your house? Why or why not?\" \"What would he need to live out in the wild that he wouldn't need in a house?\" Book of the week: A Color of His Own by Leo Lionni.",
+  "letterPlan": "N is for nest, nighttime, and neighborhood. Children build each animal a nighttime home out of loose parts and blocks, deciding where it sleeps: wild animals go into nests, dens, and burrows out in nature, and pets go into a neighborhood or a house with people. As they build, the teacher points to the printed N and repeats \"N is for nest,\" \"N is for nighttime,\" and \"N is for neighborhood,\" making the /n/ sound each time and inviting children to echo it. Children name their animal's home out loud when they finish: \"N is for nest\" or \"N is for nook.\"",
+  "objectives": [
+   "Approaches to learning: ask questions and make predictions about where animals live and how they survive.",
+   "Language and literacy: use and explain new animal words such as wild, pet, habitat, tame, and domesticated.",
+   "Scientific inquiry: sort animals by one or more attributes, such as wild or pet and land, air, or sea, and explain the reasoning."
+  ],
+  "steam": {
+   "name": "Wild or Pet? Build-a-Habitat Challenge",
+   "dev": {
+    "social": "Shares their build in a gallery walk.",
+    "physical": "Cutting, taping, and building.",
+    "cognitive": "Reasons about what each animal needs.",
+    "language": "Explains choices with new words like habitat."
+   },
+   "why": "Designing a habitat makes children reason about what living things need, the heart of early science.",
+   "desc": "Set the animals, building materials, and both empty bins on the floor and read the two signs together. Explain the challenge: each animal needs a home that gives it what it needs, and the children will build it. Each child picks two animals, one pet and one wild, and thinks out loud about what each needs (\"What does a fish need that a tiger doesn't? Where would a lion sleep? What would a dog need to stay warm?\"), then builds with any materials. Ask questions that push reasoning: \"Why did you put the rabbit in the house and the zebra outside?\" \"What would happen to your lion if he lived in the dog's house?\" End with a gallery walk where each child shows their build and names one thing their animal has and one thing it needs.",
+   "supplies": [
+    "Two shallow bins or trays",
+    "Small plastic toy animals (pets and wild animals)",
+    "Cardboard tubes, small boxes, foam blocks, craft sticks",
+    "Felt or fabric scraps, cotton balls, shredded paper",
+    "Sand, small rocks, craft grass or moss",
+    "Tape, glue sticks, child-safe scissors",
+    "Two signs: \"Pets\" (house picture) and \"Wild\" (tree picture)"
+   ],
+   "img": "../media/activities/wild-pets/fours_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "N is for Ninja",
+    "dev": {
+     "physical": "Coloring and gluing build fine motor skills.",
+     "cognitive": "Turns the letter N into a character.",
+     "language": "Hears \"N is for ninja.\""
+    },
+    "why": "Turning N into a ninja turtle makes the letter shape stick.",
+    "desc": "Children color a green letter N cutout with crayons, then glue on a colored paper mask and googly eyes to turn it into a ninja turtle.",
+    "supplies": [
+     "Green construction paper letter N cutout",
+     "Crayons",
+     "Colored paper masks",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/fours_craft1.webp"
+   },
+   {
+    "name": "Fork Painted Hedgehog",
+    "dev": {
+     "physical": "Stamping with a fork builds hand control.",
+     "cognitive": "Sees how texture makes spikes.",
+     "language": "Hears hedgehog and spiky."
+    },
+    "why": "Fork painting turns a simple tool into spiky texture and builds hand control.",
+    "desc": "Children dip plastic forks in brown paint and press them across a hedgehog body outline to make spikes, then color the face, add googly eyes, and glue on a brown paper nose.",
+    "supplies": [
+     "Hedgehog body outline",
+     "Brown paint",
+     "Plastic forks",
+     "Googly eyes",
+     "Beige crayons, colored pencils, or markers",
+     "Brown paper nose (about 1 inch)",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/fours_craft2.webp"
+   },
+   {
+    "name": "Coffee Filter Peacocks",
+    "dev": {
+     "physical": "Painting and spraying build hand strength.",
+     "cognitive": "Watches colors spread and blend."
+    },
+    "why": "Misting watercolor filters shows colors blending and makes a bright peacock tail.",
+    "desc": "Children paint a coffee filter with blue, green, yellow, and purple watercolors, then mist it with water so the colors blend. When it is dry, the filter is pinched into a blue clothespin as the tail, and children add googly eyes, a yellow paper beak, and a green feather.",
+    "supplies": [
+     "White coffee filters",
+     "Blue, green, yellow, and purple watercolor paint",
+     "Spray bottle of water",
+     "Blue clothespin",
+     "Googly eyes",
+     "Yellow paper beak",
+     "Green feather",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/wild-pets/fours_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Letter N Writing Practice",
+    "group": "Small group",
+    "dev": {
+     "physical": "Forming lines builds pre-writing strokes.",
+     "cognitive": "Learns the shape of N.",
+     "language": "Says the /n/ sound."
+    },
+    "why": "Making N in many ways builds the muscle memory for writing it.",
+    "desc": "Children practice making the letter N at stations: tracing a large N with a finger in a tray of sand or salt, rolling playdough sticks into an N, building N with popsicle sticks on an outline, and tracing N with a dry-erase marker on a laminated card. The teacher models the strokes at each station and says the /n/ sound as children write.",
+    "supplies": [
+     "Shallow tray of sand or salt",
+     "Playdough",
+     "Popsicle sticks and a letter N outline",
+     "Laminated N cards and dry-erase markers"
+    ],
+    "img": "../media/activities/wild-pets/fours_act1.webp"
+   },
+   {
+    "name": "Animal Size Sorting",
+    "group": "Large group",
+    "dev": {
+     "cognitive": "Compares and orders by size.",
+     "language": "Uses big, medium, small, bigger, and smaller."
+    },
+    "why": "Sorting and ordering animals by size builds comparing and measuring words.",
+    "desc": "Children sort toy animals, both wild and pets, into three size groups: big, medium, and small, comparing each animal against the others. The teacher names each group and asks questions: \"Is the elephant bigger or smaller than the dog?\" \"Which group has the most animals?\" \"Can you find one that's the same size as this one?\" Children say the size word as they place each animal. Then they line up the animals from smallest to biggest within each group.",
+    "supplies": [
+     "Toy animals (wild and pets) in many sizes",
+     "Three labeled areas: big, medium, small"
+    ],
+    "img": "../media/activities/wild-pets/fours_act2.webp"
+   },
+   {
+    "name": "Animal Rescue",
+    "group": "Small group",
+    "dev": {
+     "emotional": "Persistence when a knot is tricky.",
+     "physical": "Untying and unwinding build finger strength.",
+     "cognitive": "Plans and tries new ways to solve a problem.",
+     "language": "Names each animal and says wild or pet."
+    },
+    "why": "Freeing tangled animals builds finger strength, problem solving, and persistence.",
+    "desc": "The teacher wraps plastic animals ahead of time in yarn, rubber bands, and other loose materials with different levels of difficulty, and sets them in a shallow bin. Children choose a rescue and work with their fingers to untie knots, unwind wraps, and pull off bands until each animal is free. The teacher asks: \"Which animal is easiest to free? Which one is taking the longest? What could you try next?\" Children name each freed animal and say whether it is wild or a pet.",
+    "supplies": [
+     "Plastic toy animals",
+     "Yarn",
+     "Rubber bands",
+     "Shallow bin or tray"
+    ],
+    "img": "../media/activities/wild-pets/fours_act3.webp"
+   },
+   {
+    "name": "Animal Dance",
+    "group": "Large group",
+    "dev": {
+     "social": "Takes turns leading the group.",
+     "physical": "Hopping, stomping, and crawling build gross motor skills.",
+     "language": "Names animals and says wild or pet."
+    },
+    "why": "Moving like animals builds gross motor skills and reviews wild versus pet.",
+    "desc": "Children roll a jumbo die with six animal pictures, each paired with a movement: hop like a frog, stomp like an elephant, pounce like a cat, slither like a snake, flap like a bird, and wag and crawl like a dog. The teacher rolls first and models, then a child rolls and leads. For each animal, the teacher asks whether it is wild or a pet and leads the group: \"A frog! Frogs are wild. Everybody hop!\"",
+    "supplies": [
+     "Jumbo die with six animal pictures"
+    ],
+    "img": "../media/activities/wild-pets/fours_act4.webp"
+   }
+  ]
+ }
+];
+
+/* Personal Hygiene: from Amy's 11/13/2026 PDFs */
+window.HYGIENE=[
+ {
+  "id": "hyg-ones",
+  "age": "Ones",
+  "ageId": "ones",
+  "theme": "Personal Hygiene",
+  "short": "Personal Hygiene",
+  "letter": "Mm",
+  "overview": "Children learn simple ways to keep clean, like washing hands, wiping noses, and brushing teeth, through songs, bubbles, and play.",
+  "circle": "Circle time opens with \"This Is the Way We Wash Our Hands,\" with children rubbing their palms together. The teacher reads the book of the week, pausing on each page to name the hygiene item pictured (soap, towel, tissue, toothbrush) and letting children point to it. The group repeats the song with two or three more verses (brush our teeth, wipe our nose, take a bath, comb our hair), with the teacher helping children's hands through the motions. Next, the teacher passes around a bar of soap, a washcloth, a tissue, and a toothbrush one at a time so children can hold, feel, and smell each item while the teacher names it and says what it's for: \"Soap. We wash our hands with soap.\" Book of the week: Germs Are Not for Sharing by Elizabeth Verdick.",
+  "letterPlan": "M is for mitten. Each child presses a few large, chunky card stock mitten shapes onto a large letter M spread with glue, with teacher support. Materials are chunky and safe, with no small buttons, yarn, or loose string, and the teacher keeps the mitten shapes within reach so children can grasp, press, and drop them on their own. The teacher names the letter, makes the /m/ sound, and repeats \"M is for mitten,\" tying it back to circle time: mittens keep hands warm when the weather turns cold.",
+  "objectives": [
+   "Self-care: take part in hand washing by holding hands out, rubbing them together, and drying with a towel, with adult support.",
+   "Health and safety: respond to familiar hygiene routines, such as opening their mouth for tooth brushing, holding still for a face wipe, or reaching for a tissue.",
+   "Language: look at, point to, or try words for hygiene items such as soap, towel, toothbrush, or tissue."
+  ],
+  "steam": {
+   "name": "Soap and Water Exploration",
+   "dev": {
+    "physical": "Whisking, pouring, and squeezing build hand strength.",
+    "cognitive": "Watches bubbles build and disappear.",
+    "language": "Hears bubbles, squeeze, and wash."
+   },
+   "why": "Playing with soapy water shows how bubbles form and makes washing a happy routine.",
+   "desc": "Children whisk, pour, and squeeze soapy water, watching the bubbles build and disappear. They dunk washcloths and sponges, wring them out, and wipe their own hands and arms. An adult sits at the child's level, narrates what happens (\"Bubbles!\" \"Squeeze it out\"), and keeps a hand near the bin at all times.",
+   "supplies": [
+    "Shallow bin with 1–2 inches of warm water",
+    "Tear-free baby soap or a pump of hand soap",
+    "Whisks, spoons, and small cups",
+    "Washcloths and sponges",
+    "Towels on the floor beneath and beside the bin",
+    "Basket of empty soap bottles and scrub brushes for dry play"
+   ],
+   "img": "../media/activities/hygiene/ones_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Dirty Hands, Clean Hands",
+    "dev": {
+     "physical": "Squeezing glue and sprinkling build hand control.",
+     "cognitive": "Imagines what germs look like."
+    },
+    "why": "Making germs visible with glitter helps toddlers understand why we wash hands.",
+    "desc": "Children dab glue on their handprint and sprinkle on different colors of glitter to show what germs would look like if we could see them. The paper is labeled \"If I could see germs on my hands... this is what it would look like!\" The teacher handles the glitter and keeps it away from eyes and mouths.",
+    "supplies": [
+     "Child's handprint glued to construction paper with the label",
+     "Liquid glue",
+     "Different colors of glitter"
+    ],
+    "img": "../media/activities/hygiene/ones_craft1.webp"
+   },
+   {
+    "name": "M is for Mud Fingerpainting",
+    "dev": {
+     "physical": "Fingerpainting builds hand strength.",
+     "cognitive": "Feels the shape of M.",
+     "language": "Hears \"M is for mud.\""
+    },
+    "why": "Fingerpainting brown mud over a big M is a messy, memorable way to meet the letter.",
+    "desc": "Children fingerpaint brown \"mud\" all over a large letter M outline.",
+    "supplies": [
+     "Large letter M outline on light-colored paper",
+     "Brown paint"
+    ],
+    "img": "../media/activities/hygiene/ones_craft2.webp"
+   },
+   {
+    "name": "Bath Time",
+    "dev": {
+     "physical": "Stamping builds hand control.",
+     "cognitive": "Sees circle prints become bubbles."
+    },
+    "why": "Stamping soapy bubbles onto a bathtub builds hand control and connects art to bath time.",
+    "desc": "Children dip paper towel rolls in soapy blue paint and stamp circle bubbles onto a bathtub outline.",
+    "supplies": [
+     "Bathtub outline on paper",
+     "Paper towel rolls",
+     "Blue paint mixed with water and soap"
+    ],
+    "img": "../media/activities/hygiene/ones_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Color Sorting Germs",
+    "group": "Small group",
+    "dev": {
+     "physical": "Pushing pom-poms builds finger strength.",
+     "cognitive": "Matches colors and counts.",
+     "language": "Hears color words."
+    },
+    "why": "Pushing pom-pom \"germs\" into matching fingers builds color matching and finger strength.",
+    "desc": "Children match pom-pom \"germs\" to the matching color dots inside a clear plastic glove. They pick a pom-pom from a bowl and push it into the finger that matches its color while the teacher names the color: \"Red. That one goes in the red spot.\" Children can pull them back out and start again, sort the whole bowl, or count the germs as they go in. The teacher ties it back to the theme: germs live on our hands, and washing them off keeps us healthy. Use large pom-poms and watch closely so none go in mouths.",
+    "supplies": [
+     "Clear plastic glove with color dots in each finger",
+     "Bowl of large pom-poms in matching colors"
+    ],
+    "img": "../media/activities/hygiene/ones_act1.webp"
+   },
+   {
+    "name": "Magic Germs",
+    "group": "Small group",
+    "dev": {
+     "cognitive": "Sees soap push the pepper away: cause and effect.",
+     "language": "Hears germs, soap, and away."
+    },
+    "why": "Watching soap chase pepper \"germs\" away shows why we wash with soap.",
+    "desc": "Pepper is sprinkled onto the surface of the water. Children watch it float and spread out like germs on hands. The teacher dips a finger in dish soap and touches the water, and the pepper scatters to the edges instantly. Children take turns dipping their own soapy finger in and watching the \"germs\" run away. Keep pepper away from eyes.",
+    "supplies": [
+     "Shallow dish of water",
+     "Ground black pepper",
+     "Dish soap"
+    ],
+    "img": "../media/activities/hygiene/ones_act2.webp"
+   },
+   {
+    "name": "Scrubbing Hands",
+    "group": "Large group",
+    "dev": {
+     "physical": "Rubbing and squeezing build coordination.",
+     "cognitive": "Learns the hand-washing steps.",
+     "language": "Hears wet, soap, scrub, rinse, dry."
+    },
+    "why": "Practicing the steps over and over with a teacher builds a lifelong hand-washing habit.",
+    "desc": "Children wash their own hands and the hands of chunky plastic dolls at a shallow tray of lukewarm water with washcloths and soapy sponges, rubbing and squeezing to make bubbles. The teacher washes along with them and says each step out loud (\"Wet, soap, scrub, rinse, dry!\"), then hands each child a towel. The teacher names the parts as they go: fingers, palms, thumbs, all clean.",
+    "supplies": [
+     "Shallow tray of lukewarm water",
+     "Washcloths and soapy sponges",
+     "Chunky plastic dolls",
+     "Towels"
+    ],
+    "img": "../media/activities/hygiene/ones_act3.webp"
+   },
+   {
+    "name": "Wash and Wipe",
+    "group": "Small group",
+    "dev": {
+     "emotional": "Practices gentle caring.",
+     "physical": "Wiping and squeezing build hand control.",
+     "language": "Hears face, hands, and clean."
+    },
+    "why": "Washing dolls lets toddlers practice the same steps they use for themselves.",
+    "desc": "Children wash chunky plastic dolls and toys in a shallow tub of lukewarm water with washcloths and sponges. The teacher washes along with them and names each step (\"Wash the face, wash the hands, all clean!\"), then helps children dry the toys with a towel.",
+    "supplies": [
+     "Shallow tub of lukewarm water",
+     "Chunky plastic dolls and toys",
+     "Washcloths and sponges",
+     "Towel"
+    ],
+    "img": "../media/activities/hygiene/ones_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "hyg-twos",
+  "age": "Twos",
+  "ageId": "twos",
+  "theme": "Personal Hygiene",
+  "short": "Personal Hygiene",
+  "letter": "Mm",
+  "overview": "Children practice washing hands, covering coughs, and brushing teeth, and see how soap chases germs away.",
+  "circle": "Circle time opens with \"This Is the Way We Wash Our Hands,\" with children rubbing their palms together. The group sings three or four more verses (brush our teeth, wipe our nose, take a bath, comb our hair), with the teacher helping children do the actions on their own bodies. Next, the teacher passes around a bar of soap, a washcloth, a tissue, and a toothbrush one at a time so children can hold, feel, and smell each item while the teacher names it and says what it's for: \"Soap. We wash our hands with soap.\" Children put each item back in the basket and ask for the next one. Book of the week: Germs Are Not for Sharing by Elizabeth Verdick.",
+  "letterPlan": "M is for mitten. Each child presses a few large, chunky card stock mitten shapes onto a large letter M spread with glue, with teacher support. The teacher offers the mittens one at a time so children can ask for \"more\" or name the color, and can peel and re-press shapes before the glue sets. The teacher names the letter, makes the /m/ sound, and repeats \"M is for mitten.\" Children can also trace the M with a finger before gluing.",
+  "objectives": [
+   "Self-care: wash hands with soap and water, rubbing palms and drying with a towel, and brush teeth with adult support.",
+   "Health and safety: cover a cough or sneeze with a hand or elbow, wipe their nose with a tissue, and put used tissues in the trash.",
+   "Language: name or point to soap, towel, toothbrush, tissue, and trash can, and use words like wash, clean, and dirty."
+  ],
+  "steam": {
+   "name": "Soap Power",
+   "dev": {
+    "cognitive": "Sees soap push the pepper away: cause and effect.",
+    "language": "Hears germs, soap, and let go."
+   },
+   "why": "Watching soap scatter pepper \"germs\" shows why we wash with soap, not just water.",
+   "desc": "Children sprinkle pepper onto the water and watch it float and spread. The teacher dips a soapy finger into the water and the pepper scatters to the edges. Children take turns dipping their own soapy finger in and watching the \"germs\" run away, then add more pepper and start over. The teacher explains that soap makes germs let go of our hands, so we wash with soap, not just water. Keep pepper away from eyes.",
+   "supplies": [
+    "Shallow tray of water",
+    "Ground black pepper (the \"germs\")",
+    "Dish soap",
+    "Small bowl of soapy water",
+    "Towels"
+   ],
+   "img": "../media/activities/hygiene/twos_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Germ Straw Blowing",
+    "dev": {
+     "physical": "Blowing builds breath control; droppers build finger strength.",
+     "cognitive": "Watches paint spread and colors mix."
+    },
+    "why": "Blowing paint into wild germ shapes is silly fun that builds breath and hand control.",
+    "desc": "Children drop watercolor paint onto white cardstock with droppers, then blow through a straw to spread it into wild germ shapes. When dry, they add googly eyes to their germs. Remind children to blow out, never sip.",
+    "supplies": [
+     "White cardstock",
+     "Watercolor paint",
+     "Straws",
+     "Googly eyes",
+     "Droppers"
+    ],
+    "img": "../media/activities/hygiene/twos_craft1.webp"
+   },
+   {
+    "name": "Cotton Ball Tooth",
+    "dev": {
+     "physical": "Pulling and gluing cotton builds fine motor skills.",
+     "language": "Hears tooth, white, and clean."
+    },
+    "why": "Building a bright white tooth starts a happy conversation about brushing.",
+    "desc": "Children glue cotton balls onto a tooth outline to make it bright and white, add googly eyes and a red paper smile, and glue it to a popsicle stick.",
+    "supplies": [
+     "Tooth outline",
+     "Cotton balls",
+     "Liquid glue",
+     "Popsicle sticks",
+     "Googly eyes",
+     "Red paper semicircle mouth"
+    ],
+    "img": "../media/activities/hygiene/twos_craft2.webp"
+   },
+   {
+    "name": "Clean vs. Dirty Hands",
+    "dev": {
+     "physical": "Coloring and dotting build hand control.",
+     "cognitive": "Compares dirty and clean."
+    },
+    "why": "Comparing dirty and clean hands shows what soap does.",
+    "desc": "Children glue two hand cutouts under \"Dirty Hands\" and color them brown for dirt, then glue two clean hands under \"Clean Hands,\" add a yellow paper \"Soap\" bar, and dot blue bubbles with a dot marker.",
+    "supplies": [
+     "4 hand cutouts per child",
+     "White paper folded in half, labeled \"Dirty Hands\" on top and \"Clean Hands\" on the bottom",
+     "Blue dot marker",
+     "Yellow paper rectangle labeled \"Soap\"",
+     "Brown crayons or markers",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/hygiene/twos_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Dramatic Center",
+    "group": "Small group",
+    "dev": {
+     "social": "Plays caregiver alongside friends.",
+     "emotional": "Practices gentle care.",
+     "physical": "Squeezing and wringing build hand strength.",
+     "language": "Hears wash, dry, and soaking wet."
+    },
+    "why": "Caring for baby dolls lets toddlers practice their own hygiene routines through play.",
+    "desc": "Children bathe and care for baby dolls at a wash station: undressing them, washing them with soapy washcloths, drying them, and dressing them again, while the teacher names each step (\"Wash baby's hands,\" \"Dry baby's face\") and connects it to their own routines. At the same station, children squeeze wet sponges and washcloths in a shallow bin, with the teacher naming what happens (\"Squeeze it out,\" \"Soaking wet,\" \"All dry\"), and wipe doll faces, tables, or their own hands when they finish.",
+    "supplies": [
+     "Baby dolls with clothes",
+     "Shallow bin of water",
+     "Soapy washcloths and sponges",
+     "Towels"
+    ],
+    "img": "../media/activities/hygiene/twos_act1.webp"
+   },
+   {
+    "name": "Counting Bubbles",
+    "group": "Small group",
+    "dev": {
+     "physical": "Pinching clothespins builds finger strength.",
+     "cognitive": "Counts 1 to 5 with one-to-one matching.",
+     "language": "Says number words."
+    },
+    "why": "Clipping one pin per bubble builds counting and the pinch needed for writing.",
+    "desc": "Each child picks a card showing 1 to 5 large bubbles, counts them aloud with the teacher, and clips one clothespin onto each bubble. The teacher counts along and pauses to let children fill in the last number when they are ready: \"One, two, three...\"",
+    "supplies": [
+     "Bubble counting cards (1–5 large bubbles)",
+     "Clothespins"
+    ],
+    "img": "../media/activities/hygiene/twos_act2.webp"
+   },
+   {
+    "name": "Lego Flossing",
+    "group": "Small group",
+    "dev": {
+     "physical": "Sliding yarn builds fine motor control.",
+     "cognitive": "Connects floss to cleaning between teeth.",
+     "language": "Hears push, slide, and floss."
+    },
+    "why": "Flossing playdough out of blocks shows why we clean between our teeth.",
+    "desc": "The teacher pre-builds a few short block rows and tucks playdough into the gaps, then shows children how to slide a length of yarn down into a gap and pull it through to lift the dough out. Children also press playdough into the gaps themselves. The teacher names what happens (\"Push it in,\" \"Slide the floss down,\" \"Got it out!\") and compares the yarn to floss cleaning between teeth, where a toothbrush can't reach. Use large blocks (Duplo-size) for this age.",
+    "supplies": [
+     "Large building blocks (Duplo-size)",
+     "Playdough",
+     "Yarn"
+    ],
+    "img": "../media/activities/hygiene/twos_act3.webp"
+   },
+   {
+    "name": "Learning to Wipe Game",
+    "group": "Small group",
+    "dev": {
+     "physical": "Folding and wiping build hand control.",
+     "cognitive": "Learns the steps in order.",
+     "language": "Hears wipe, clean, and trash."
+    },
+    "why": "Practicing wiping in a game makes a private skill easy to learn and talk about.",
+    "desc": "The teacher tapes two balloons side by side and draws a small smudge between them (or spreads a tablespoon of chocolate pudding there), and sets out a basket of toilet paper squares with a trash can beside it. Children take a square, wipe the mark off, and drop the used paper in the trash. The teacher names each step (\"Wipe, wipe,\" \"All clean,\" \"In the trash\") and compares it to wiping after using the bathroom: use the paper once, then put it in the trash, not on the floor or back on the roll. Safety: an adult keeps hold of the balloons; popped or uninflated balloon pieces are a choking hazard, so throw them away right away.",
+    "supplies": [
+     "Two balloons taped side by side",
+     "Marker (or chocolate pudding)",
+     "Toilet paper squares",
+     "Trash can"
+    ],
+    "img": "../media/activities/hygiene/twos_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "hyg-threes",
+  "age": "3 Year Olds",
+  "ageId": "threes",
+  "theme": "Personal Hygiene",
+  "short": "Personal Hygiene",
+  "letter": "Mm",
+  "overview": "Children learn the steps to clean hands and teeth, and discover how germs spread and how soap stops them.",
+  "circle": "Circle time opens with \"This Is the Way We Wash Our Hands,\" with children rubbing their palms together. The group sings four or five verses (brush our teeth, wipe our nose, take a bath, comb our hair), and children name the next verse before it starts. Next, the teacher sets out a basket of real items (soap, a washcloth, a tissue, a toothbrush, floss), and children take turns choosing one, naming it, and saying what it's for: \"Floss. It cleans between your teeth where the brush can't reach.\" The group acts out the hand-washing steps in order on the rug (wet, soap, scrub, rinse, dry), counting each step on their fingers, then walks to the sink to wash hands for real while singing. Book of the week: Wash Your Hands! by Tony Ross.",
+  "letterPlan": "M is for muffin. Children recognize the letter M, learn its sound, and connect it to words like muffin. Each child glues a paper muffin liner onto a large letter M and presses crumpled paper \"muffin tops\" into it, with teacher support. The teacher sets out real muffin liners, scrap paper in browns, yellows, and blues for berries, and glue sticks, then asks each child to say the /m/ sound and name what goes on top of their muffin before gluing. The teacher repeats \"M is for muffin\" and asks \"What else starts with /m/?\" (mitten, moon, milk, mom), accepting any answer. Children who are ready can trace the M with a finger.",
+  "objectives": [
+   "Self-care: complete hand-washing steps in order (wet, soap, scrub, rinse, dry) and brush teeth with adult support, naming the steps.",
+   "Health and safety: cover coughs and sneezes, wipe their nose and throw the tissue away, and explain why washing hands stops germs from spreading.",
+   "Language: name hygiene items and routines using words like soap, floss, tissue, germs, clean, and dirty, and follow two-step directions."
+  ],
+  "steam": {
+   "name": "Pepper and Soap Experiment",
+   "dev": {
+    "cognitive": "Observes, repeats, and explains what soap does.",
+    "language": "Uses words like germs, float, and scatter."
+   },
+   "why": "Repeating the pepper test lets children see for themselves why soap matters.",
+   "desc": "Children sprinkle pepper onto the water and watch it float and spread out, like germs on hands. The teacher dips a soapy finger in and the pepper scatters to the edges right away. Children take turns dipping their own soapy finger in, then add more pepper and start over as long as interest holds. The teacher explains that soap makes germs let go of our hands, so we wash with soap and water, not just water. Keep pepper away from eyes.",
+   "supplies": [
+    "Shallow tray or dish of water",
+    "Ground black pepper (the \"germs\")",
+    "Dish soap",
+    "Small bowl of soapy water",
+    "Towels"
+   ],
+   "img": "../media/activities/hygiene/threes_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Handwashing Time",
+    "dev": {
+     "physical": "Brushing paint builds hand control.",
+     "cognitive": "Connects art to washing hands."
+    },
+    "why": "Painting soapy water around their own handprint makes hand washing personal.",
+    "desc": "In aprons, children brush blue paint onto their hand and press a handprint onto white paper, then brush blue water drops and bubbles around it.",
+    "supplies": [
+     "White construction or printer paper (8.5x11)",
+     "Blue paint",
+     "Paint brushes",
+     "Aprons"
+    ],
+    "img": "../media/activities/hygiene/threes_craft1.webp"
+   },
+   {
+    "name": "Germ Straw Blowing",
+    "dev": {
+     "physical": "Blowing builds breath control.",
+     "cognitive": "Watches paint spread and colors mix."
+    },
+    "why": "Blowing paint into wild germ shapes is silly fun that builds breath control.",
+    "desc": "Children drop watercolor paint onto white cardstock, then blow through a straw to spread it into wild germ shapes. When dry, they glue on googly eyes. Remind children to blow out, never sip.",
+    "supplies": [
+     "White cardstock",
+     "Watercolor paint",
+     "Straws",
+     "Googly eyes",
+     "Liquid glue"
+    ],
+    "img": "../media/activities/hygiene/threes_craft2.webp"
+   },
+   {
+    "name": "Create Your Own Germ",
+    "dev": {
+     "physical": "Gluing shapes builds fine motor skills.",
+     "cognitive": "Invents and describes a germ.",
+     "language": "Tells about their germ."
+    },
+    "why": "Inventing a silly germ helps children talk about something they can't see.",
+    "desc": "Children glue colorful paper shapes onto paper labeled \"Germs are ick! They make me sick!\" to invent their own silly germ.",
+    "supplies": [
+     "Construction paper labeled \"Germs are ick! They make me sick!\"",
+     "Shapes cut from different colors of construction paper",
+     "Glue stick or liquid glue"
+    ],
+    "img": "../media/activities/hygiene/threes_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Teeth Brushing",
+    "group": "Small group",
+    "dev": {
+     "physical": "Brushing builds hand control.",
+     "cognitive": "Compares brushed and unbrushed teeth."
+    },
+    "why": "Scrubbing pretend plaque shows children why brushing matters.",
+    "desc": "Children see what happens to teeth that aren't brushed, then use a toy toothbrush to scrub the plaque off and see the difference.",
+    "supplies": [
+     "Toy toothbrushes",
+     "Model or paper teeth with pretend plaque"
+    ],
+    "img": "../media/activities/hygiene/threes_act1.webp"
+   },
+   {
+    "name": "How Germs Spread",
+    "group": "Small group",
+    "dev": {
+     "social": "Sees how what we touch reaches others.",
+     "cognitive": "Watches glitter spread like germs.",
+     "language": "Hears spread, touch, and wash."
+    },
+    "why": "Watching glitter spread shows how germs travel, and why soap and scrubbing matter.",
+    "desc": "The teacher puts a little glitter on one child's hands and has them rub their hands together. Children pass the sparkle along by touching things around the room, and the teacher names what happens: \"Look, it's on your hands, and now on the table, and now on the toy.\" Germs spread the same way, so we wash with soap and water. Children then wash at the sink until the glitter comes off, seeing how much soap and rubbing it takes, and use baby wipes to clean surfaces they touched. Keep glitter away from eyes.",
+    "supplies": [
+     "Glitter",
+     "Soap and water",
+     "Baby wipes"
+    ],
+    "img": "../media/activities/hygiene/threes_act2.webp"
+   },
+   {
+    "name": "Learning to Wipe Game",
+    "group": "Small group",
+    "dev": {
+     "physical": "Folding and wiping build hand control.",
+     "cognitive": "Learns the steps in order.",
+     "language": "Hears wipe, clean, and trash."
+    },
+    "why": "Practicing wiping in a game makes a private skill easy to learn and talk about.",
+    "desc": "The teacher tapes two balloons side by side and draws a small smudge between them (or spreads a tablespoon of chocolate pudding there), and sets out a basket of toilet paper squares with a trash can beside it. Children fold or scrunch a square, wipe the mark off, and drop the used paper in the trash. The teacher names each step (\"Wipe, wipe,\" \"All clean,\" \"In the trash\") and asks what comes next, comparing it to wiping after using the bathroom: use the paper once, then put it in the trash. Safety: an adult keeps hold of the balloons; popped or uninflated balloon pieces are a choking hazard, so throw them away right away.",
+    "supplies": [
+     "Two balloons taped side by side",
+     "Marker (or chocolate pudding)",
+     "Toilet paper squares",
+     "Trash can"
+    ],
+    "img": "../media/activities/hygiene/threes_act3.webp"
+   },
+   {
+    "name": "Letter M Writing Practice",
+    "group": "Small group",
+    "dev": {
+     "physical": "Forming lines builds pre-writing strokes.",
+     "cognitive": "Learns the shape of M.",
+     "language": "Says the /m/ sound."
+    },
+    "why": "Making M in many ways builds the muscle memory for writing it.",
+    "desc": "Children practice making the letter M at stations: tracing a large M with a finger on sandpaper or textured card, writing M in a tray of sand or salt, rolling playdough sticks into an M, and tracing M with a dry-erase marker on a laminated card. The teacher models the strokes at each station and says the /m/ sound as children write.",
+    "supplies": [
+     "Sandpaper or textured letter M card",
+     "Shallow tray of sand or salt",
+     "Playdough",
+     "Laminated M cards and dry-erase markers"
+    ],
+    "img": "../media/activities/hygiene/threes_act4.webp"
+   }
+  ]
+ },
+ {
+  "id": "hyg-fours",
+  "age": "Fours",
+  "ageId": "fours",
+  "theme": "Personal Hygiene",
+  "short": "Personal Hygiene",
+  "letter": "Mm",
+  "overview": "Children explain how germs spread, test why soap works, and practice hygiene routines on their own.",
+  "circle": "Circle time opens with the song \"Wash, wash, wash your hands, wash them every day. Scrub the tops and scrub the palms, wash the germs away,\" with children rubbing their palms and scrubbing the backs of their hands as they sing. Next, the teacher sets out a basket of real items (soap, a washcloth, a tissue, a toothbrush, floss, a trash can), and children take turns choosing one, naming it, and explaining what it's for and when they use it. Book of the week: Those Mean Nasty Dirty Downright Disgusting but... Invisible Germs by Judith Rice.",
+  "letterPlan": "M is for magnet. Children recognize the letter M, learn its sound, and connect it to words like magnet. Each child takes a magnet and tests each item on a tray: things that stick go in the \"sticks\" bin, and things that don't go in the other. Children can test an item twice, try a stronger magnet, or take their magnet on a hunt around the room to see what it grabs (the cabinet, the door frame, a chair leg) and what it ignores. They can also hold a magnet under a cookie sheet and drag a paper clip across the top without touching it.",
+  "objectives": [
+   "Self-care: complete hygiene routines in order on their own (wet, soap, scrub, rinse, dry; brush, rinse, spit) and explain why each step matters.",
+   "Health and safety: describe how germs spread and show ways to stop them, like covering a cough with an elbow, using a tissue once, and washing hands before eating and after the bathroom.",
+   "Language: use words like germs, spread, floss, rinse, healthy, and routine, and follow and give multi-step directions."
+  ],
+  "steam": {
+   "name": "Hand Washing vs. Water Only",
+   "dev": {
+    "cognitive": "Predicts, tests, and compares results.",
+    "language": "Explains why soap works."
+   },
+   "why": "Testing water against soap is a real experiment: predict, test, compare, explain.",
+   "desc": "Children sprinkle pepper onto the water and watch it float and spread, like germs on hands. The teacher dips a plain wet finger in first, and nothing happens: the pepper stays put. Then the teacher dips a soapy finger in, and the pepper scatters to the edges. Children take a turn with each finger, compare what happened, and predict which will work before they try. The teacher sums it up: water alone doesn't move the germs, soap does, so we wash with soap and scrub long enough to get germs off. Keep pepper away from eyes.",
+   "supplies": [
+    "Shallow tray or dish of water",
+    "Ground black pepper (the \"germs\")",
+    "Dish soap",
+    "A second tray of plain water",
+    "Small bowl of soapy water"
+   ],
+   "img": "../media/activities/hygiene/fours_steam.webp"
+  },
+  "crafts": [
+   {
+    "name": "Germs Are Ick! They Make Me Sick!",
+    "dev": {
+     "physical": "Gluing shapes builds fine motor skills.",
+     "cognitive": "Invents and describes a germ.",
+     "language": "Tells about their germ."
+    },
+    "why": "Inventing a silly germ helps children talk about something they can't see.",
+    "desc": "Children glue colorful paper shapes onto paper labeled \"Germs are ick! They make me sick!\" to invent their own germ, then tell a friend about it.",
+    "supplies": [
+     "Construction paper labeled \"Germs are ick! They make me sick!\"",
+     "Shapes cut from different colors of construction paper",
+     "Liquid glue or glue sticks"
+    ],
+    "img": "../media/activities/hygiene/fours_craft1.webp"
+   },
+   {
+    "name": "Mouth Model",
+    "dev": {
+     "physical": "Folding and placing small squares builds fine motor control.",
+     "cognitive": "Learns how teeth line up in a mouth."
+    },
+    "why": "Building a paper mouth helps children picture where to brush and floss.",
+    "desc": "Children fold a pink semicircle into a mouth and glue small white paper squares along the edges as teeth.",
+    "supplies": [
+     "Pink construction paper semicircles, folded so the edges overlap",
+     "White paper squares (about ½ inch)",
+     "Wet glue or glue sticks"
+    ],
+    "img": "../media/activities/hygiene/fours_craft2.webp"
+   },
+   {
+    "name": "Cotton Ball Tooth",
+    "dev": {
+     "physical": "Pulling and gluing cotton builds fine motor skills.",
+     "language": "Talks about healthy teeth."
+    },
+    "why": "Building a bright white tooth starts a conversation about brushing.",
+    "desc": "Children glue cotton balls onto a tooth outline to make it bright and white, add googly eyes and a red paper smile, and glue it to a popsicle stick.",
+    "supplies": [
+     "Tooth outline",
+     "Cotton balls",
+     "Liquid glue",
+     "Popsicle sticks",
+     "Googly eyes",
+     "Red paper semicircle mouth"
+    ],
+    "img": "../media/activities/hygiene/fours_craft3.webp"
+   }
+  ],
+  "activities": [
+   {
+    "name": "Cleaning the Tooth",
+    "group": "Small group",
+    "dev": {
+     "physical": "Brushing builds hand control.",
+     "cognitive": "Sees yellow turn white."
+    },
+    "why": "Brushing yellow teeth white shows why we brush every day.",
+    "desc": "Children use real toothbrushes and white paint thinned with water to \"clean\" teeth drawn on yellow paper to look dirty.",
+    "supplies": [
+     "Teeth drawn on yellow paper",
+     "White paint thinned with water",
+     "Toothbrushes (for painting only)"
+    ],
+    "img": "../media/activities/hygiene/fours_act1.webp"
+   },
+   {
+    "name": "How Germs Spread",
+    "group": "Large group",
+    "dev": {
+     "social": "Sees how what we touch reaches others.",
+     "cognitive": "Watches glitter spread like germs.",
+     "language": "Explains how germs travel."
+    },
+    "why": "Watching glitter spread shows how germs travel, and why soap and scrubbing matter.",
+    "desc": "The teacher puts a little glitter on one child's hands and has them rub their hands together. Children pass the sparkle along by touching things around the room, and the teacher names what happens: \"Look, it's on your hands, and now on the table, and now on the toy.\" Germs spread the same way, so we wash with soap and water. Children then wash at the sink until the glitter comes off, seeing how much soap and rubbing it takes, and use baby wipes to clean surfaces they touched. Keep glitter away from eyes.",
+    "supplies": [
+     "Glitter",
+     "Soap and water",
+     "Baby wipes"
+    ],
+    "img": "../media/activities/hygiene/fours_act2.webp"
+   },
+   {
+    "name": "Learning to Wipe Game",
+    "group": "Large group",
+    "dev": {
+     "physical": "Folding and wiping build hand control.",
+     "cognitive": "Learns the steps in order.",
+     "language": "Hears wipe, clean, and trash."
+    },
+    "why": "Practicing wiping in a game makes a private skill easy to learn and talk about.",
+    "desc": "The teacher tapes two balloons side by side and draws a small smudge between them (or spreads a tablespoon of chocolate pudding there), and sets out a basket of toilet paper squares with a trash can beside it. Children fold or scrunch a square, wipe the mark off, and drop the used paper in the trash. The teacher names each step (\"Wipe, wipe,\" \"All clean,\" \"In the trash\") and asks what comes next, comparing it to wiping after using the bathroom: use the paper once, then put it in the trash. Safety: an adult keeps hold of the balloons; popped or uninflated balloon pieces are a choking hazard, so throw them away right away.",
+    "supplies": [
+     "Two balloons taped side by side",
+     "Marker (or chocolate pudding)",
+     "Toilet paper squares",
+     "Trash can"
+    ],
+    "img": "../media/activities/hygiene/fours_act3.webp"
+   },
+   {
+    "name": "Flossing",
+    "group": "Small group",
+    "dev": {
+     "physical": "Sliding yarn builds fine motor control.",
+     "cognitive": "Connects floss to cleaning between teeth."
+    },
+    "why": "Flossing \"gunk\" out of a model mouth shows what floss reaches that a brush can't.",
+    "desc": "A model mouth has \"plaque\" (tissue paper or playdough) tucked between the teeth. Children use yarn to \"floss\" between the teeth and pull out the gunk.",
+    "supplies": [
+     "Model mouth with teeth",
+     "Tissue paper or playdough \"plaque\"",
+     "Yarn"
+    ],
+    "img": "../media/activities/hygiene/fours_act4.webp"
    }
   ]
  }

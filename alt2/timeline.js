@@ -10,13 +10,17 @@ const AGES = [
 ];
 const THEMES = [
   {slug:"fall-leaves-pumpkins", month:"Fall", theme:"Fall Leaves & Pumpkins", letter:"Ll", icon:"🍂", week:9, kind:"fall"},
-  {slug:"fall-seasonal-changes", month:"Fall", theme:"Fall Seasonal Changes", letter:"Kk", icon:"🍁", week:10, kind:"seasonal"}
+  {slug:"fall-seasonal-changes", month:"Fall", theme:"Fall Seasonal Changes", letter:"Kk", icon:"🍁", week:10, kind:"seasonal"},
+  {slug:"my-family", month:"More Themes", theme:"My Family", letter:"Oo", icon:"👨‍👩‍👧", week:11, kind:"family"},
+  {slug:"wild-animals-vs-pets", month:"More Themes", theme:"Wild Animals vs. Pets", letter:"Nn", icon:"🦁", week:12, kind:"wild"},
+  {slug:"personal-hygiene", month:"More Themes", theme:"Personal Hygiene", letter:"Mm", icon:"🧼", week:13, kind:"hygiene"}
 ];
 const OLD_ROOT = /^(director|tour|grows|readiness|week|parent|today|plan|pplan|fridge)(\/|$)/;
 const devHtml = s => s.dev ? `<ul class="dev">${AREAS.filter(([k]) => s.dev[k]).map(([k, l]) => `<li class="d-${k}"><b>${l}</b> <span data-ed="${s.id}|dev-${k}">${esc(s.dev[k])}</span></li>`).join("")}</ul>` : "";
 const esc = s => String(s || "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fallPlans = () => window.FALL || [];
 const seasonalPlans = () => window.FALL_SEASONAL || [];
+const KIND_PLANS = {family: () => window.MY_FAMILY || [], wild: () => window.WILD_PETS || [], hygiene: () => window.HYGIENE || []};
 function letterPair(raw){
   const letters = String(raw || "").replace(/[^A-Za-z]/g, "");
   if (!letters) return {upper:"", lower:"", html:"", text:""};
@@ -137,6 +141,10 @@ function planFor(ageId, theme){
   }
   if (theme.kind === "seasonal") {
     const p = seasonalPlans().find(x => x.ageId === ageId);
+    return p || null;
+  }
+  if (KIND_PLANS[theme.kind]) {
+    const p = KIND_PLANS[theme.kind]().find(x => x.ageId === ageId);
     return p || null;
   }
   return seaPlan(ageId, theme);
